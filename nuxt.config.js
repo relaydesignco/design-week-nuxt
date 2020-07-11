@@ -44,7 +44,12 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/posts.server.js', '~/plugins/tags.server.js', '~/plugins/dateformat.js'],
+  plugins: [
+    '~/plugins/events.server.js',
+    '~/plugins/speakers.server.js',
+    '~/plugins/sponsors.server.js',
+    '~/plugins/dateformat.js',
+  ],
   generate: {
     routes: dynamicRoutes,
   },

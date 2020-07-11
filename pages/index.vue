@@ -40,33 +40,41 @@
 
 <script>
 // import AppMasthead from '@/components/AppMasthead.vue';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   components: {
     // AppMasthead,
   },
+
   data() {
     return {
       selectedTag: null,
       activeClass: 'active',
     };
   },
+
   computed: {
-    events() {
-      return this.$store.state.events;
-    },
-    tags() {
-      return this.$store.state.tags;
-    },
-    sortedEvents() {
-      if (!this.selectedTag) return this.events;
-      return this.events.filter((el) => el.tags.includes(this.selectedTag));
-    },
+    ...mapState(['events', 'speakers', 'sponsors']),
+
+    // tags() {
+    //   return this.$store.state.tags;
+    // },
+    // sortedEvents() {
+    //   if (!this.selectedTag) return this.events;
+    //   return this.events.filter((el) => el.tags.includes(this.selectedTag));
+    // },
   },
+
   created() {
-    this.$store.dispatch('getEvents');
+    this.getEvents();
+    this.getSpeakers();
+    this.getSponsors();
   },
+
   methods: {
+    ...mapActions(['getEvents', 'getSpeakers', 'getSponsors']),
+
     updateTag(tag) {
       if (!this.selectedTag) {
         this.selectedTag = tag.id;
