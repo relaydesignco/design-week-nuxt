@@ -31,9 +31,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-svg {
-  vertical-align: middle;
-  margin-right: 10px;
-}
-</style>
+<style lang="postcss" scoped></style>

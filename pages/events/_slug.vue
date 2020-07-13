@@ -1,7 +1,7 @@
 <template>
-  <main class="event individual">
+  <main>
     <h1>{{ event.title.rendered }}</h1>
-    <!-- <small class="date">{{ event.date | dateformat }}</small> -->
+    <!-- <small>{{ event.date | dateformat }}</small> -->
     <section v-html="event.content.rendered"></section>
   </main>
 </template>
@@ -30,23 +30,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-main.event {
-  margin: 60px auto 50px;
-  max-width: 800px;
-  padding: 0 30px 70px;
-}
-
-h1 {
-  color: black;
-  font-size: 40px;
-}
-
-section {
-  color: #444;
-}
-
-.date {
-  text-align: center;
-}
-</style>
+<style lang="postcss" scoped></style>

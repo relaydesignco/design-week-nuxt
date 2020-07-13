@@ -1,8 +1,10 @@
 <template>
-  <div class="nav">
-    <ul>
+  <nav class="p-4 max-w-screen-xl mx-auto mb-8">
+    <ul class="flex justify-between items-center">
       <li>
-        <nuxt-link exact to="/"><app-icon />Events</nuxt-link>
+        <nuxt-link exact to="/" class="flex items-center"
+          ><app-icon class="mr-2" />Events</nuxt-link
+        >
       </li>
       <li>
         <nuxt-link to="/speakers">Speakers</nuxt-link>
@@ -11,7 +13,7 @@
         <nuxt-link to="/sponsors">Sponsors</nuxt-link>
       </li>
     </ul>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -24,34 +26,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.nav {
-  background: #000;
-  color: #fff;
-  padding: 1em 100px;
-
-  a {
-    color: #fff;
-    opacity: 0.8;
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
-
-div {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
-
-ul {
-  padding-left: 0;
-
-  li {
-    display: inline-block;
-    margin-right: 30px;
-  }
-}
-</style>
+<style scoped></style>

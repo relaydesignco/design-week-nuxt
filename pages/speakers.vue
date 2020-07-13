@@ -1,21 +1,19 @@
 <template>
-  <div class="speakers">
-    <main>
-      <div v-for="speaker in speakers" :key="speaker.id" class="speaker">
-        <h3>
-          <a :href="`${speaker.acf.url}`">{{ speaker.title.rendered }}</a>
-        </h3>
-        <a :href="`${speaker.acf.url}`">
-          <img :src="speaker.acf.image.sizes.large" alt="speaker.acf.image.alt" />
-        </a>
-        <div>
-          Speaker: <strong>{{ speaker.acf.speaker }}</strong>
-        </div>
-        <div v-html="speaker.content.rendered"></div>
-        <a :href="`speakers/${speaker.slug}`" class="readmore slide">More Info ⟶</a>
+  <main class="p-4 max-w-screen-xl mx-auto">
+    <div v-for="speaker in speakers" :key="speaker.id">
+      <h3>
+        <a :href="`${speaker.acf.url}`">{{ speaker.title.rendered }}</a>
+      </h3>
+      <a :href="`${speaker.acf.url}`">
+        <img :src="speaker.acf.image.sizes.large" alt="speaker.acf.image.alt" />
+      </a>
+      <div>
+        Speaker: <strong>{{ speaker.acf.speaker }}</strong>
       </div>
-    </main>
-  </div>
+      <div v-html="speaker.content.rendered"></div>
+      <a :href="`speakers/${speaker.slug}`">More Info ⟶</a>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -41,4 +39,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="postcss" scoped></style>

@@ -25,13 +25,7 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Alata|Open+Sans&display=swap',
-      },
-    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
@@ -40,7 +34,17 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/mixins.scss'],
+  css: [], // stylesheet being loaded by @nuxt/tailwindcss
+
+  webfontloader: {
+    // typekit: {
+    //   id: 'xxxxxx', // for Adobe Typekit fonts
+    // },
+    google: {
+      families: ['Open Sans:400,700'], // Google Font with weights 400 and 700
+    },
+  },
+
   /*
    ** Plugins to load before mounting the App
    */
@@ -56,7 +60,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ['@nuxtjs/tailwindcss', 'nuxt-webfontloader'],
   /*
    ** Build configuration
    */
