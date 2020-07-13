@@ -2,10 +2,13 @@
   <div class="nav">
     <ul>
       <li>
-        <nuxt-link exact to="/"><app-icon /></nuxt-link>
+        <nuxt-link exact to="/"><app-icon />Events</nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/about">About</nuxt-link>
+        <nuxt-link to="/speakers">Speakers</nuxt-link>
+      </li>
+      <li>
+        <nuxt-link to="/sponsors">Sponsors</nuxt-link>
       </li>
     </ul>
   </div>
