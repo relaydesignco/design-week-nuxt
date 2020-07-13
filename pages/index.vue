@@ -5,16 +5,18 @@
       <main>
         <div v-for="event in events" :key="event.id" class="event">
           <h3>
-            <a :href="`${event.acf.url}`">{{ event.title.rendered }}</a>
+            <a :href="`${event.acf.url}`" target=" _blank" rel="noopener noreferrer">{{
+              event.title.rendered
+            }}</a>
           </h3>
           <!-- <small>{{ event.date | dateformat }}</small> -->
-          <a :href="`${event.acf.url}`">
+          <a :href="`${event.acf.url}`" target=" _blank" rel="noopener noreferrer">
             <img :src="event.acf.image.sizes.large" alt="event.acf.image.alt" />
           </a>
           <div>
             Speaker: <strong>{{ event.acf.speaker }}</strong>
           </div>
-          <div v-html="event.acf.description"></div>
+          <div>{{ event.acf.description }}</div>
           <a :href="`events/${event.slug}`" class="readmore slide">Get Info ⟶</a>
         </div>
       </main>
@@ -49,13 +51,13 @@ export default {
 
   data() {
     return {
-      selectedTag: null,
-      activeClass: 'active',
+      // selectedTag: null,
+      // activeClass: 'active',
     };
   },
 
   computed: {
-    ...mapState(['events', 'speakers', 'sponsors']),
+    ...mapState(['events']),
 
     // tags() {
     //   return this.$store.state.tags;
@@ -68,12 +70,10 @@ export default {
 
   created() {
     this.getEvents();
-    this.getSpeakers();
-    this.getSponsors();
   },
 
   methods: {
-    ...mapActions(['getEvents', 'getSpeakers', 'getSponsors']),
+    ...mapActions(['getEvents']),
 
     updateTag(tag) {
       if (!this.selectedTag) {

@@ -1,6 +1,4 @@
 const siteURL = 'http://midwestdesignweekapi.local';
-// const events = 'http://midwestdesignweekapi.local/wp-json/mwdw/v1/events';
-// const sponsors = 'http://midwestdesignweekapi.local/wp-json/mwdw/v1/sponsors';
 
 export const state = () => ({
   events: [],
@@ -62,10 +60,11 @@ export const actions = {
 
       speakers = speakers
         // .filter((el) => el.status === 'publish')
-        .map(({ id, slug, title, acf }) => ({
+        .map(({ id, slug, title, content, acf }) => ({
           id,
           slug,
           title,
+          content,
           acf,
         }));
       commit('updateSpeakers', speakers);
