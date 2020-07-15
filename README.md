@@ -1,11 +1,5 @@
 # Headless Wordpress on the JAMstack
 
-### Deploy this Template
-
-Click the "Deploy to Netlify" button, and you can configure it to fit your needs.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-labs/headless-wp-nuxt?utm_source=github&utm_medium=headlesswp-sd&utm_campaign=devex)
-
 ## Build Setup
 
 ```bash
