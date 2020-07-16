@@ -14,11 +14,7 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 export default {
-  data() {
-    return {
-      // key: value,
-    };
-  },
+  name: 'Sponsors',
 
   computed: {
     ...mapState(['sponsors']),
@@ -30,6 +26,19 @@ export default {
 
   methods: {
     ...mapActions(['getSponsors']),
+  },
+
+  head() {
+    return {
+      title: `Midwest Design Week | ${this.name}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'List of Sponsors for Midwest Design Week 2020',
+        },
+      ],
+    };
   },
 };
 </script>

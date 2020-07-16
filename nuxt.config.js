@@ -15,14 +15,46 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Midwest Design Week',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content:
+          'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        value: 'summary',
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'Midwest Design Week',
+      },
+      {
+        hid: 'og:type',
+        name: 'og:type',
+        content: 'article',
+      },
+      {
+        hid: 'og:url',
+        name: 'og:url',
+        content: 'https://midwestdesignweek.com',
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: 'https://midwestdesignweek.com/og-image.jpg',
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content:
+          'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

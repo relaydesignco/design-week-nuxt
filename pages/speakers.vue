@@ -19,11 +19,7 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 export default {
-  data() {
-    return {
-      // key: value,
-    };
-  },
+  name: 'Speakers',
 
   computed: {
     ...mapState(['speakers']),
@@ -35,6 +31,19 @@ export default {
 
   methods: {
     ...mapActions(['getSpeakers']),
+  },
+
+  head() {
+    return {
+      title: `Midwest Design Week | ${this.name}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'List of Speakers for Midwest Design Week 2020',
+        },
+      ],
+    };
   },
 };
 </script>

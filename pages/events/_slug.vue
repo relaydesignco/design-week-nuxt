@@ -27,6 +27,19 @@ export default {
   created() {
     this.$store.dispatch('getEvents');
   },
+
+  head() {
+    return {
+      title: `Midwest Design Week | ${this.event}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.event} information`,
+        },
+      ],
+    };
+  },
 };
 </script>
 
