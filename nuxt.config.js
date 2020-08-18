@@ -106,6 +106,8 @@ export default {
      ** You can extend webpack config here
      */
     extractCSS: true,
-    extend(config, ctx) {},
+    extend(config, ctx) {
+      config.devtool = process.env.NODE_ENV === 'development' ? '#source-map' : '';
+    },
   },
 };
