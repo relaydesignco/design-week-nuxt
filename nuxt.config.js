@@ -78,7 +78,7 @@ export default {
     //   id: 'xxxxxx', // for Adobe Typekit fonts
     // },
     google: {
-      families: ['Source Sans Pro:400,700', 'Lekton:400,700'], // Google Font with weights 400 and 700
+      families: ['Open Sans:400,600,700', 'Lekton:400,700'],
     },
   },
 
@@ -89,7 +89,6 @@ export default {
     '~/plugins/events.server.js',
     '~/plugins/speakers.server.js',
     '~/plugins/sponsors.server.js',
-    '~/plugins/dateformat.js',
   ],
   generate: {
     routes: dynamicRoutes,
@@ -97,7 +96,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxtjs/tailwindcss', 'nuxt-webfontloader'],
+  buildModules: ['@nuxtjs/tailwindcss', 'nuxt-webfontloader', '@nuxtjs/date-fns'],
   /*
    ** Build configuration
    */

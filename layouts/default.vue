@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-offwhite">
-    <app-nav />
+  <div>
+    <!-- <app-nav /> -->
     <nuxt />
     <app-footer />
   </div>

@@ -15,7 +15,7 @@ h1,
 h2,
 h3,
 h4 {
-  @apply font-mono tracking-wide;
+  @apply font-bold tracking-wide leading-none;
 }
 
 a {
@@ -31,11 +31,15 @@ a {
 }
 
 .field-label {
-  @apply block text-gray-700 mb-2;
+  @apply block text-white mb-2;
 }
 
 input[type='email'].field:focus:invalid {
   @apply shadow-none border-red;
+}
+
+.btn {
+  @apply bg-blue pt-3 pb-2 px-4 tracking-wide text-white text-lg uppercase font-mono font-bold inline-block;
 }
 
 @tailwind utilities;

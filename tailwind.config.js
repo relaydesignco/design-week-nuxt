@@ -10,14 +10,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
+        sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
         mono: ['Lekton', ...defaultTheme.fontFamily.mono],
       },
       colors: {
         black: '#3f3e3f',
         green: '#8fc73e',
         teal: '#4dc1b5',
-        blue: '#5d9bcc',
+        blue: {
+          default: '#5d9bcc',
+          dark: '#427ca8',
+        },
         red: '#cb1d1f',
         offwhite: '#fbfaf7',
       },
