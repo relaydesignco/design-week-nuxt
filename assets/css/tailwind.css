@@ -3,31 +3,43 @@
 @tailwind components;
 /* purgecss end ignore */
 
+html {
+  /* font-size: 20px; */
+}
+
 body {
   @apply text-black;
 }
 
-h1 {
-  @apply text-5xl;
-  @apply font-bold;
-}
-
-h2 {
-  @apply text-4xl;
-  @apply font-bold;
-}
-
-h3 {
-  @apply text-2xl;
-  @apply font-bold;
+h1,
+h2,
+h3,
+h4 {
+  @apply font-mono tracking-wide;
 }
 
 a {
-  @apply text-blue-700;
+  @apply text-blue;
+}
+
+.field {
+  @apply appearance-none shadow border w-full py-2 px-3 text-gray-700 leading-tight;
+}
+
+.field:focus {
+  @apply outline-none shadow-outline;
+}
+
+.field-label {
+  @apply block text-gray-700 mb-2;
+}
+
+input[type='email'].field:focus:invalid {
+  @apply shadow-none border-red;
 }
 
 @tailwind utilities;
 
-/* .place-center {
+.place-center {
   place-items: center;
-} */
+}

@@ -1,6 +1,7 @@
 <template>
   <div>
     <app-hero></app-hero>
+
     <main class="p-4 max-w-screen-xl mx-auto">
       <div v-for="event in events" :key="event.id">
         <h3>

@@ -4,7 +4,6 @@ export const state = () => ({
   events: [],
   speakers: [],
   sponsors: [],
-  // tags: [],
 });
 
 export const mutations = {

@@ -10,24 +10,31 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+        sans: ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
+        mono: ['Lekton', ...defaultTheme.fontFamily.mono],
       },
       colors: {
-        black: '#030703',
+        black: '#3f3e3f',
+        green: '#8fc73e',
+        teal: '#4dc1b5',
+        blue: '#5d9bcc',
+        red: '#cb1d1f',
+        offwhite: '#fbfaf7',
+      },
+      letterSpacing: {
+        wide: '0.1em',
+        wider: '0.2em',
+        widest: '0.5em',
       },
     },
   },
   variants: {},
   plugins: [],
-  purge: {
-    // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      'components/**/*.vue',
-      'layouts/**/*.vue',
-      'pages/**/*.vue',
-      'plugins/**/*.js',
-      'nuxt.config.js',
-    ],
-  },
+  purge: [
+    'components/**/*.vue',
+    'layouts/**/*.vue',
+    'pages/**/*.vue',
+    'plugins/**/*.js',
+    'nuxt.config.js',
+  ],
 };
