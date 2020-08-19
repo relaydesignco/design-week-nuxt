@@ -42,33 +42,33 @@
           </button>
         </div>
 
-        <div class="flex lg:max-w-screen-md pb-8 lg:pb-16">
+        <div
+          v-for="event in sortedEvents"
+          :key="event.id"
+          class="flex lg:max-w-screen-lg pb-8 lg:pb-16"
+        >
           <div class="w-2/5 lg:w-1/4">
-            <time class="text-sm lg:text-3xl font-mono">4 - 5pm EST</time>
-            <img src="/1024x1024.png" alt="speaker" class="" />
+            <time class="lg:text-3xl font-mono">
+              {{ $dateFns.format(new Date(event.acf.start), 'h:mm') }}-{{
+                $dateFns.format(new Date(event.acf.end), 'h:mmaaaaa')
+              }}
+              ET
+            </time>
+            <img
+              :src="event.acf.image.sizes.large"
+              alt="event.acf.image.alt"
+              class="w-32 lg:w-64 h-32 lg:h-64 object-cover"
+            />
           </div>
-          <div class="w-3/5 lg:w-3/4 pl-4 lg:pl-8 lg:pt-10">
+          <div class="w-3/5 lg:w-3/4 pl-4 lg:pl-8 pt-1 lg:pt-10">
             <h4 class="lg:text-3xl font-normal leading-tight mb-1">
-              Storybuilding & the Future of Truth In Our Branded World
+              {{ event.title.rendered }}
             </h4>
-            <h3 class="text-sm lg:text-2xl font-semibold mb-3 lg:mb-8">Terresa_Moses</h3>
+            <h3 class="text-sm lg:text-2xl font-bold mb-3 lg:mb-8">{{ event.acf.speaker }}</h3>
             <a href="#" class="btn-sm lg:btn bg-green hover:bg-green-dark mb-2 mr-2">Event Info</a>
-            <a href="#" class="btn-sm lg:btn bg-blue hover:bg-blue-dark">Register</a>
-          </div>
-        </div>
-
-        <div class="flex lg:max-w-screen-md pb-8 lg:pb-16">
-          <div class="w-2/5 lg:w-1/4">
-            <time class="text-sm lg:text-3xl font-mono">4 - 5pm EST</time>
-            <img src="/1024x1024.png" alt="speaker" class="" />
-          </div>
-          <div class="w-3/5 lg:w-3/4 pl-4 lg:pl-8 lg:pt-10">
-            <h4 class="lg:text-3xl font-normal leading-tight mb-1">
-              Storybuilding & the Future of Truth In Our Branded World
-            </h4>
-            <h3 class="text-sm lg:text-2xl font-semibold mb-3 lg:mb-8">Terresa_Moses</h3>
-            <a href="#" class="btn-sm lg:btn bg-green hover:bg-green-dark mb-2 mr-2">Event Info</a>
-            <a href="#" class="btn-sm lg:btn bg-blue hover:bg-blue-dark">Register</a>
+            <a :href="`${event.acf.url}`" class="btn-sm lg:btn bg-blue hover:bg-blue-dark">
+              Register
+            </a>
           </div>
         </div>
       </div>
@@ -82,7 +82,35 @@
 </template>
 
 <script>
-export default {};
+import { mapActions, mapGetters } from 'vuex';
+export default {
+  name: 'Events',
+
+  computed: {
+    ...mapGetters(['sortedEvents']),
+  },
+
+  created() {
+    this.getEvents();
+  },
+
+  methods: {
+    ...mapActions(['getEvents']),
+  },
+
+  head() {
+    return {
+      title: `Midwest Design Week | ${this.name}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Schedule of Events for Midwest Design Week 2020',
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="postcss" scoped>

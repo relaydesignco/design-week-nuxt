@@ -54,7 +54,9 @@
           </div>
         </div>
         <div class="w-full text-center mt-8">
-          <a href="#" class="btn bg-blue hover:bg-blue-dark">See Full Schedule</a>
+          <nuxt-link to="/schedule" class="btn bg-blue hover:bg-blue-dark"
+            >See Full Schedule
+          </nuxt-link>
         </div>
       </div>
     </section>
@@ -96,6 +98,7 @@ import AppHero from '@/components/AppHero.vue';
 import EmailForm from '@/components/EmailForm';
 
 export default {
+  name: 'Sponsors',
   components: {
     AppHero,
     EmailForm,
@@ -118,14 +121,6 @@ export default {
 
   methods: {
     ...mapActions(['getEvents']),
-
-    updateTag(tag) {
-      if (!this.selectedTag) {
-        this.selectedTag = tag.id;
-      } else {
-        this.selectedTag = null;
-      }
-    },
   },
 };
 </script>

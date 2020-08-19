@@ -1,3 +1,4 @@
+import axios from 'axios';
 const siteURL = 'http://midwestdesignweekapi.local';
 
 export const state = () => ({
@@ -5,6 +6,12 @@ export const state = () => ({
   speakers: [],
   sponsors: [],
 });
+
+export const getters = {
+  sortedEvents: (state) => {
+    return state.events.slice().sort((a, b) => new Date(a.acf.start) - new Date(b.acf.start));
+  },
+};
 
 export const mutations = {
   updateEvents: (state, events) => {
@@ -25,23 +32,21 @@ export const mutations = {
 };
 
 export const actions = {
-  async getEvents({ state, commit, dispatch }) {
+  async getEvents({ state, commit }) {
     if (state.events.length) return;
 
     try {
-      let events = await fetch(
-        `${siteURL}/wp-json/wp/v2/events?page=1&per_page=100&_embed=1`
-      ).then((res) => res.json());
+      let events = await axios
+        .get(`${siteURL}/wp-json/wp/v2/events?page=1&per_page=100&_embed=1`)
+        .then((res) => res.data);
 
-      events = events
-        // .filter((el) => el.status === 'publish')
-        .map(({ id, slug, title, content, acf }) => ({
-          id,
-          slug,
-          title,
-          content,
-          acf,
-        }));
+      events = events.map(({ id, slug, title, content, acf }) => ({
+        id,
+        slug,
+        title,
+        content,
+        acf,
+      }));
 
       commit('updateEvents', events);
     } catch (err) {
@@ -49,73 +54,45 @@ export const actions = {
     }
   },
 
-  async getSpeakers({ state, commit, dispatch }) {
+  async getSpeakers({ state, commit }) {
     if (state.speakers.length) return;
 
     try {
-      let speakers = await fetch(
-        `${siteURL}/wp-json/wp/v2/speakers?page=1&per_page=100&_embed=1`
-      ).then((res) => res.json());
+      let speakers = await axios
+        .get(`${siteURL}/wp-json/wp/v2/speakers?page=1&per_page=100&_embed=1`)
+        .then((res) => res.data);
 
-      speakers = speakers
-        // .filter((el) => el.status === 'publish')
-        .map(({ id, slug, title, content, acf }) => ({
-          id,
-          slug,
-          title,
-          content,
-          acf,
-        }));
+      speakers = speakers.map(({ id, slug, title, content, acf }) => ({
+        id,
+        slug,
+        title,
+        content,
+        acf,
+      }));
       commit('updateSpeakers', speakers);
     } catch (err) {
       console.error('getSpeakers', err);
     }
   },
 
-  async getSponsors({ state, commit, dispatch }) {
+  async getSponsors({ state, commit }) {
     if (state.sponsors.length) return;
 
     try {
-      let sponsors = await fetch(
-        `${siteURL}/wp-json/wp/v2/sponsors?page=1&per_page=100&_embed=1`
-      ).then((res) => res.json());
+      let sponsors = await axios
+        .get(`${siteURL}/wp-json/wp/v2/sponsors?page=1&per_page=100&_embed=1`)
+        .then((res) => res.data);
 
-      sponsors = sponsors
-        // .filter((el) => el.status === 'publish')
-        .map(({ id, slug, title, acf }) => ({
-          id,
-          slug,
-          title,
-          acf,
-        }));
+      sponsors = sponsors.map(({ id, slug, title, acf }) => ({
+        id,
+        slug,
+        title,
+        acf,
+      }));
 
       commit('updateSponsors', sponsors);
     } catch (err) {
       console.error('getSponsors', err);
     }
   },
-
-  // async getTags({ state, commit }) {
-  //   if (state.tags.length) return;
-
-  //   let allTags = state.events.reduce((acc, item) => {
-  //     return acc.concat(item.tags);
-  //   }, []);
-  //   allTags = allTags.join();
-
-  //   try {
-  //     let tags = await fetch(
-  //       `${siteURL}/wp-json/wp/v2/tags?page=1&per_page=40&include=${allTags}`
-  //     ).then((res) => res.json());
-
-  //     tags = tags.map(({ id, name }) => ({
-  //       id,
-  //       name,
-  //     }));
-
-  //     commit('updateTags', tags);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // },
 };
