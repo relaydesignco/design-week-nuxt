@@ -22,7 +22,7 @@
           <h4 class="text-xl font-normal pt-4 pb-5 leading-tight">
             Storybuilding & the Future of Truth In Our Branded World
           </h4>
-          <a href="#" class="btn hover:bg-blue-dark">Register</a>
+          <a href="#" class="btn bg-blue hover:bg-blue-dark">Register</a>
         </div>
       </div>
     </section>
@@ -54,7 +54,7 @@
           </div>
         </div>
         <div class="w-full text-center mt-8">
-          <a href="#" class="btn hover:bg-blue-dark">See Full Schedule</a>
+          <a href="#" class="btn bg-blue hover:bg-blue-dark">See Full Schedule</a>
         </div>
       </div>
     </section>

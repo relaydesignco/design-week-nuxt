@@ -38,8 +38,18 @@ input[type='email'].field:focus:invalid {
   @apply shadow-none border-red;
 }
 
-.btn {
-  @apply bg-blue pt-3 pb-2 px-4 tracking-wide text-white text-lg uppercase font-mono font-bold inline-block;
+@responsive {
+  .btn {
+    @apply pt-3 pb-2 px-4 tracking-wide leading-none text-white text-lg uppercase font-mono font-bold inline-block;
+  }
+
+  .btn-sm {
+    @apply pt-2 pb-1 px-2 tracking-wide leading-none text-white text-sm uppercase font-mono font-bold inline-block;
+  }
+}
+
+.calendar-button {
+  @apply bg-offwhite-dark font-mono font-bold leading-none uppercase;
 }
 
 @tailwind utilities;

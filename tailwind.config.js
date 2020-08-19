@@ -15,14 +15,32 @@ module.exports = {
       },
       colors: {
         black: '#3f3e3f',
-        green: '#8fc73e',
+        green: {
+          default: '#8fc73e',
+          dark: '#77ad1a',
+        },
         teal: '#4dc1b5',
         blue: {
           default: '#5d9bcc',
           dark: '#427ca8',
         },
         red: '#cb1d1f',
-        offwhite: '#fbfaf7',
+        offwhite: {
+          default: '#fbfaf7',
+          dark: '#f1f1e6',
+        },
+      },
+      fontSize: {
+        xs: '0.75rem',
+        sm: '0.875rem',
+        base: '1rem',
+        lg: '1.125rem',
+        xl: '1.25rem',
+        '2xl': '1.5rem',
+        '3xl': '1.875rem',
+        '4xl': '2.5rem',
+        '5xl': '3rem',
+        '6xl': '4rem',
       },
       letterSpacing: {
         wide: '0.1em',
