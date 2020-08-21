@@ -1,57 +1,54 @@
 <template>
-  <main class="p-10">
-    <div class="lg:max-w-screen-lg mx-auto">
-      <h1 class="text-2xl lg:text-4xl font-bold font-mono leading-tight">
-        <a :href="speaker.acf.url" target="_blank" rel="noopener noreferrer">
+  <section class="p-10 bg-black text-white">
+    <div class="lg:max-w-screen-lg mx-auto lg:flex pb-8 lg:pb-16">
+      <div class="lg:w-2/5">
+        <img
+          :src="speaker.acf.image.sizes.large"
+          :alt="speaker.acf.image.alt"
+          class="w-auto h-64 lg:w-full lg:h-96 object-cover mb-4 lg:mb-8"
+        />
+        <section
+          class="hidden lg:block leading-relaxed mb-6"
+          v-html="speaker.content.rendered"
+        ></section>
+      </div>
+
+      <div class="lg:w-3/5 lg:pl-8">
+        <h1 class="text-2xl lg:text-4xl font-bold font-mono leading-tight">
           {{ speaker.title.rendered }}
-        </a>
-      </h1>
-      <h2 class="text-xl lg:text-2xl font-normal font-mono leading-tight mb-2">
-        {{ speaker.acf.job_title }}
-      </h2>
+        </h1>
+        <h2 class="text-xl lg:text-2xl font-normal font-mono leading-tight mb-2 lg:mb-16">
+          {{ speaker.acf.job_title }}
+        </h2>
+        <section class="lg:hidden leading-relaxed mb-6" v-html="speaker.content.rendered"></section>
 
-      <div class="lg:flex pb-8 lg:pb-16">
-        <div class="lg:w-2/5">
-          <img
-            :src="speaker.acf.image.sizes.large"
-            :alt="speaker.acf.image.alt"
-            class="w-auto h-64 lg:w-full lg:h-96 object-cover mb-4"
-          />
-        </div>
-        <div class="lg:w-3/5 lg:pl-8">
-          <section
-            class="lg:text-lg leading-relaxed mb-6"
-            v-html="speaker.content.rendered"
-          ></section>
-
-          <h3 class="text-xl lg:text-2xl font-mono uppercase mb-2">Sessions_</h3>
-          <div v-for="session in speaker.acf.sessions" :key="session.event.ID" class="font-bold">
-            <nuxt-link :to="`/events/${session.event.post_name}`"> </nuxt-link>
-            <time class="text-2xl lg:text-3xl font-semibold">
-              {{
-                $dateFns.format(
-                  new Date(getMatchingEventInfo(session.event.post_name).acf.start),
-                  'M/d h:mmaaaaa'
-                )
-              }}
-            </time>
-            <h4 class="text-xl font-normal leading-tight mb-3">
-              {{ session.event.post_title }}
-            </h4>
-            <a
-              :href="getMatchingEventInfo(session.event.post_name).acf.url"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-sm lg:btn bg-blue hover:bg-blue-dark mb-8"
-            >
-              Register
-            </a>
-            <!-- <h1>{{ getMatchingEventInfo(session.event.post_name).acf.description }}</h1> -->
-          </div>
+        <h3 class="lg:text-xl uppercase mb-2">Sessions</h3>
+        <div v-for="session in speaker.acf.sessions" :key="session.event.ID" class="font-bold">
+          <nuxt-link :to="`/events/${session.event.post_name}`"> </nuxt-link>
+          <time class="text-2xl lg:text-3xl font-semibold">
+            {{
+              $dateFns.format(
+                new Date(getMatchingEventInfo(session.event.post_name).acf.start),
+                'M/d h:mmaaaaa'
+              )
+            }}
+          </time>
+          <h4 class="text-xl font-normal leading-tight mb-3">
+            {{ session.event.post_title }}
+          </h4>
+          <a
+            :href="getMatchingEventInfo(session.event.post_name).acf.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-sm lg:btn bg-blue hover:bg-blue-dark mb-8"
+          >
+            Register
+          </a>
+          <!-- <h1>{{ getMatchingEventInfo(session.event.post_name).acf.description }}</h1> -->
         </div>
       </div>
     </div>
-  </main>
+  </section>
 </template>
 
 <script>
