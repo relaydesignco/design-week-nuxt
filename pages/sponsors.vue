@@ -1,14 +1,23 @@
 <template>
-  <main class="p-4 max-w-screen-xl mx-auto">
-    <div v-for="sponsor in sponsors" :key="sponsor.id">
-      <!-- <h3>
-        <a :href="`${sponsor.acf.url}`">{{ sponsor.title.rendered }}</a>
-      </h3> -->
-      <a :href="`${sponsor.acf.url}`">
-        <img :src="sponsor.acf.image.sizes.large" alt="sponsor.acf.image.alt" />
-      </a>
-    </div>
-  </main>
+  <div>
+    <h1
+      class="font-mono text-2xl lg:text-4xl px-10 pb-4 lg:pb-8 pt-16 lg:pt-32 lg:px-0 lg:max-w-screen-lg mx-auto"
+    >
+      Sponsors_
+    </h1>
+    <section class="px-10 py-4 lg:py-10">
+      <div class="lg:max-w-screen-lg mx-auto grid gap-x-6 gap-y-12 lg:grid-cols-3">
+        <div v-for="sponsor in sponsors" :key="sponsor.id">
+          <!-- <h3>
+            <a :href="`${sponsor.acf.url}`">{{ sponsor.title.rendered }}</a>
+          </h3> -->
+          <a :href="`${sponsor.acf.url}`">
+            <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
