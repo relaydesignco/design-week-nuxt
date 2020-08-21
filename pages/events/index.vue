@@ -3,47 +3,31 @@
     <h1
       class="font-mono text-2xl lg:text-4xl px-6 pb-4 lg:pb-8 pt-16 lg:pt-32 lg:px-0 lg:max-w-screen-lg mx-auto"
     >
-      Schedule_
+      Events Schedule_
     </h1>
     <section class="px-6 py-4 lg:py-10">
       <div class="lg:max-w-screen-lg mx-auto">
         <h2 class="lg:text-3xl font-mono font-normal mb-2 lg:mb-4">September 2020</h2>
         <!-- day select buttons -->
         <div class="grid grid-cols-5 gap-2 lg:gap-4 pb-8 lg:pb-16">
-          <button class="calendar-button">
-            Mon
+          <button
+            v-for="(day, index) in days"
+            :key="index"
+            :class="[
+              [index === currentSelectedDayIndex ? 'bg-green' : 'bg-offwhite-dark'],
+              'font-mono font-bold leading-none uppercase calendar-button transition-colors duration-300',
+            ]"
+            @click="selectDay(index)"
+          >
+            {{ day.name }}
             <div class="date">
-              21
-            </div>
-          </button>
-          <button class="calendar-button">
-            Tue
-            <div class="date">
-              22
-            </div>
-          </button>
-          <button class="calendar-button">
-            Wed
-            <div class="date">
-              23
-            </div>
-          </button>
-          <button class="calendar-button">
-            Thu
-            <div class="date">
-              24
-            </div>
-          </button>
-          <button class="calendar-button">
-            Fri
-            <div class="date">
-              25
+              {{ day.date }}
             </div>
           </button>
         </div>
 
         <div
-          v-for="event in sortedEvents"
+          v-for="event in selectedDaysEvents"
           :key="event.id"
           class="flex lg:max-w-screen-lg pb-8 lg:pb-16"
         >
@@ -56,7 +40,7 @@
             </time>
             <img
               :src="event.acf.image.sizes.large"
-              alt="event.acf.image.alt"
+              :alt="event.acf.image.alt"
               class="w-32 lg:w-64 h-32 lg:h-64 object-cover"
             />
           </div>
@@ -65,17 +49,34 @@
               {{ event.title.rendered }}
             </h4>
             <h3 class="text-sm lg:text-2xl font-bold mb-3 lg:mb-8">{{ event.acf.speaker }}</h3>
-            <a href="#" class="btn-sm lg:btn bg-green hover:bg-green-dark mb-2 mr-2">Event Info</a>
-            <a :href="`${event.acf.url}`" class="btn-sm lg:btn bg-blue hover:bg-blue-dark">
+            <nuxt-link
+              :to="`/events/${event.slug}`"
+              class="btn-sm lg:btn bg-green hover:bg-green-dark mb-2 mr-2"
+            >
+              Event Info
+            </nuxt-link>
+            <a
+              :href="event.acf.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-sm lg:btn bg-blue hover:bg-blue-dark"
+            >
               Register
             </a>
           </div>
         </div>
       </div>
     </section>
-    <section class="bg-blue px-6 py-4 lg:py-10">
-      <p class="text-center text-white text-xl lg:text-2xl">
+    <section class="bg-offwhite-dark px-6 py-4 lg:py-10">
+      <p class="text-center lg:text-2xl font-mono">
         Get your All Access Pass
+        <a
+          href="http://"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-sm lg:btn bg-blue hover:bg-blue-dark ml-2"
+          >Purchase Now</a
+        >
       </p>
     </section>
   </div>
@@ -85,17 +86,60 @@
 import { mapActions, mapGetters } from 'vuex';
 export default {
   name: 'Events',
+  data() {
+    return {
+      days: [
+        {
+          name: 'Mon',
+          date: '21',
+        },
+        {
+          name: 'Tue',
+          date: '22',
+        },
+        {
+          name: 'Wed',
+          date: '23',
+        },
+        {
+          name: 'Thu',
+          date: '24',
+        },
+        {
+          name: 'Fri',
+          date: '25',
+        },
+      ],
+      currentSelectedDayIndex: 0,
+    };
+  },
 
   computed: {
     ...mapGetters(['sortedEvents']),
+
+    dayOfWeek() {
+      return this.$dateFns.getDay(new Date());
+    },
+
+    selectedDaysEvents() {
+      return this.sortedEvents.filter(
+        (event) => event.acf.start.split('/')[1] === this.days[this.currentSelectedDayIndex].date
+      );
+    },
   },
 
   created() {
     this.getEvents();
+    // console.log(this.sortedEvents);
   },
 
   methods: {
     ...mapActions(['getEvents']),
+
+    selectDay(index) {
+      this.currentSelectedDayIndex = index;
+      console.log(this.selectedDaysEvents);
+    },
   },
 
   head() {

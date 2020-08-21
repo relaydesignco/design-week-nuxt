@@ -1,25 +1,25 @@
 <template>
   <main class="p-10">
     <div class="lg:max-w-screen-lg mx-auto">
-      <h1 class="text-2xl lg:text-4xl font-normal leading-tight mb-2">
+      <h1 class="text-2xl lg:text-4xl font-normal leading-tight mb-1">
         {{ event.title.rendered }}
       </h1>
       <h2 class="text-xl lg:text-3xl font-bold mb-3 lg:mb-8">{{ event.acf.speaker }}</h2>
 
       <div class="lg:flex pb-8 lg:pb-16">
-        <div class="lg:w-1/4">
+        <div class="lg:w-2/5">
           <img
             :src="event.acf.image.sizes.large"
-            alt="event.acf.image.alt"
-            class="w-auto h-64 lg:w-64 lg:h-64 object-cover mb-4"
+            :alt="event.acf.image.alt"
+            class="w-auto h-64 lg:w-full lg:h-96 object-cover mb-4"
           />
         </div>
-        <div class="lg:w-3/4 lg:pl-8">
+        <div class="lg:w-3/5 lg:pl-8">
           <time class="text-xl lg:text-3xl font-mono leading-none block mb-1">
             {{ $dateFns.format(new Date(event.acf.start), 'EEEE M/d') }}
           </time>
 
-          <time class="text-xl lg:text-4xl font-mono leading-tight block mb-4">
+          <time class="text-xl lg:text-4xl font-mono leading-tight block mb-2 lg:mb-4">
             <span class="font-bold">
               {{ $dateFns.format(new Date(event.acf.start), 'h:mm') }}-{{
                 $dateFns.format(new Date(event.acf.end), 'h:mmaaaaa')
@@ -27,7 +27,7 @@
             </span>
             ET
           </time>
-          <section v-html="event.content.rendered"></section>
+          <section class="lg:text-lg leading-relaxed" v-html="event.content.rendered"></section>
         </div>
       </div>
     </div>
@@ -58,12 +58,12 @@ export default {
 
   head() {
     return {
-      title: `Midwest Design Week | ${this.event}`,
+      title: `Midwest Design Week | ${this.event.title.rendered}`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: `${this.event} information`,
+          content: `${this.event.title.rendered} information`,
         },
       ],
     };
