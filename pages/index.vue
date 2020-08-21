@@ -3,12 +3,12 @@
     <app-hero></app-hero>
     <!-- opening blurb -->
     <section class="bg-black p-10 lg:py-32 text-white lg:text-2xl">
-      <div class="lg:max-w-screen-lg mx-auto">
+      <p class="lg:max-w-screen-lg mx-auto leading-relaxed">
         Lorem ipsum dolor sit amet, con- sectetuer adipiscing elit, sed diam nonummy nibh euismod
         tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
         nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo con-
         sequat. Duis
-      </div>
+      </p>
     </section>
 
     <!-- keynote highlight -->
@@ -22,7 +22,14 @@
           <h4 class="text-xl font-normal pt-4 pb-5 leading-tight">
             Storybuilding & the Future of Truth In Our Branded World
           </h4>
-          <a href="#" class="btn bg-blue hover:bg-blue-dark">Register</a>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn bg-blue hover:bg-blue-dark"
+          >
+            Register
+          </a>
         </div>
       </div>
     </section>
@@ -31,17 +38,17 @@
     <section class="p-10 lg:py-16">
       <div class="lg:max-w-screen-lg mx-auto">
         <h2 class="text-2xl lg:text-4xl font-mono mb-4">Upcoming Events_</h2>
-        <div class="grid grid-cols-3 gap-6">
-          <div v-for="event in events" :key="event.id">
-            <a :href="`${event.acf.url}`" target=" _blank" rel="noopener noreferrer">
+        <div class="grid lg:grid-cols-3 gap-6">
+          <div v-for="event in sortedEvents.slice(0, 3)" :key="event.id">
+            <nuxt-link :to="`/events/${event.slug}`">
               <img
                 :src="event.acf.image.sizes.large"
                 alt="event.acf.image.alt"
                 class="w-64 h-64 object-cover"
               />
-            </a>
+            </nuxt-link>
             <time class="font-mono font-bold block mt-2 mb-1">
-              {{ $dateFns.format(new Date(event.acf.start), 'M/d') }}
+              {{ $dateFns.format(new Date(event.acf.start), 'M/d h:mmaaaaa') }} ET
             </time>
             <h3 class="font-mono text-2xl mb-1">{{ event.acf.speaker }}</h3>
             <h4 class="font-mono font-normal text-lg">
@@ -54,7 +61,7 @@
           </div>
         </div>
         <div class="w-full text-center mt-8">
-          <nuxt-link to="/schedule" class="btn bg-blue hover:bg-blue-dark"
+          <nuxt-link to="/events" class="btn bg-blue hover:bg-blue-dark"
             >See Full Schedule
           </nuxt-link>
         </div>
@@ -83,7 +90,7 @@
             target=" _blank"
             rel="noopener noreferrer"
           >
-            <img :src="sponsor.acf.image.sizes.large" alt="sponsor.acf.image.alt" class="w-64" />
+            <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" class="w-64" />
           </a>
           <!-- <h3>{{ sponsor.title.rendered }}</h3> -->
         </div>
@@ -93,7 +100,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapGetters, mapActions } from 'vuex';
 import AppHero from '@/components/AppHero.vue';
 import EmailForm from '@/components/EmailForm';
 
@@ -113,6 +120,8 @@ export default {
 
   computed: {
     ...mapState(['events', 'sponsors']),
+
+    ...mapGetters(['sortedEvents']),
   },
 
   created() {

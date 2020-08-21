@@ -1,5 +1,5 @@
 <template>
-  <header class="px-4 py-4 md:p-12 relative">
+  <header class="px-4 py-4 md:p-12 relative bg-offwhite">
     <div class="absolute top-0 right-0 w-2/12 md:w-36 lg:w-64">
       <svg-symbol />
     </div>

@@ -1,5 +1,6 @@
 import axios from 'axios';
 const siteURL = 'http://midwestdesignweekapi.local';
+// const siteURL = 'https://mwdwaiga.wpengine.com';
 
 export const state = () => ({
   events: [],
