@@ -1,14 +1,3 @@
-import axios from 'axios';
-const dynamicRoutes = () => {
-  const routes = axios
-    .get('http://midwestdesignweekapi.local/wp-json/wp/v2/events?page=1&per_page=100')
-    .then((res) => {
-      return res.data.map((post) => `/events/${post.slug}`);
-    });
-  console.log(routes);
-  return routes;
-};
-
 export default {
   mode: 'universal',
   /*
@@ -90,9 +79,7 @@ export default {
     '~/plugins/speakers.server.js',
     '~/plugins/sponsors.server.js',
   ],
-  generate: {
-    routes: dynamicRoutes,
-  },
+  generate: {},
   /*
    ** Nuxt.js dev-modules
    */
