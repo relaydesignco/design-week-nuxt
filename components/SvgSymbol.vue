@@ -1,5 +1,5 @@
-<template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360">
+<template functional>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" class="w-full">
     <g style="isolation: isolate;">
       <g id="symbol">
         <rect
@@ -8,16 +8,16 @@
           width="180"
           height="180"
           transform="translate(540 180) rotate(-180)"
-          fill="#cb1d1f"
           style="mix-blend-mode: multiply;"
+          class="fill-current text-red"
         />
         <rect
           id="green"
           width="180"
           height="180"
           transform="translate(180 180) rotate(-180)"
-          fill="#8fc73e"
           style="mix-blend-mode: multiply;"
+          class="fill-current text-green"
         />
         <rect
           id="blue"
@@ -26,8 +26,8 @@
           width="180"
           height="180"
           transform="translate(360 360) rotate(-180)"
-          fill="#5d9bcc"
           style="mix-blend-mode: multiply;"
+          class="fill-current text-blue"
         />
         <rect
           id="teal"
@@ -36,8 +36,8 @@
           width="180"
           height="180"
           transform="translate(540 540) rotate(-180)"
-          fill="#4dc1b5"
           style="mix-blend-mode: multiply;"
+          class="fill-current text-teal"
         />
       </g>
     </g>
@@ -50,4 +50,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="postcss" scoped></style>

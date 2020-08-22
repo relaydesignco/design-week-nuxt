@@ -15,7 +15,7 @@
             :key="index"
             :class="[
               [index === currentSelectedDayIndex ? 'bg-green' : 'bg-offwhite-dark'],
-              'font-mono font-bold leading-none uppercase calendar-button transition-colors duration-300',
+              'font-mono font-bold text-black leading-none uppercase calendar-button transition-colors duration-300',
             ]"
             @click="selectDay(index)"
           >

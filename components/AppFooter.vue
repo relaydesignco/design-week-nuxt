@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-black p-10">
+  <footer class="bg-dark p-6">
     <div class="max-w-screen-lg mx-auto text-sm text-white lg:flex justify-between">
       <a href="//aiga.org" target="_blank" rel="noopener noreferrer">
         <div class="w-24 mb-8 lg:mb-0">
@@ -14,6 +14,7 @@
 <script>
 import SvgAigaFullLogo from '@/components/SvgAigaFullLogo';
 export default {
+  name: 'AppFooter',
   components: {
     SvgAigaFullLogo,
   },

@@ -1,5 +1,5 @@
 <template>
-  <section class="p-10 bg-black text-white">
+  <section class="p-6 bg-dark text-white">
     <div class="lg:max-w-screen-lg mx-auto lg:flex pb-8 lg:pb-16">
       <div class="lg:w-2/5">
         <img

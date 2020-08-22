@@ -1,5 +1,5 @@
-<template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+<template functional>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" class="w-full">
     <title lang="en">AIGA Midwest Design Week logo</title>
     <g style="isolation: isolate;">
       <g id="logo">
@@ -9,8 +9,8 @@
             y="42.22"
             width="155.56"
             height="155.56"
-            fill="#cb1d1f"
             style="mix-blend-mode: multiply;"
+            class="fill-current text-red"
           />
         </g>
         <g id="teal" style="mix-blend-mode: multiply;">
@@ -20,8 +20,8 @@
             width="155.56"
             height="155.56"
             transform="translate(120 -49.71) rotate(45)"
-            fill="#4dc1b5"
             style="mix-blend-mode: multiply;"
+            class="fill-current text-teal"
           />
         </g>
         <g id="blue" style="mix-blend-mode: multiply;">
@@ -31,8 +31,8 @@
             width="155.56"
             height="155.56"
             transform="translate(55.06 -36.79) rotate(22.5)"
-            fill="#5d9bcc"
             style="mix-blend-mode: multiply;"
+            class="fill-current text-blue"
           />
         </g>
         <g id="green" style="mix-blend-mode: multiply;">
@@ -42,8 +42,8 @@
             width="155.56"
             height="155.56"
             transform="translate(184.94 -36.79) rotate(67.5)"
-            fill="#8fc73e"
             style="mix-blend-mode: multiply;"
+            class="fill-current text-green"
           />
         </g>
         <g id="AIGA">
@@ -64,4 +64,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="postcss" scoped></style>

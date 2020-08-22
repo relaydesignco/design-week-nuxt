@@ -14,7 +14,8 @@ module.exports = {
         mono: ['Lekton', ...defaultTheme.fontFamily.mono],
       },
       colors: {
-        black: '#3f3e3f',
+        black: '#222222',
+        dark: '#3f3e3f',
         green: {
           default: '#8fc73e',
           dark: '#77ad1a',
@@ -26,16 +27,18 @@ module.exports = {
         },
         red: '#cb1d1f',
         offwhite: {
-          default: '#fbfaf7',
+          default: '#f8f8f2',
           dark: '#f1f1e6',
         },
       },
       spacing: {
+        // '30': '7.5rem',
         '96': '24rem',
         '80': '20rem',
         '128': '32rem',
       },
       fontSize: {
+        xxs: '0.5rem',
         '4xl': '2.5rem',
       },
       letterSpacing: {
@@ -44,7 +47,7 @@ module.exports = {
         widest: '0.5em',
       },
       lineHeight: {
-        tight: '1.2',
+        tighter: '1.15',
       },
     },
   },

@@ -1,18 +1,18 @@
 <template>
   <div>
-    <!-- <app-nav /> -->
+    <app-header />
     <nuxt />
     <app-footer />
   </div>
 </template>
 
 <script>
-// import AppNav from '~/components/AppNav.vue';
-import AppFooter from '~/components/AppFooter.vue';
+import AppHeader from '@/components/AppHeader';
+import AppFooter from '@/components/AppFooter';
 
 export default {
   components: {
-    // AppNav,
+    AppHeader,
     AppFooter,
   },
 };

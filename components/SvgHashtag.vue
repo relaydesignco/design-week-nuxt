@@ -1,8 +1,8 @@
-<template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 633.6 66">
+<template functional>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 633.6 66" class="w-full">
     <title lang="en">#MWDW2020</title>
     <g style="isolation: isolate;">
-      <g id="MWDW2020" fill="#3f3e3f">
+      <g id="MWDW2020" class="fill-current text-dark">
         <path d="M92.4,13.2V0H79.2V66H92.4V26.4h13.2V13.2Z" />
         <path d="M105.6,52.8h13.2V26.4H105.6Z" />
         <path d="M132,13.2H118.8V26.4H132V66h13.2V0H132Z" />
@@ -34,10 +34,26 @@
         <path d="M343.2,66h13.2V39.6H343.2Z" />
       </g>
       <g id="hashmark">
-        <path d="M39.6,0V66H52.8V0Z" fill="#8fc73e" style="mix-blend-mode: multiply;" />
-        <path d="M13.2,0V66H26.4V0Z" fill="#4dc1b5" style="mix-blend-mode: multiply;" />
-        <path d="M0,26.4H66V13.2H0Z" fill="#cb1d1f" style="mix-blend-mode: multiply;" />
-        <path d="M0,52.8H66V39.6H0Z" fill="#5d9bcc" style="mix-blend-mode: multiply;" />
+        <path
+          d="M39.6,0V66H52.8V0Z"
+          style="mix-blend-mode: multiply;"
+          class="fill-current text-green"
+        />
+        <path
+          d="M13.2,0V66H26.4V0Z"
+          style="mix-blend-mode: multiply;"
+          class="fill-current text-teal"
+        />
+        <path
+          d="M0,26.4H66V13.2H0Z"
+          style="mix-blend-mode: multiply;"
+          class="fill-current text-red"
+        />
+        <path
+          d="M0,52.8H66V39.6H0Z"
+          style="mix-blend-mode: multiply;"
+          class="fill-current text-blue"
+        />
       </g>
     </g>
   </svg>
@@ -49,4 +65,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="postcss" scoped></style>

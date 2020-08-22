@@ -1,5 +1,5 @@
 <template>
-  <main class="p-10">
+  <main class="p-6">
     <div class="lg:max-w-screen-lg mx-auto">
       <h1 class="text-2xl lg:text-4xl font-normal leading-tight mb-1">
         {{ event.title.rendered }}

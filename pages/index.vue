@@ -2,7 +2,7 @@
   <div>
     <app-hero></app-hero>
     <!-- opening blurb -->
-    <section class="bg-black p-10 lg:py-32 text-white lg:text-2xl">
+    <section class="bg-dark p-6 lg:py-32 text-white lg:text-2xl">
       <p class="lg:max-w-screen-lg mx-auto leading-relaxed">
         Lorem ipsum dolor sit amet, con- sectetuer adipiscing elit, sed diam nonummy nibh euismod
         tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
@@ -12,7 +12,7 @@
     </section>
 
     <!-- keynote highlight -->
-    <section class="bg-offwhite p-10 lg:py-16">
+    <section class="bg-offwhite p-6 lg:py-16">
       <div class="lg:flex lg:max-w-screen-lg mx-auto">
         <img src="/1024x1024.png" alt="speaker" class="lg:mr-10 lg:w-1/2" />
         <div>
@@ -35,7 +35,7 @@
     </section>
 
     <!-- upcoming events -->
-    <section class="p-10 lg:py-16">
+    <section class="p-6 lg:py-16">
       <div class="lg:max-w-screen-lg mx-auto">
         <h2 class="text-2xl lg:text-4xl font-mono mb-4">Upcoming Events_</h2>
         <div class="grid lg:grid-cols-3 gap-6">
@@ -69,7 +69,7 @@
     </section>
 
     <!-- email form -->
-    <section class="p-10 lg:max-w-screen-lg mx-auto bg-black">
+    <section class="p-6 lg:max-w-screen-lg mx-auto bg-dark">
       <h2 class="text-2xl lg:text-4xl text-white mb-8 font-mono">Stay Connected_</h2>
       <email-form
         form-action="https://aiga.us3.list-manage.com/subscribe/post"
@@ -79,7 +79,7 @@
     </section>
 
     <!-- sponsors -->
-    <section class="p-10 lg:py-24">
+    <section class="p-6 lg:py-24">
       <div class="lg:max-w-screen-lg mx-auto">
         <h2 class="text-2xl lg:text-4xl font-mono mb-10 lg:mb-16">Thanks to our Sponsors_</h2>
         <div class="grid grid-cols-3 gap-4 items-center">

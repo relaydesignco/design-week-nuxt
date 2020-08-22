@@ -1,5 +1,5 @@
 <template>
-  <nav class="p-4 max-w-screen-xl mx-auto mb-8">
+  <nav class="p-6 max-w-screen-xl mx-auto mb-8">
     <ul class="flex justify-between items-center">
       <li>
         <nuxt-link exact to="/" class="flex items-center"
