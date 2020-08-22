@@ -1,33 +1,56 @@
 <template functional>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 159.88 36.34" class="w-full">
     <g class="fill-current text-dark">
-      <path d="M0 0h7.27v7.27H0zM0 7.27h7.27v7.27H0zM7.27 7.27h7.27v7.27H7.27z" />
-      <path
-        d="M14.53 14.53h7.27v7.27h-7.27zM14.53 21.8h7.27v7.27h-7.27zM0 14.53h7.27v7.27H0zM0 21.8h7.27v7.27H0zM0 29.07h7.27v7.27H0zM36.34 7.27h-7.27V0h7.27z"
-      />
-      <path
-        d="M36.34 14.53h-7.27V7.26h7.27zM29.07 14.53H21.8V7.26h7.27zM36.34 21.81h-7.27v-7.27h7.27z"
-      />
-      <path
-        d="M36.34 29.07h-7.27V21.8h7.27zM36.34 36.34h-7.27v-7.27h7.27zM87.21 0h7.27v7.27h-7.27zM87.21 7.27h7.27v7.27h-7.27z"
-      />
-      <path
-        d="M94.47 0h7.27v7.27h-7.27zM101.74 0h7.27v7.27h-7.27zM94.47 29.07h7.27v7.27h-7.27zM101.74 29.07h7.27v7.27h-7.27zM109.01 14.53h7.27v7.27h-7.27zM109.01 21.8h7.27v7.27h-7.27zM87.21 14.53h7.27v7.27h-7.27zM87.21 21.8h7.27v7.27h-7.27z"
-      />
-      <path
-        d="M87.21 29.07h7.27v7.27h-7.27zM116.28 14.53h-7.27V7.26h7.27zM43.6 0h7.27v7.27H43.6zM43.6 7.27h7.27v7.27H43.6zM58.14 7.27h7.27v7.27h-7.27z"
-      />
-      <path
-        d="M58.14 14.53h7.27v7.27h-7.27zM43.6 14.53h7.27v7.27H43.6zM50.87 21.8h7.27v7.27h-7.27zM50.87 29.07h7.27v7.27h-7.27zM79.94 7.27h-7.27V0h7.27z"
-      />
-      <path
-        d="M79.94 14.53h-7.27V7.26h7.27zM79.94 21.81h-7.27v-7.27h7.27zM72.67 29.07H65.4V21.8h7.27zM72.67 36.34H65.4v-7.27h7.27zM123.54 0h7.27v7.27h-7.27zM123.54 7.27h7.27v7.27h-7.27zM138.08 7.27h7.27v7.27h-7.27z"
-      />
-      <path
-        d="M138.08 14.53h7.27v7.27h-7.27zM123.54 14.53h7.27v7.27h-7.27zM130.81 21.8h7.27v7.27h-7.27zM130.81 29.07h7.27v7.27h-7.27zM159.88 7.27h-7.27V0h7.27z"
-      />
-      <path d="M159.88 14.53h-7.27V7.26h7.27zM159.88 21.81h-7.27v-7.27h7.27z" />
-      <path d="M152.61 29.07h-7.27V21.8h7.27zM152.61 36.34h-7.27v-7.27h7.27z" />
+      <rect width="7.27" height="7.27" />
+      <rect y="7.27" width="7.27" height="7.27" />
+      <rect x="7.27" y="7.27" width="7.27" height="7.27" />
+      <rect x="14.53" y="14.53" width="7.27" height="7.27" />
+      <rect x="14.53" y="21.8" width="7.27" height="7.27" />
+      <rect y="14.53" width="7.27" height="7.27" />
+      <rect y="21.8" width="7.27" height="7.27" />
+      <rect y="29.07" width="7.27" height="7.27" />
+      <rect x="29.07" width="7.27" height="7.27" />
+      <rect x="29.07" y="7.27" width="7.27" height="7.27" />
+      <rect x="21.8" y="7.27" width="7.27" height="7.27" />
+      <rect x="29.07" y="14.53" width="7.27" height="7.27" />
+      <rect x="29.07" y="21.8" width="7.27" height="7.27" />
+      <rect x="29.07" y="29.07" width="7.27" height="7.27" />
+      <rect x="87.21" width="7.27" height="7.27" />
+      <rect x="87.21" y="7.27" width="7.27" height="7.27" />
+      <rect x="94.47" width="7.27" height="7.27" />
+      <rect x="101.74" width="7.27" height="7.27" />
+      <rect x="94.47" y="29.07" width="7.27" height="7.27" />
+      <rect x="101.74" y="29.07" width="7.27" height="7.27" />
+      <rect x="109.01" y="14.53" width="7.27" height="7.27" />
+      <rect x="109.01" y="21.8" width="7.27" height="7.27" />
+      <rect x="87.21" y="14.53" width="7.27" height="7.27" />
+      <rect x="87.21" y="21.8" width="7.27" height="7.27" />
+      <rect x="87.21" y="29.07" width="7.27" height="7.27" />
+      <rect x="109.01" y="7.27" width="7.27" height="7.27" />
+      <rect x="43.6" width="7.27" height="7.27" />
+      <rect x="43.6" y="7.27" width="7.27" height="7.27" />
+      <rect x="58.14" y="7.27" width="7.27" height="7.27" />
+      <rect x="58.14" y="14.53" width="7.27" height="7.27" />
+      <rect x="43.6" y="14.53" width="7.27" height="7.27" />
+      <rect x="50.87" y="21.8" width="7.27" height="7.27" />
+      <rect x="50.87" y="29.07" width="7.27" height="7.27" />
+      <rect x="72.67" width="7.27" height="7.27" />
+      <rect x="72.67" y="7.27" width="7.27" height="7.27" />
+      <rect x="72.67" y="14.53" width="7.27" height="7.27" />
+      <rect x="65.41" y="21.8" width="7.27" height="7.27" />
+      <rect x="65.41" y="29.07" width="7.27" height="7.27" />
+      <rect x="123.54" width="7.27" height="7.27" />
+      <rect x="123.54" y="7.27" width="7.27" height="7.27" />
+      <rect x="138.08" y="7.27" width="7.27" height="7.27" />
+      <rect x="138.08" y="14.53" width="7.27" height="7.27" />
+      <rect x="123.54" y="14.53" width="7.27" height="7.27" />
+      <rect x="130.81" y="21.8" width="7.27" height="7.27" />
+      <rect x="130.81" y="29.07" width="7.27" height="7.27" />
+      <rect x="152.61" width="7.27" height="7.27" />
+      <rect x="152.61" y="7.27" width="7.27" height="7.27" />
+      <rect x="152.61" y="14.53" width="7.27" height="7.27" />
+      <rect x="145.35" y="21.8" width="7.27" height="7.27" />
+      <rect x="145.35" y="29.07" width="7.27" height="7.27" />
     </g>
   </svg>
 </template>

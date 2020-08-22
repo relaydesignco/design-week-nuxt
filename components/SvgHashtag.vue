@@ -1,59 +1,131 @@
 <template functional>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 633.6 66" class="w-full">
-    <title lang="en">#MWDW2020</title>
-    <g style="isolation: isolate;">
-      <g id="MWDW2020" class="fill-current text-dark">
-        <path d="M92.4,13.2V0H79.2V66H92.4V26.4h13.2V13.2Z" />
-        <path d="M105.6,52.8h13.2V26.4H105.6Z" />
-        <path d="M132,13.2H118.8V26.4H132V66h13.2V0H132Z" />
-        <path d="M250.8,52.8V13.2h26.4V0H237.6V66h39.6V52.8Z" />
-        <path d="M277.2,52.8h13.2V13.2H277.2Z" />
-        <path d="M382.8,0V13.2h39.6V0Z" />
-        <path d="M382.8,26.4V66h52.8V52.8H396V39.6h26.4V26.4Z" />
-        <rect x="422.4" y="13.2" width="13.2" height="13.2" />
-        <path d="M488.4,13.2V0H462V13.2Z" />
-        <path d="M462,52.8V66h26.4V52.8Z" />
-        <path d="M462,13.2H448.8V52.8H462Z" />
-        <path d="M488.4,52.8h13.2V13.2H488.4Z" />
-        <rect x="514.8" width="39.6" height="13.2" />
-        <path d="M514.8,26.4V66h52.8V52.8H528V39.6h26.4V26.4Z" />
-        <rect x="554.4" y="13.2" width="13.2" height="13.2" />
-        <path d="M620.4,13.2V0H594V13.2Z" />
-        <path d="M594,52.8V66h26.4V52.8Z" />
-        <path d="M594,13.2H580.8V52.8H594Z" />
-        <path d="M620.4,13.2V52.8h13.2V13.2Z" />
-        <path d="M171.6,0H158.4V39.6h13.2Z" />
-        <path d="M198,13.2H184.8V39.6H198Z" />
-        <path d="M171.6,66h13.2V39.6H171.6Z" />
-        <path d="M211.2,39.6h13.2V0H211.2Z" />
-        <path d="M198,66h13.2V39.6H198Z" />
-        <path d="M316.8,0H303.6V39.6h13.2Z" />
-        <path d="M343.2,13.2H330V39.6h13.2Z" />
-        <path d="M316.8,66H330V39.6H316.8Z" />
-        <path d="M356.4,39.6h13.2V0H356.4Z" />
-        <path d="M343.2,66h13.2V39.6H343.2Z" />
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337.44 35.15">
+    <g id="hashtag">
+      <g id="mwdw2020" class="fill-current text-dark">
+        <rect x="42.18" width="7.03" height="7.03" />
+        <rect x="42.18" y="7.03" width="7.03" height="7.03" />
+        <rect x="49.21" y="7.03" width="7.03" height="7.03" />
+        <rect x="56.24" y="14.06" width="7.03" height="7.03" />
+        <rect x="56.24" y="21.09" width="7.03" height="7.03" />
+        <rect x="42.18" y="14.06" width="7.03" height="7.03" />
+        <rect x="42.18" y="21.09" width="7.03" height="7.03" />
+        <rect x="42.18" y="28.12" width="7.03" height="7.03" />
+        <rect x="70.3" width="7.03" height="7.03" />
+        <rect x="70.3" y="7.03" width="7.03" height="7.03" />
+        <rect x="63.27" y="7.03" width="7.03" height="7.03" />
+        <rect x="70.3" y="14.06" width="7.03" height="7.03" />
+        <rect x="70.3" y="21.09" width="7.03" height="7.03" />
+        <rect x="70.3" y="28.12" width="7.03" height="7.03" />
+        <rect x="126.54" width="7.03" height="7.03" />
+        <rect x="126.54" y="7.03" width="7.03" height="7.03" />
+        <rect x="133.57" width="7.03" height="7.03" />
+        <rect x="140.6" width="7.03" height="7.03" />
+        <rect x="133.57" y="28.12" width="7.03" height="7.03" />
+        <rect x="140.6" y="28.12" width="7.03" height="7.03" />
+        <rect x="147.63" y="14.06" width="7.03" height="7.03" />
+        <rect x="147.63" y="21.09" width="7.03" height="7.03" />
+        <rect x="126.54" y="14.06" width="7.03" height="7.03" />
+        <rect x="126.54" y="21.09" width="7.03" height="7.03" />
+        <rect x="126.54" y="28.12" width="7.03" height="7.03" />
+        <rect x="147.63" y="7.03" width="7.03" height="7.03" />
+        <rect x="203.87" width="7.03" height="7.03" />
+        <rect x="210.9" width="7.03" height="7.03" />
+        <rect x="217.93" width="7.03" height="7.03" />
+        <rect x="210.9" y="28.12" width="7.03" height="7.03" />
+        <rect x="217.93" y="28.12" width="7.03" height="7.03" />
+        <rect x="217.93" y="14.06" width="7.03" height="7.03" />
+        <rect x="210.9" y="14.06" width="7.03" height="7.03" />
+        <rect x="224.96" y="28.12" width="7.03" height="7.03" />
+        <rect x="203.87" y="14.06" width="7.03" height="7.03" />
+        <rect x="203.87" y="21.09" width="7.03" height="7.03" />
+        <rect x="203.87" y="28.12" width="7.03" height="7.03" />
+        <rect x="224.96" y="7.03" width="7.03" height="7.03" />
+        <rect x="239.02" y="7.03" width="7.03" height="7.03" />
+        <rect x="246.05" width="7.03" height="7.03" />
+        <rect x="253.08" width="7.03" height="7.03" />
+        <rect x="246.05" y="28.12" width="7.03" height="7.03" />
+        <rect x="253.08" y="28.12" width="7.03" height="7.03" />
+        <rect x="260.11" y="14.06" width="7.03" height="7.03" />
+        <rect x="260.11" y="21.09" width="7.03" height="7.03" />
+        <rect x="239.02" y="14.06" width="7.03" height="7.03" />
+        <rect x="239.02" y="21.09" width="7.03" height="7.03" />
+        <rect x="260.11" y="7.03" width="7.03" height="7.03" />
+        <rect x="274.17" width="7.03" height="7.03" />
+        <rect x="281.2" width="7.03" height="7.03" />
+        <rect x="288.23" width="7.03" height="7.03" />
+        <rect x="281.2" y="28.12" width="7.03" height="7.03" />
+        <rect x="288.23" y="28.12" width="7.03" height="7.03" />
+        <rect x="288.23" y="14.06" width="7.03" height="7.03" />
+        <rect x="281.2" y="14.06" width="7.03" height="7.03" />
+        <rect x="295.26" y="28.12" width="7.03" height="7.03" />
+        <rect x="274.17" y="14.06" width="7.03" height="7.03" />
+        <rect x="274.17" y="21.09" width="7.03" height="7.03" />
+        <rect x="274.17" y="28.12" width="7.03" height="7.03" />
+        <rect x="295.26" y="7.03" width="7.03" height="7.03" />
+        <rect x="309.32" y="7.03" width="7.03" height="7.03" />
+        <rect x="316.35" width="7.03" height="7.03" />
+        <rect x="323.38" width="7.03" height="7.03" />
+        <rect x="316.35" y="28.12" width="7.03" height="7.03" />
+        <rect x="323.38" y="28.12" width="7.03" height="7.03" />
+        <rect x="330.41" y="14.06" width="7.03" height="7.03" />
+        <rect x="330.41" y="21.09" width="7.03" height="7.03" />
+        <rect x="309.32" y="14.06" width="7.03" height="7.03" />
+        <rect x="309.32" y="21.09" width="7.03" height="7.03" />
+        <rect x="330.41" y="7.03" width="7.03" height="7.03" />
+        <rect x="84.36" width="7.03" height="7.03" />
+        <rect x="84.36" y="7.03" width="7.03" height="7.03" />
+        <rect x="98.42" y="7.03" width="7.03" height="7.03" />
+        <rect x="98.42" y="14.06" width="7.03" height="7.03" />
+        <rect x="84.36" y="14.06" width="7.03" height="7.03" />
+        <rect x="91.39" y="21.09" width="7.03" height="7.03" />
+        <rect x="91.39" y="28.12" width="7.03" height="7.03" />
+        <rect x="112.48" width="7.03" height="7.03" />
+        <rect x="112.48" y="7.03" width="7.03" height="7.03" />
+        <rect x="112.48" y="14.06" width="7.03" height="7.03" />
+        <rect x="105.45" y="21.09" width="7.03" height="7.03" />
+        <rect x="105.45" y="28.12" width="7.03" height="7.03" />
+        <rect x="161.69" width="7.03" height="7.03" />
+        <rect x="161.69" y="7.03" width="7.03" height="7.03" />
+        <rect x="175.75" y="7.03" width="7.03" height="7.03" />
+        <rect x="175.75" y="14.06" width="7.03" height="7.03" />
+        <rect x="161.69" y="14.06" width="7.03" height="7.03" />
+        <rect x="168.72" y="21.09" width="7.03" height="7.03" />
+        <rect x="168.72" y="28.12" width="7.03" height="7.03" />
+        <rect x="189.81" width="7.03" height="7.03" />
+        <rect x="189.81" y="7.03" width="7.03" height="7.03" />
+        <rect x="189.81" y="14.06" width="7.03" height="7.03" />
+        <rect x="182.78" y="21.09" width="7.03" height="7.03" />
+        <rect x="182.78" y="28.12" width="7.03" height="7.03" />
       </g>
-      <g id="hashmark">
-        <path
-          d="M39.6,0V66H52.8V0Z"
-          style="mix-blend-mode: multiply;"
-          class="fill-current text-green"
-        />
-        <path
-          d="M13.2,0V66H26.4V0Z"
-          style="mix-blend-mode: multiply;"
-          class="fill-current text-teal"
-        />
-        <path
-          d="M0,26.4H66V13.2H0Z"
-          style="mix-blend-mode: multiply;"
-          class="fill-current text-red"
-        />
-        <path
-          d="M0,52.8H66V39.6H0Z"
-          style="mix-blend-mode: multiply;"
-          class="fill-current text-blue"
-        />
+      <g id="hashmark" style="isolation: isolate;">
+        <g class="fill-current text-green">
+          <rect x="21.09" width="7.03" height="7.03" />
+          <rect x="21.09" y="7.03" width="7.03" height="7.03" />
+          <rect x="21.09" y="14.06" width="7.03" height="7.03" />
+          <rect x="21.09" y="21.09" width="7.03" height="7.03" />
+          <rect x="21.09" y="28.12" width="7.03" height="7.03" />
+        </g>
+        <g class="fill-current text-teal">
+          <rect x="7.03" width="7.03" height="7.03" />
+          <rect x="7.03" y="7.03" width="7.03" height="7.03" />
+          <rect x="7.03" y="14.06" width="7.03" height="7.03" />
+          <rect x="7.03" y="21.09" width="7.03" height="7.03" />
+          <rect x="7.03" y="28.12" width="7.03" height="7.03" />
+        </g>
+        <g class="fill-current text-red">
+          <rect y="7.03" width="7.03" height="7.03" />
+          <rect x="7.03" y="7.03" width="7.03" height="7.03" />
+          <rect x="14.06" y="7.03" width="7.03" height="7.03" />
+          <rect x="21.09" y="7.03" width="7.03" height="7.03" />
+          <rect x="28.12" y="7.03" width="7.03" height="7.03" />
+        </g>
+        <g class="fill-current text-blue">
+          <rect y="21.09" width="7.03" height="7.03" />
+          <rect x="7.03" y="21.09" width="7.03" height="7.03" />
+          <rect x="14.06" y="21.09" width="7.03" height="7.03" />
+          <rect x="21.09" y="21.09" width="7.03" height="7.03" />
+          <rect x="28.12" y="21.09" width="7.03" height="7.03" />
+        </g>
       </g>
     </g>
   </svg>
