@@ -7,7 +7,6 @@
           x="180"
           width="180"
           height="180"
-          transform="translate(540 180) rotate(-180)"
           style="mix-blend-mode: multiply;"
           class="fill-current text-red"
         />
@@ -15,7 +14,6 @@
           id="green"
           width="180"
           height="180"
-          transform="translate(180 180) rotate(-180)"
           style="mix-blend-mode: multiply;"
           class="fill-current text-green"
         />
@@ -25,7 +23,6 @@
           y="90"
           width="180"
           height="180"
-          transform="translate(360 360) rotate(-180)"
           style="mix-blend-mode: multiply;"
           class="fill-current text-blue"
         />
@@ -35,7 +32,6 @@
           y="180"
           width="180"
           height="180"
-          transform="translate(540 540) rotate(-180)"
           style="mix-blend-mode: multiply;"
           class="fill-current text-teal"
         />

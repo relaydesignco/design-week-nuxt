@@ -50,8 +50,8 @@
             <time class="font-mono font-bold block mt-2 mb-1">
               {{ $dateFns.format(new Date(event.acf.start), 'M/d h:mmaaaaa') }} ET
             </time>
-            <h3 class="font-mono text-2xl mb-1">{{ event.acf.speaker }}</h3>
-            <h4 class="font-mono font-normal text-lg">
+            <h3 class="font-mono text-2xl">{{ event.acf.speaker }}</h3>
+            <h4 class="font-mono font-normal text-lg leading-tight">
               <a :href="`${event.acf.url}`" target=" _blank" rel="noopener noreferrer">{{
                 event.title.rendered
               }}</a>

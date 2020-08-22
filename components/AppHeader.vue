@@ -11,21 +11,23 @@
           <li>Toledo</li>
         </ul>
         <div class="w-16 lg:w-32 mx-auto">
-          <svg-logo />
+          <nuxt-link to="/">
+            <svg-logo />
+          </nuxt-link>
         </div>
         <div class="w-20 lg:w-40">
           <svg-mwdw />
         </div>
       </div>
       <div class="w-20 lg:w-48">
-        <svg-symbol />
+        <svg-symbol-nav @toggle-nav="toggleNav()" />
       </div>
     </div>
   </header>
 </template>
 
 <script>
-import SvgSymbol from '@/components/SvgSymbol';
+import SvgSymbolNav from '@/components/SvgSymbolNav';
 import SvgLogo from '@/components/SvgLogo';
 import SvgMwdw from '@/components/SvgMwdw';
 
@@ -33,13 +35,20 @@ export default {
   name: 'AppHeader',
   components: {
     SvgLogo,
-    SvgSymbol,
+    SvgSymbolNav,
     SvgMwdw,
   },
   data() {
     return {
       year: new Date().getFullYear(),
+      navIsOpen: false,
     };
+  },
+  methods: {
+    toggleNav() {
+      this.navIsOpen = !this.navIsOpen;
+      // console.log(this.navIsOpen);
+    },
   },
 };
 </script>
