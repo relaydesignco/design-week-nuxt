@@ -7,7 +7,11 @@
     </h1>
     <section class="px-6 py-4 lg:py-10">
       <div class="lg:max-w-screen-lg mx-auto grid gap-x-6 gap-y-12 lg:grid-cols-3">
-        <div v-for="sponsor in sponsors" :key="sponsor.id">
+        <div
+          v-for="sponsor in sponsors"
+          :key="sponsor.id"
+          class="transform hover:scale-105 transition-transform duration-300"
+        >
           <!-- <h3>
             <a :href="`${sponsor.acf.url}`">{{ sponsor.title.rendered }}</a>
           </h3> -->

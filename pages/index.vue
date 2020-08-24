@@ -39,7 +39,12 @@
       <div class="lg:max-w-screen-lg mx-auto">
         <h2 class="text-2xl lg:text-4xl font-mono mb-4">Upcoming Events_</h2>
         <div class="grid lg:grid-cols-3 gap-6">
-          <div v-for="event in sortedEvents.slice(0, 3)" :key="event.id">
+          <div
+            v-for="event in sortedEvents.slice(0, 3)"
+            :key="event.id"
+            class="transform hover:scale-105 transition-transform duration-300"
+          >
+            >
             <nuxt-link :to="`/events/${event.slug}`">
               <img
                 :src="event.acf.image.sizes.large"

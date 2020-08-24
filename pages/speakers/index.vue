@@ -8,7 +8,11 @@
 
     <section class="px-10 py-4 lg:py-10">
       <div class="lg:max-w-screen-lg mx-auto grid gap-x-6 gap-y-12 lg:grid-cols-3">
-        <div v-for="speaker in speakers" :key="speaker.id">
+        <div
+          v-for="speaker in speakers"
+          :key="speaker.id"
+          class="transform hover:scale-105 transition-transform duration-300"
+        >
           <nuxt-link :to="`/speakers/${speaker.slug}`">
             <img
               :src="speaker.acf.image.sizes.large"

@@ -84,7 +84,7 @@ input[type='email'].field:focus:invalid {
 
 .page-enter-active,
 .fading-leave-active {
-  transition-duration: 0.8s;
+  transition-duration: 0.5s;
   transition-property: opacity;
   transition-timing-function: ease-in-out;
 }
