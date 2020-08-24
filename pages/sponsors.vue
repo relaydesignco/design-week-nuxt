@@ -25,6 +25,11 @@ import { mapState, mapActions } from 'vuex';
 export default {
   name: 'Sponsors',
 
+  transition: {
+    enterActiveClass: 'animated fadeInUp fast',
+    enterLeaveClass: 'animated fadeOutUp fast',
+  },
+
   computed: {
     ...mapState(['sponsors']),
   },

@@ -86,6 +86,12 @@
 import { mapActions, mapGetters } from 'vuex';
 export default {
   name: 'Events',
+
+  transition: {
+    enterActiveClass: 'animated fadeInUp fast',
+    enterLeaveClass: 'animated fadeOutUp fast',
+  },
+
   data() {
     return {
       days: [

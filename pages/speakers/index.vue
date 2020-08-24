@@ -33,6 +33,11 @@ import { mapState, mapActions } from 'vuex';
 export default {
   name: 'Speakers',
 
+  transition: {
+    enterActiveClass: 'animated fadeInUp fast',
+    enterLeaveClass: 'animated fadeOutUp fast',
+  },
+
   computed: {
     ...mapState(['speakers']),
   },

@@ -49,6 +49,9 @@ module.exports = {
       lineHeight: {
         tighter: '1.15',
       },
+      opacity: {
+        '90': '0.9',
+      },
     },
   },
   variants: {},

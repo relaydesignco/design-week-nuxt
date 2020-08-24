@@ -1,5 +1,12 @@
 <template>
   <header class="bg-offwhite">
+    <transition
+      name="slide-down"
+      enter-active-class="animated slideInDown faster"
+      leave-active-class="animated slideOutUp faster"
+    >
+      <app-nav v-if="navIsOpen" @close-nav="toggleNav()" />
+    </transition>
     <div class="flex justify-between items-center">
       <div class="grid grid-cols-3 gap-1 lg:gap-4 items-center ml-4 lg:ml-12">
         <ul
@@ -19,7 +26,7 @@
           <svg-mwdw />
         </div>
       </div>
-      <div class="w-20 lg:w-48">
+      <div class="w-20 lg:w-48 z-50">
         <svg-symbol-nav @toggle-nav="toggleNav()" />
       </div>
     </div>
@@ -30,6 +37,7 @@
 import SvgSymbolNav from '@/components/SvgSymbolNav';
 import SvgLogo from '@/components/SvgLogo';
 import SvgMwdw from '@/components/SvgMwdw';
+import AppNav from '@/components/AppNav';
 
 export default {
   name: 'AppHeader',
@@ -37,6 +45,7 @@ export default {
     SvgLogo,
     SvgSymbolNav,
     SvgMwdw,
+    AppNav,
   },
   data() {
     return {
@@ -47,7 +56,7 @@ export default {
   methods: {
     toggleNav() {
       this.navIsOpen = !this.navIsOpen;
-      // console.log(this.navIsOpen);
+      console.log(this.navIsOpen);
     },
   },
 };

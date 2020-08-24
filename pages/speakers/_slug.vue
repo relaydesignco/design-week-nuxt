@@ -54,6 +54,13 @@
 <script>
 import { mapActions, mapState } from 'vuex';
 export default {
+  name: 'Speaker',
+
+  transition: {
+    enterActiveClass: 'animated zoomIn fast',
+    enterLeaveClass: 'animated zoomOut fast',
+  },
+
   data() {
     return {
       slug: this.$route.params.slug,

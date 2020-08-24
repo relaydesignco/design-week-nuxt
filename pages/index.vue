@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-hero></app-hero>
+    <!-- <app-hero /> -->
     <!-- opening blurb -->
     <section class="bg-dark p-6 lg:py-32 text-white lg:text-2xl">
       <p class="lg:max-w-screen-lg mx-auto leading-relaxed">
@@ -101,14 +101,19 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
-import AppHero from '@/components/AppHero.vue';
+// import AppHero from '@/components/AppHero.vue';
 import EmailForm from '@/components/EmailForm';
 
 export default {
-  name: 'Sponsors',
+  name: 'Home',
   components: {
-    AppHero,
+    // AppHero,
     EmailForm,
+  },
+
+  transition: {
+    enterActiveClass: 'animated fadeIn faster',
+    enterLeaveClass: 'animated fadeOut faster',
   },
 
   data() {

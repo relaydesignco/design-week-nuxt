@@ -1,5 +1,5 @@
 <template>
-  <main class="p-6">
+  <section class="p-6">
     <div class="lg:max-w-screen-lg mx-auto">
       <h1 class="text-2xl lg:text-4xl font-normal leading-tight mb-1">
         {{ event.title.rendered }}
@@ -31,11 +31,18 @@
         </div>
       </div>
     </div>
-  </main>
+  </section>
 </template>
 
 <script>
 export default {
+  name: 'Event',
+
+  transition: {
+    enterActiveClass: 'animated fadeInLeft faster',
+    enterLeaveClass: 'animated fadeOutRight faster',
+  },
+
   data() {
     return {
       slug: this.$route.params.slug,

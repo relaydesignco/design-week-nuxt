@@ -60,7 +60,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [], // stylesheet being loaded by @nuxt/tailwindcss
+  css: ['~assets/css/animate.css'], // stylesheet being loaded by @nuxt/tailwindcss
 
   webfontloader: {
     // typekit: {
@@ -95,6 +95,7 @@ export default {
         // Disable a plugin by passing false as value
         'postcss-nested': {},
       },
+      transpile: ['gsap'],
     },
 
     extractCSS: true,

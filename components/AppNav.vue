@@ -1,29 +1,55 @@
 <template>
-  <nav class="p-6 max-w-screen-xl mx-auto mb-8">
-    <ul class="flex justify-between items-center">
-      <li>
-        <nuxt-link exact to="/" class="flex items-center"
-          ><app-icon class="mr-2" />Events</nuxt-link
-        >
-      </li>
-      <li>
-        <nuxt-link to="/speakers">Speakers</nuxt-link>
-      </li>
-      <li>
-        <nuxt-link to="/sponsors">Sponsors</nuxt-link>
-      </li>
+  <nav class="px-10 py-20 lg:px-32 lg:py-40 mx-auto w-screen h-screen bg-black bg-opacity-90 fixed">
+    <ul class="text-4xl lg:text-6xl font-mono font-bold tracking-wide">
+      <transition appear appear-active-class="animated fadeInDown fast delay-5">
+        <li @click="$emit('close-nav')">
+          <nuxt-link to="/" class="text-white">Home_</nuxt-link>
+        </li>
+      </transition>
+      <transition appear appear-active-class="animated fadeInDown fast delay-4">
+        <li @click="$emit('close-nav')">
+          <nuxt-link exact to="/events" class="text-white">Events_</nuxt-link>
+        </li>
+      </transition>
+      <transition appear appear-active-class="animated fadeInDown fast delay-3">
+        <li @click="$emit('close-nav')">
+          <nuxt-link to="/speakers" class="text-white">Speakers_</nuxt-link>
+        </li>
+      </transition>
+      <transition appear appear-active-class="animated fadeInDown fast delay-2">
+        <li @click="$emit('close-nav')">
+          <nuxt-link to="/sponsors" class="text-white">Sponsors_</nuxt-link>
+        </li>
+      </transition>
     </ul>
   </nav>
 </template>
 
 <script>
-import AppIcon from '@/components/AppIcon.vue';
-
 export default {
-  components: {
-    AppIcon,
+  data() {
+    return {
+      links: [
+        {
+          route: '/events',
+          name: 'Events_',
+        },
+        {
+          route: '/speakers',
+          name: 'Speakers_',
+        },
+        {
+          route: '/sponsors',
+          name: 'Sponsors_',
+        },
+        {
+          route: '/home',
+          name: 'Home_',
+        },
+      ],
+    };
   },
 };
 </script>
 
-<style scoped></style>
+<style lang="postcss" scoped></style>
