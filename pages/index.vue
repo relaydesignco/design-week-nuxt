@@ -96,24 +96,20 @@
         </div>
       </div>
     </section>
+    <app-footer />
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
-// import AppHero from '@/components/AppHero.vue';
 import EmailForm from '@/components/EmailForm';
+import AppFooter from '@/components/AppFooter.vue';
 
 export default {
   name: 'Home',
   components: {
-    // AppHero,
     EmailForm,
-  },
-
-  transition: {
-    enterActiveClass: 'animated fadeIn faster',
-    enterLeaveClass: 'animated fadeOut faster',
+    AppFooter,
   },
 
   data() {

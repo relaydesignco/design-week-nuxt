@@ -1,46 +1,48 @@
 <template>
-  <section class="p-6">
-    <div class="lg:max-w-screen-lg mx-auto">
-      <h1 class="text-2xl lg:text-4xl font-normal leading-tight mb-1">
-        {{ event.title.rendered }}
-      </h1>
-      <h2 class="text-xl lg:text-3xl font-bold mb-3 lg:mb-8">{{ event.acf.speaker }}</h2>
+  <div>
+    <section class="p-6">
+      <div class="lg:max-w-screen-lg mx-auto">
+        <h1 class="text-2xl lg:text-4xl font-normal leading-tight mb-1">
+          {{ event.title.rendered }}
+        </h1>
+        <h2 class="text-xl lg:text-3xl font-bold mb-3 lg:mb-8">{{ event.acf.speaker }}</h2>
 
-      <div class="lg:flex pb-8 lg:pb-16">
-        <div class="lg:w-2/5">
-          <img
-            :src="event.acf.image.sizes.large"
-            :alt="event.acf.image.alt"
-            class="w-auto h-64 lg:w-full lg:h-96 object-cover mb-4"
-          />
-        </div>
-        <div class="lg:w-3/5 lg:pl-8">
-          <time class="text-xl lg:text-3xl font-mono leading-none block mb-1">
-            {{ $dateFns.format(new Date(event.acf.start), 'EEEE M/d') }}
-          </time>
+        <div class="lg:flex pb-8 lg:pb-16">
+          <div class="lg:w-2/5">
+            <img
+              :src="event.acf.image.sizes.large"
+              :alt="event.acf.image.alt"
+              class="w-auto h-64 lg:w-full lg:h-96 object-cover mb-4"
+            />
+          </div>
+          <div class="lg:w-3/5 lg:pl-8">
+            <time class="text-xl lg:text-3xl font-mono leading-none block mb-1">
+              {{ $dateFns.format(new Date(event.acf.start), 'EEEE M/d') }}
+            </time>
 
-          <time class="text-xl lg:text-4xl font-mono leading-tight block mb-2 lg:mb-4">
-            <span class="font-bold">
-              {{ $dateFns.format(new Date(event.acf.start), 'h:mm') }}-{{
-                $dateFns.format(new Date(event.acf.end), 'h:mmaaaaa')
-              }}
-            </span>
-            ET
-          </time>
-          <section class="lg:text-lg leading-relaxed" v-html="event.content.rendered"></section>
+            <time class="text-xl lg:text-4xl font-mono leading-tight block mb-2 lg:mb-4">
+              <span class="font-bold">
+                {{ $dateFns.format(new Date(event.acf.start), 'h:mm') }}-{{
+                  $dateFns.format(new Date(event.acf.end), 'h:mmaaaaa')
+                }}
+              </span>
+              ET
+            </time>
+            <section class="lg:text-lg leading-relaxed" v-html="event.content.rendered"></section>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <app-footer />
+  </div>
 </template>
 
 <script>
+import AppFooter from '@/components/AppFooter.vue';
 export default {
   name: 'Event',
-
-  transition: {
-    enterActiveClass: 'animated fadeInLeft faster',
-    enterLeaveClass: 'animated fadeOutRight faster',
+  components: {
+    AppFooter,
   },
 
   data() {

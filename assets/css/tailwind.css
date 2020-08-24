@@ -82,11 +82,14 @@ input[type='email'].field:focus:invalid {
   animation-delay: 0.8s;
 }
 
-/* .page-enter-active,
-.page-leave-active {
-  transition: opacity 0.2s;
+.page-enter-active,
+.fading-leave-active {
+  transition-duration: 0.8s;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
 }
+
 .page-enter,
-.page-leave-to {
-  opacity: 0;
-} */
+.page-leave-active {
+  opacity: 0
+}

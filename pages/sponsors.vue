@@ -17,17 +17,18 @@
         </div>
       </div>
     </section>
+    <app-footer />
   </div>
 </template>
 
 <script>
+import AppFooter from '@/components/AppFooter.vue';
 import { mapState, mapActions } from 'vuex';
 export default {
   name: 'Sponsors',
 
-  transition: {
-    enterActiveClass: 'animated fadeInUp fast',
-    enterLeaveClass: 'animated fadeOutUp fast',
+  components: {
+    AppFooter,
   },
 
   computed: {

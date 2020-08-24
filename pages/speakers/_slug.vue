@@ -1,5 +1,6 @@
 <template>
   <section class="p-6 bg-dark text-white">
+    <nuxt-link to="/speakers" class="btn">X</nuxt-link>
     <div class="lg:max-w-screen-lg mx-auto lg:flex pb-8 lg:pb-16">
       <div class="lg:w-2/5">
         <img
@@ -48,17 +49,18 @@
         </div>
       </div>
     </div>
+    <app-footer />
   </section>
 </template>
 
 <script>
+import AppFooter from '@/components/AppFooter.vue';
 import { mapActions, mapState } from 'vuex';
 export default {
   name: 'Speaker',
 
-  transition: {
-    enterActiveClass: 'animated zoomIn fast',
-    enterLeaveClass: 'animated zoomOut fast',
+  components: {
+    AppFooter,
   },
 
   data() {

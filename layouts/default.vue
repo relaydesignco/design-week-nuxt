@@ -1,10 +1,8 @@
 <template>
   <div>
     <app-header />
-    <main class="overflow-hidden">
-      <nuxt />
-    </main>
-    <app-footer />
+
+    <nuxt />
   </div>
 </template>
 
