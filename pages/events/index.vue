@@ -25,45 +25,51 @@
             </div>
           </button>
         </div>
+        <!-- events -->
 
-        <div
-          v-for="event in selectedDaysEvents"
-          :key="event.id"
-          class="flex lg:max-w-screen-lg pb-8 lg:pb-16"
-        >
-          <div class="w-2/5 lg:w-1/4">
-            <time class="lg:text-3xl font-mono">
-              {{ $dateFns.format(new Date(event.acf.start), 'h:mm') }}-{{
-                $dateFns.format(new Date(event.acf.end), 'h:mmaaaaa')
-              }}
-              ET
-            </time>
-            <img
-              :src="event.acf.image.sizes.large"
-              :alt="event.acf.image.alt"
-              class="w-32 lg:w-64 h-32 lg:h-64 object-cover"
-            />
-          </div>
-          <div class="w-3/5 lg:w-3/4 pl-4 lg:pl-8 pt-1 lg:pt-10">
-            <h4 class="lg:text-3xl font-normal leading-tight mb-1">
-              {{ event.title.rendered }}
-            </h4>
-            <h3 class="text-sm lg:text-2xl font-bold mb-3 lg:mb-8">{{ event.acf.speaker }}</h3>
-            <nuxt-link
-              :to="`/events/${event.slug}`"
-              class="btn-sm lg:btn bg-green hover:bg-green-dark mb-2 mr-2"
+        <div v-for="(event, index) in selectedDaysEvents" :key="event.id">
+          <transition appear enter-active-class="animated slideInLeft">
+            <div
+              :class="`flex lg:max-w-screen-lg pb-8 lg:pb-16`"
+              :style="`animationDelay: ${index}00ms`"
             >
-              Event Info
-            </nuxt-link>
-            <a
-              :href="event.acf.url"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-sm lg:btn bg-blue hover:bg-blue-dark"
-            >
-              Register
-            </a>
-          </div>
+              <div class="w-2/5 lg:w-1/4">
+                <time class="lg:text-3xl font-mono">
+                  {{ $dateFns.format(new Date(event.acf.start), 'h:mm') }}-{{
+                    $dateFns.format(new Date(event.acf.end), 'h:mmaaaaa')
+                  }}
+                  ET
+                </time>
+                <img
+                  :src="event.acf.image.sizes.large"
+                  :alt="event.acf.image.alt"
+                  class="w-32 lg:w-64 h-32 lg:h-64 object-cover"
+                />
+              </div>
+              <div class="w-3/5 lg:w-3/4 pl-4 lg:pl-8 pt-1 lg:pt-10">
+                <h4 class="lg:text-3xl font-normal leading-tight mb-1">
+                  {{ event.title.rendered }}
+                </h4>
+                <h3 class="text-sm lg:text-2xl font-bold mb-3 lg:mb-8">
+                  {{ event.acf.speaker }}
+                </h3>
+                <nuxt-link
+                  :to="`/events/${event.slug}`"
+                  class="btn-sm lg:btn bg-green hover:bg-green-dark mb-2 mr-2"
+                >
+                  Event Info
+                </nuxt-link>
+                <a
+                  :href="event.acf.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-sm lg:btn bg-blue hover:bg-blue-dark"
+                >
+                  Register
+                </a>
+              </div>
+            </div>
+          </transition>
         </div>
       </div>
     </section>

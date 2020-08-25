@@ -82,6 +82,10 @@ input[type='email'].field:focus:invalid {
   animation-delay: 0.8s;
 }
 
+.delay-9 {
+  animation-delay: 0.9s;
+}
+
 .page-enter-active,
 .fading-leave-active {
   transition-duration: 0.5s;
@@ -91,5 +95,5 @@ input[type='email'].field:focus:invalid {
 
 .page-enter,
 .page-leave-active {
-  opacity: 0
+  opacity: 0;
 }
