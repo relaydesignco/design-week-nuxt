@@ -1,11 +1,14 @@
 import axios from 'axios';
-const siteURL = 'http://midwestdesignweekapi.local';
-// const siteURL = 'https://mwdwaiga.wpengine.com';
+
+const cms = axios.create({
+  baseURL: process.env.baseUrl,
+});
 
 export const state = () => ({
   events: [],
   speakers: [],
   sponsors: [],
+  navIsOpen: false,
 });
 
 export const getters = {
@@ -15,20 +18,20 @@ export const getters = {
 };
 
 export const mutations = {
-  updateEvents: (state, events) => {
+  SET_EVENTS: (state, events) => {
     state.events = events;
   },
 
-  updateSpeakers: (state, speakers) => {
+  SET_SPEAKERS: (state, speakers) => {
     state.speakers = speakers;
   },
 
-  updateSponsors: (state, sponsors) => {
+  SET_SPONSORS: (state, sponsors) => {
     state.sponsors = sponsors;
   },
 
-  updateTags: (state, tags) => {
-    state.tags = tags;
+  SET_NAV_IS_OPEN: (state, status) => {
+    state.navIsOpen = status;
   },
 };
 
@@ -37,8 +40,8 @@ export const actions = {
     if (state.events.length) return;
 
     try {
-      let events = await axios
-        .get(`${siteURL}/wp-json/wp/v2/events?page=1&per_page=100&_embed=1`)
+      let events = await cms
+        .get(`/wp-json/wp/v2/events?page=1&per_page=100&_embed=1`)
         .then((res) => res.data);
 
       events = events.map(({ id, slug, title, content, acf }) => ({
@@ -49,7 +52,7 @@ export const actions = {
         acf,
       }));
 
-      commit('updateEvents', events);
+      commit('SET_EVENTS', events);
     } catch (err) {
       console.error('getEvents', err);
     }
@@ -59,8 +62,8 @@ export const actions = {
     if (state.speakers.length) return;
 
     try {
-      let speakers = await axios
-        .get(`${siteURL}/wp-json/wp/v2/speakers?page=1&per_page=100&_embed=1`)
+      let speakers = await cms
+        .get(`/wp-json/wp/v2/speakers?page=1&per_page=100&_embed=1`)
         .then((res) => res.data);
 
       speakers = speakers.map(({ id, slug, title, content, acf }) => ({
@@ -70,7 +73,7 @@ export const actions = {
         content,
         acf,
       }));
-      commit('updateSpeakers', speakers);
+      commit('SET_SPEAKERS', speakers);
     } catch (err) {
       console.error('getSpeakers', err);
     }
@@ -80,8 +83,8 @@ export const actions = {
     if (state.sponsors.length) return;
 
     try {
-      let sponsors = await axios
-        .get(`${siteURL}/wp-json/wp/v2/sponsors?page=1&per_page=100&_embed=1`)
+      let sponsors = await cms
+        .get(`/wp-json/wp/v2/sponsors?page=1&per_page=100&_embed=1`)
         .then((res) => res.data);
 
       sponsors = sponsors.map(({ id, slug, title, acf }) => ({
@@ -91,7 +94,7 @@ export const actions = {
         acf,
       }));
 
-      commit('updateSponsors', sponsors);
+      commit('SET_SPONSORS', sponsors);
     } catch (err) {
       console.error('getSponsors', err);
     }

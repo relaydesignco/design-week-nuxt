@@ -53,6 +53,10 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://midwestdesignweekapi.local',
+  },
   /*
    ** Customize the progress-bar color
    */
