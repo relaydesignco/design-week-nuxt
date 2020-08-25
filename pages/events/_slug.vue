@@ -2,9 +2,7 @@
   <div>
     <section class="px-6 pt-6 pb-16 lg:pb-32">
       <div class="w-full text-right lg:pr-32">
-        <nuxt-link to="/events" class="btn bg-dark">
-          <img src="/close.svg" alt="x close icon" class="pb-1 w-4 lg:w-6" />
-        </nuxt-link>
+        <close-button to-route="/events" />
       </div>
       <div class="lg:max-w-screen-lg mx-auto">
         <transition appear enter-active-class="animated fadeInRight fast delay-4">
@@ -56,11 +54,13 @@
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter.vue';
+import AppFooter from '@/components/AppFooter';
+import CloseButton from '@/components/CloseButton';
 export default {
   name: 'Event',
   components: {
     AppFooter,
+    CloseButton,
   },
 
   data() {

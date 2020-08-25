@@ -1,9 +1,7 @@
 <template>
   <section class="p-6 bg-dark text-white">
     <div class="w-full text-right lg:pr-32">
-      <nuxt-link to="/speakers" class="btn bg-black">
-        <img src="/close.svg" alt="x close icon" class="pb-1 w-4 lg:w-6" />
-      </nuxt-link>
+      <close-button to-route="/speakers" />
     </div>
     <div class="lg:max-w-screen-lg mx-auto lg:flex pb-8 lg:pb-16">
       <div class="lg:w-2/5">
@@ -79,13 +77,15 @@
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter.vue';
+import AppFooter from '@/components/AppFooter';
+import CloseButton from '@/components/CloseButton';
 import { mapActions, mapState } from 'vuex';
 export default {
   name: 'Speaker',
 
   components: {
     AppFooter,
+    CloseButton,
   },
 
   data() {
