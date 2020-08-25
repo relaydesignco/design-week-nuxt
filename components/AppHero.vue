@@ -1,7 +1,7 @@
 <template>
   <header class="p-6 md:p-12 relative bg-offwhite">
     <div class="absolute top-0 right-0 w-2/12 md:w-36 lg:w-64">
-      <svg-symbol />
+      <svg-symbol-nav />
     </div>
     <div class="w-6/12 lg:w-8/12">
       <svg-title />
@@ -26,7 +26,6 @@
       <div class="w-32 md:w-48">
         <svg-logo />
       </div>
-      <!-- <img src="/MWDW2020.svg" alt="#MWDW2020" class="mt-10 xl:mt-0 w-48 md:w-64" /> -->
       <div class="mt-10 xl:mt-0 w-48 md:w-64">
         <svg-hashtag />
       </div>
@@ -37,7 +36,7 @@
 <script>
 import SvgTitle from '@/components/SvgTitle';
 import SvgHashtag from '@/components/SvgHashtag';
-import SvgSymbol from '@/components/SvgSymbol';
+import SvgSymbolNav from '@/components/SvgSymbolNav';
 import SvgLogo from '@/components/SvgLogo';
 
 export default {
@@ -45,7 +44,7 @@ export default {
   components: {
     SvgTitle,
     SvgHashtag,
-    SvgSymbol,
+    SvgSymbolNav,
     SvgLogo,
   },
   data() {

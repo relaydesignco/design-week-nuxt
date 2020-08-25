@@ -1,5 +1,5 @@
 <template functional>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337.44 35.15">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337.44 35.15" class="w-full">
     <g id="hashtag">
       <g id="mwdw2020" class="fill-current text-dark">
         <rect x="42.18" width="7.03" height="7.03" />
@@ -97,7 +97,7 @@
         <rect x="182.78" y="21.09" width="7.03" height="7.03" />
         <rect x="182.78" y="28.12" width="7.03" height="7.03" />
       </g>
-      <g id="hashmark" style="isolation: isolate;">
+      <g id="hashmark" style="isolation: isolate">
         <g class="fill-current text-green">
           <rect x="21.09" width="7.03" height="7.03" />
           <rect x="21.09" y="7.03" width="7.03" height="7.03" />

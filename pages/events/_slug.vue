@@ -10,21 +10,34 @@
             {{ event.title.rendered }}
           </h1>
         </transition>
+
         <transition appear enter-active-class="animated fadeInRight fast delay-5">
-          <h2 class="text-xl lg:text-3xl font-bold mb-3 lg:mb-8">{{ event.acf.speaker }}</h2>
+          <h2 v-if="event.acf.speaker" class="text-xl lg:text-3xl font-bold mb-3 lg:mb-8">
+            {{ event.acf.speaker }}
+          </h2>
         </transition>
 
         <div class="lg:flex pb-8 lg:pb-16">
           <div class="lg:w-2/5">
             <transition appear enter-active-class="animated fadeIn delay-5">
               <img
+                v-if="event.acf.image"
                 :src="event.acf.image.sizes.large"
                 :alt="event.acf.image.alt"
                 class="w-auto h-64 lg:w-full lg:h-96 object-cover mb-4"
               />
+              <div v-else class="w-64 h-64 object-cover"><svg-logo /></div>
             </transition>
           </div>
           <div class="lg:w-3/5 lg:pl-8">
+            <a
+              :href="event.acf.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-sm lg:btn bg-blue hover:bg-blue-dark mb-4"
+            >
+              Register
+            </a>
             <transition appear enter-active-class="animated fadeInUp delay-7">
               <time class="text-xl lg:text-3xl font-mono leading-none block mb-1">
                 {{ $dateFns.format(new Date(event.acf.start), 'EEEE M/d') }}
@@ -56,11 +69,13 @@
 <script>
 import AppFooter from '@/components/AppFooter';
 import CloseButton from '@/components/CloseButton';
+import SvgLogo from '@/components/SvgLogo';
 export default {
   name: 'Event',
   components: {
     AppFooter,
     CloseButton,
+    SvgLogo,
   },
 
   data() {

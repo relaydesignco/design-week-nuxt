@@ -28,8 +28,9 @@
         <!-- events -->
 
         <div v-for="(event, index) in selectedDaysEvents" :key="event.id">
-          <transition appear enter-active-class="animated slideInLeft">
+          <transition appear enter-active-class="animated fadeInLeft">
             <div
+              :key="index"
               :class="`flex lg:max-w-screen-lg pb-8 lg:pb-16`"
               :style="`animationDelay: ${index}00ms`"
             >
@@ -41,10 +42,12 @@
                   ET
                 </time>
                 <img
+                  v-if="event.acf.image"
                   :src="event.acf.image.sizes.large"
                   :alt="event.acf.image.alt"
                   class="w-32 lg:w-64 h-32 lg:h-64 object-cover"
                 />
+                <div v-else class="w-32 lg:w-64 h-32 lg:h-64 object-cover"><svg-logo /></div>
               </div>
               <div class="w-3/5 lg:w-3/4 pl-4 lg:pl-8 pt-1 lg:pt-10">
                 <h4 class="lg:text-3xl font-normal leading-tight mb-1">
@@ -90,12 +93,15 @@
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter.vue';
+import AppFooter from '@/components/AppFooter';
+import SvgLogo from '@/components/SvgLogo';
 import { mapActions, mapGetters } from 'vuex';
+
 export default {
   name: 'Events',
   components: {
     AppFooter,
+    SvgLogo,
   },
 
   data() {
@@ -156,7 +162,7 @@ export default {
 
   head() {
     return {
-      title: `Midwest Design Week | ${this.name}`,
+      title: `Midwest Design Week | Events`,
       meta: [
         {
           hid: 'description',

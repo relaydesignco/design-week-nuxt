@@ -49,7 +49,7 @@ export default {
 
   head() {
     return {
-      title: `Midwest Design Week | ${this.name}`,
+      title: `Midwest Design Week | Sponsors`,
       meta: [
         {
           hid: 'description',

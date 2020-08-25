@@ -58,7 +58,7 @@ export default {
 
   head() {
     return {
-      title: `Midwest Design Week | ${this.name}`,
+      title: `Midwest Design Week | Speakers`,
       meta: [
         {
           hid: 'description',

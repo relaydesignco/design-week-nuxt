@@ -44,13 +44,14 @@
             :key="event.id"
             class="transform hover:scale-105 transition-transform duration-300"
           >
-            >
             <nuxt-link :to="`/events/${event.slug}`">
               <img
+                v-if="event.acf.image"
                 :src="event.acf.image.sizes.large"
                 alt="event.acf.image.alt"
                 class="w-64 h-64 object-cover"
               />
+              <div v-else class="w-64 h-64 object-cover"><svg-logo /></div>
             </nuxt-link>
             <time class="font-mono font-bold block mt-2 mb-1">
               {{ $dateFns.format(new Date(event.acf.start), 'M/d h:mmaaaaa') }} ET
@@ -61,8 +62,6 @@
                 event.title.rendered
               }}</a>
             </h4>
-            <!-- <div>{{ event.acf.description }}</div> -->
-            <!-- <a :href="`events/${event.slug}`">Get Info</a> -->
           </div>
         </div>
         <div class="w-full text-center mt-8">
@@ -94,6 +93,7 @@
             :href="`${sponsor.acf.url}`"
             target=" _blank"
             rel="noopener noreferrer"
+            class="transform hover:scale-105 transition-transform duration-300"
           >
             <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" class="w-64" />
           </a>
@@ -108,13 +108,15 @@
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
 import EmailForm from '@/components/EmailForm';
-import AppFooter from '@/components/AppFooter.vue';
+import AppFooter from '@/components/AppFooter';
+import SvgLogo from '@/components/SvgLogo';
 
 export default {
   name: 'Home',
   components: {
     EmailForm,
     AppFooter,
+    SvgLogo,
   },
 
   data() {

@@ -33,9 +33,12 @@ module.exports = {
       },
       spacing: {
         // '30': '7.5rem',
-        '96': '24rem',
-        '80': '20rem',
-        '128': '32rem',
+        96: '24rem',
+        80: '20rem',
+        128: '32rem',
+      },
+      gridTemplateColumns: {
+        '1fr3': '1fr 1fr 1fr',
       },
       fontSize: {
         xxs: '0.5rem',
@@ -50,7 +53,7 @@ module.exports = {
         tighter: '1.15',
       },
       opacity: {
-        '90': '0.9',
+        90: '0.9',
       },
     },
   },
