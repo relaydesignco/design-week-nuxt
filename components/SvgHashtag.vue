@@ -1,5 +1,6 @@
 <template functional>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337.44 35.15" class="w-full">
+    <title lang="en">#MWDW2020</title>
     <g id="hashtag">
       <g id="mwdw2020" class="fill-current text-dark">
         <rect x="42.18" width="7.03" height="7.03" />

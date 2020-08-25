@@ -44,6 +44,9 @@ module.exports = {
         xxs: '0.5rem',
         '4xl': '2.5rem',
       },
+      minHeight: {
+        '16x9': '56.25vw',
+      },
       letterSpacing: {
         wide: '0.1em',
         wider: '0.2em',

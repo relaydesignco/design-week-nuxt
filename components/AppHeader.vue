@@ -1,5 +1,4 @@
 <template>
-  <!-- regular page header -->
   <header class="bg-offwhite">
     <transition
       name="slide-down"
@@ -8,6 +7,8 @@
     >
       <app-nav v-if="navIsOpen" @close-nav="SET_NAV_IS_OPEN(!navIsOpen)" />
     </transition>
+
+    <!-- regular page header -->
     <template v-if="!isHomePage">
       <div class="flex justify-between items-center">
         <div class="grid grid-cols-3 gap-1 lg:gap-4 items-center ml-4 lg:ml-12">
@@ -36,7 +37,20 @@
 
     <!-- landing page header -->
     <template v-else>
-      <div class="p-6 md:p-16 relative">
+      <!-- intro animation -->
+      <div class="absolute inset-x-0 invisible">
+        <svg-animated-logo />
+        <div
+          class="absolute bottom-0 mb-8 lg:mb-32 text-xs lg:text-3xl font-mono font-bold uppercase tracking-wide lg:tracking-wider w-full text-center"
+        >
+          <span class="text-blue">Cincinnati_</span>
+          <span class="text-green">Indianapospans_</span>
+          <span class="text-red">Louisville_</span>
+          <span class="text-teal">Toledo_</span>
+        </div>
+      </div>
+
+      <div class="p-6 md:p-16 min-h-16x9">
         <div class="absolute top-0 right-0 w-20 lg:w-48 z-50">
           <svg-symbol-nav @toggle-nav="SET_NAV_IS_OPEN(!navIsOpen)" />
         </div>
@@ -84,6 +98,7 @@ import SvgMwdw from '@/components/SvgMwdw';
 import AppNav from '@/components/AppNav';
 import SvgTitle from '@/components/SvgTitle';
 import SvgHashtag from '@/components/SvgHashtag';
+import SvgAnimatedLogo from '@/components/SvgAnimatedLogo';
 import { mapState, mapMutations } from 'vuex';
 
 export default {
@@ -95,10 +110,12 @@ export default {
     AppNav,
     SvgTitle,
     SvgHashtag,
+    SvgAnimatedLogo,
   },
   data() {
     return {
       year: new Date().getFullYear(),
+      isAnimating: true,
     };
   },
 

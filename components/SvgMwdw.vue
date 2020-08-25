@@ -1,5 +1,6 @@
 <template functional>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 159.88 36.34" class="w-full">
+    <title lang="en">MWDW</title>
     <g class="fill-current text-dark">
       <rect width="7.27" height="7.27" />
       <rect y="7.27" width="7.27" height="7.27" />
