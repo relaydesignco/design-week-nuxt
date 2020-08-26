@@ -30,14 +30,17 @@
             </transition>
           </div>
           <div class="lg:w-3/5 lg:pl-8">
-            <a
-              :href="event.acf.url"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-sm lg:btn bg-blue hover:bg-blue-dark mb-4"
-            >
-              Register
-            </a>
+            <transition appear enter-active-class="animated fadeIn">
+              <a
+                :href="event.acf.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-sm lg:btn bg-blue hover:bg-blue-dark mb-4"
+              >
+                Register
+              </a>
+            </transition>
+
             <transition appear enter-active-class="animated fadeInUp delay-7">
               <time class="text-xl lg:text-3xl font-mono leading-none block mb-1">
                 {{ $dateFns.format(new Date(event.acf.start), 'EEEE M/d') }}
