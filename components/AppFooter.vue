@@ -6,7 +6,19 @@
           <svg-aiga-full-logo />
         </div>
       </a>
-      <p>© {{ year }} AIGA Midwest Design Week</p>
+      <div class="text-xs lg:text-sm">
+        <p>© {{ year }} AIGA Midwest Design Week</p>
+        <p>
+          site designed and developed by
+          <a
+            href="//relaydesign.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-mono font-bold text-base lg:text-lg"
+            >relay design co.</a
+          >
+        </p>
+      </div>
     </div>
   </footer>
 </template>

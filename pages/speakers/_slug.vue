@@ -94,11 +94,6 @@ export default {
     };
   },
 
-  // transition: {
-  //   enterActiveClass: 'animated zoomIn faster',
-  //   leaveActiveClass: 'animated zoomOut faster',
-  // },
-
   computed: {
     ...mapState(['events']),
 
