@@ -14,7 +14,7 @@
     <!-- keynote highlight -->
     <section class="bg-offwhite p-6 lg:py-16">
       <div class="lg:flex lg:max-w-screen-lg mx-auto">
-        <img src="/1024x1024.png" alt="speaker" class="lg:mr-10 lg:w-1/2" />
+        <img src="~/assets/images/1024x1024.png" alt="speaker" class="lg:mr-10 lg:w-1/2" />
         <div>
           <h2 class="text-lg pb-1 pt-4 lg:pt-0">Monday - Keynote Speaker</h2>
           <time class="text-3xl font-semibold">09/21 - 6pm</time>
