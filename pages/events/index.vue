@@ -63,7 +63,7 @@
                   Event Info
                 </nuxt-link>
                 <a
-                  :href="event.acf.url"
+                  :href="options.register_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn-sm lg:btn bg-blue hover:bg-blue-dark"
@@ -76,18 +76,9 @@
         </div>
       </div>
     </section>
-    <section class="bg-offwhite-dark px-6 py-4 lg:py-10">
-      <p class="text-center lg:text-2xl font-mono">
-        Get your All Access Pass
-        <a
-          href="http://"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-sm lg:btn bg-blue hover:bg-blue-dark ml-2"
-          >Purchase Now</a
-        >
-      </p>
-    </section>
+
+    <get-pass-cta :button-link="options.register_link" />
+
     <app-footer />
   </div>
 </template>
@@ -95,13 +86,15 @@
 <script>
 import AppFooter from '@/components/AppFooter';
 import SvgLogo from '@/components/SvgLogo';
-import { mapActions, mapGetters } from 'vuex';
+import GetPassCta from '@/components/GetPassCta';
+import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
   name: 'Events',
   components: {
     AppFooter,
     SvgLogo,
+    GetPassCta,
   },
 
   data() {
@@ -133,6 +126,8 @@ export default {
   },
 
   computed: {
+    ...mapState(['options']),
+
     ...mapGetters(['sortedEvents']),
 
     dayOfWeek() {
@@ -148,11 +143,12 @@ export default {
 
   created() {
     this.getEvents();
+    this.getOptions();
     // console.log(this.sortedEvents);
   },
 
   methods: {
-    ...mapActions(['getEvents']),
+    ...mapActions(['getEvents', 'getOptions']),
 
     selectDay(index) {
       this.currentSelectedDayIndex = index;

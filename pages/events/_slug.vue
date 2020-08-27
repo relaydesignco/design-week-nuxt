@@ -32,7 +32,7 @@
           <div class="lg:w-3/5 lg:pl-8">
             <transition appear enter-active-class="animated fadeIn">
               <a
-                :href="event.acf.url"
+                :href="options.register_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-sm lg:btn bg-blue hover:bg-blue-dark mb-4"
@@ -73,6 +73,7 @@
 import AppFooter from '@/components/AppFooter';
 import CloseButton from '@/components/CloseButton';
 import SvgLogo from '@/components/SvgLogo';
+import { mapActions, mapState } from 'vuex';
 export default {
   name: 'Event',
   components: {
@@ -88,9 +89,7 @@ export default {
   },
 
   computed: {
-    events() {
-      return this.$store.state.events;
-    },
+    ...mapState(['events', 'options']),
 
     event() {
       return this.events.find((event) => event.slug === this.slug);
@@ -98,7 +97,12 @@ export default {
   },
 
   created() {
-    this.$store.dispatch('getEvents');
+    this.getEvents();
+    this.getOptions();
+  },
+
+  methods: {
+    ...mapActions(['getEvents', 'getOptions']),
   },
 
   head() {

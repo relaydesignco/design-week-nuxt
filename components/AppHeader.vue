@@ -84,7 +84,12 @@
           </div>
         </div>
         <div class="w-full text-center mt-4">
-          <a href="" class="btn-sm lg:btn bg-blue hover:bg-blue-dark lg:text-3xl">Tickets</a>
+          <a
+            :href="options.register_link"
+            class="btn-sm lg:btn bg-blue hover:bg-blue-dark lg:text-3xl lg:px-6"
+          >
+            Tickets
+          </a>
         </div>
       </div>
     </template>
@@ -120,7 +125,7 @@ export default {
   },
 
   computed: {
-    ...mapState(['navIsOpen']),
+    ...mapState(['navIsOpen', 'options']),
 
     isHomePage() {
       return this.$nuxt.$route.path === '/';

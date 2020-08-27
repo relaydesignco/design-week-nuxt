@@ -41,35 +41,37 @@
           ></section>
         </transition>
 
-        <transition appear enter-active-class="animated fadeInUp delay-7">
-          <h3 class="lg:text-xl uppercase mb-2">Sessions</h3>
-        </transition>
+        <template v-if="speaker.acf.sessions">
+          <transition appear enter-active-class="animated fadeInUp delay-7">
+            <h3 class="lg:text-xl uppercase mb-2">Sessions</h3>
+          </transition>
 
-        <transition appear enter-active-class="animated fadeInUp delay-8 fast">
-          <div v-for="session in speaker.acf.sessions" :key="session.event.ID" class="font-bold">
-            <nuxt-link :to="`/events/${session.event.post_name}`"> </nuxt-link>
-            <time class="text-2xl lg:text-3xl font-semibold">
-              {{
-                $dateFns.format(
-                  new Date(getMatchingEventInfo(session.event.post_name).acf.start),
-                  'M/d h:mmaaaaa'
-                )
-              }}
-            </time>
-            <h4 class="text-xl font-normal leading-tight mb-3">
-              {{ session.event.post_title }}
-            </h4>
-            <a
-              :href="getMatchingEventInfo(session.event.post_name).acf.url"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-sm lg:btn bg-blue hover:bg-blue-dark mb-8"
-            >
-              Register
-            </a>
-            <!-- <h1>{{ getMatchingEventInfo(session.event.post_name).acf.description }}</h1> -->
-          </div>
-        </transition>
+          <transition appear enter-active-class="animated fadeInUp delay-8 fast">
+            <div v-for="session in speaker.acf.sessions" :key="session.event.ID" class="font-bold">
+              <nuxt-link :to="`/events/${session.event.post_name}`"> </nuxt-link>
+              <time class="text-2xl lg:text-3xl font-semibold">
+                {{
+                  $dateFns.format(
+                    new Date(getMatchingEventInfo(session.event.post_name).acf.start),
+                    'M/d h:mmaaaaa'
+                  )
+                }}
+              </time>
+              <h4 class="text-xl font-normal leading-tight mb-3">
+                {{ session.event.post_title }}
+              </h4>
+              <a
+                :href="options.register_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-sm lg:btn bg-blue hover:bg-blue-dark mb-8"
+              >
+                Register
+              </a>
+              <!-- <h1>{{ getMatchingEventInfo(session.event.post_name).acf.description }}</h1> -->
+            </div>
+          </transition>
+        </template>
       </div>
     </div>
     <app-footer />
@@ -95,7 +97,7 @@ export default {
   },
 
   computed: {
-    ...mapState(['events']),
+    ...mapState(['events', 'options']),
 
     speakers() {
       return this.$store.state.speakers;
@@ -109,10 +111,11 @@ export default {
   created() {
     this.getSpeakers();
     this.getEvents();
+    this.getOptions();
   },
 
   methods: {
-    ...mapActions(['getSpeakers', 'getEvents']),
+    ...mapActions(['getSpeakers', 'getEvents', 'getOptions']),
 
     getMatchingEventInfo(slug) {
       return this.events.find((event) => event.slug === slug);

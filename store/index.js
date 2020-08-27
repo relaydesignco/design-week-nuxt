@@ -9,6 +9,7 @@ export const state = () => ({
   speakers: [],
   sponsors: [],
   navIsOpen: false,
+  options: null,
 });
 
 export const getters = {
@@ -30,6 +31,10 @@ export const mutations = {
     state.sponsors = sponsors;
   },
 
+  SET_OPTIONS: (state, options) => {
+    state.options = options;
+  },
+
   SET_NAV_IS_OPEN: (state, status) => {
     state.navIsOpen = status;
   },
@@ -38,7 +43,6 @@ export const mutations = {
 export const actions = {
   async getEvents({ state, commit }) {
     if (state.events.length) return;
-
     try {
       let events = await cms
         .get(`/wp-json/wp/v2/events?page=1&per_page=100&_embed=1`)
@@ -51,7 +55,6 @@ export const actions = {
         content,
         acf,
       }));
-
       commit('SET_EVENTS', events);
     } catch (err) {
       console.error('getEvents', err);
@@ -81,7 +84,6 @@ export const actions = {
 
   async getSponsors({ state, commit }) {
     if (state.sponsors.length) return;
-
     try {
       let sponsors = await cms
         .get(`/wp-json/wp/v2/sponsors?page=1&per_page=100&_embed=1`)
@@ -93,10 +95,20 @@ export const actions = {
         title,
         acf,
       }));
-
       commit('SET_SPONSORS', sponsors);
     } catch (err) {
       console.error('getSponsors', err);
+    }
+  },
+
+  async getOptions({ state, commit }) {
+    if (state.options) return;
+    try {
+      const res = await cms.get(`/wp-json/wp/v2/options?slug=site-wide`).then((res) => res.data);
+      const options = res[0].acf;
+      commit('SET_OPTIONS', options);
+    } catch (err) {
+      console.error('getOptions', err);
     }
   },
 };

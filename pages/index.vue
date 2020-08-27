@@ -23,7 +23,7 @@
             Storybuilding & the Future of Truth In Our Branded World
           </h4>
           <a
-            href="#"
+            :href="options.register_link"
             target="_blank"
             rel="noopener noreferrer"
             class="btn bg-blue hover:bg-blue-dark"
@@ -58,7 +58,7 @@
             </time>
             <h3 class="font-mono text-2xl">{{ event.acf.speaker }}</h3>
             <h4 class="font-mono font-normal text-lg leading-tight">
-              <a :href="`${event.acf.url}`" target=" _blank" rel="noopener noreferrer">{{
+              <a :href="`${options.register_link}`" target=" _blank" rel="noopener noreferrer">{{
                 event.title.rendered
               }}</a>
             </h4>
@@ -88,7 +88,7 @@
         <h2 class="text-2xl lg:text-4xl font-mono mb-10 lg:mb-16">Thanks to our Sponsors_</h2>
         <div class="grid grid-cols-3 gap-4 items-center">
           <a
-            v-for="sponsor in sponsors"
+            v-for="sponsor in premier"
             :key="sponsor.id"
             :href="`${sponsor.acf.url}`"
             target=" _blank"
@@ -97,8 +97,12 @@
           >
             <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" class="w-64" />
           </a>
-          <!-- <h3>{{ sponsor.title.rendered }}</h3> -->
         </div>
+      </div>
+      <div class="text-center mt-6 lg:mt-12">
+        <nuxt-link to="/sponsors" class="btn-sm lg:btn bg-blue hover:bg-blue-dark">
+          See All Sponsors
+        </nuxt-link>
       </div>
     </section>
     <app-footer />
@@ -119,25 +123,24 @@ export default {
     SvgLogo,
   },
 
-  data() {
-    return {
-      // selectedTag: null,
-      // activeClass: 'active',
-    };
-  },
-
   computed: {
-    ...mapState(['events', 'sponsors']),
+    ...mapState(['events', 'sponsors', 'options']),
 
     ...mapGetters(['sortedEvents']),
+
+    premier() {
+      return this.sponsors.filter((sponsor) => sponsor.acf.level === 'Premier');
+    },
   },
 
   created() {
     this.getEvents();
+    this.getSponsors();
+    this.getOptions();
   },
 
   methods: {
-    ...mapActions(['getEvents']),
+    ...mapActions(['getEvents', 'getSponsors', 'getOptions']),
   },
 };
 </script>

@@ -29,31 +29,37 @@
         </div>
       </div>
     </section>
+
+    <get-pass-cta :button-link="options.register_link" />
+
     <app-footer />
   </div>
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter.vue';
+import AppFooter from '@/components/AppFooter';
+import GetPassCta from '@/components/GetPassCta';
 import { mapState, mapActions } from 'vuex';
 export default {
   name: 'Speakers',
 
   components: {
     AppFooter,
+    GetPassCta,
   },
 
   computed: {
-    ...mapState(['speakers']),
+    ...mapState(['speakers', 'options']),
   },
 
   created() {
     this.getSpeakers();
+    this.getOptions();
     // console.log(this.speakers);
   },
 
   methods: {
-    ...mapActions(['getSpeakers']),
+    ...mapActions(['getSpeakers', 'getOptions']),
   },
 
   head() {

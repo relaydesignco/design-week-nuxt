@@ -55,7 +55,8 @@ export default {
   },
 
   env: {
-    baseUrl: process.env.BASE_URL || 'http://midwestdesignweekapi.local',
+    // baseUrl: process.env.BASE_URL || 'http://midwestdesignweekapi.local',
+    baseUrl: process.env.BASE_URL || 'https://mwdwaiga.wpengine.com',
   },
   /*
    ** Customize the progress-bar color
@@ -82,6 +83,7 @@ export default {
     '~/plugins/events.server.js',
     '~/plugins/speakers.server.js',
     '~/plugins/sponsors.server.js',
+    '~/plugins/options.server.js',
   ],
   generate: {},
   /*
