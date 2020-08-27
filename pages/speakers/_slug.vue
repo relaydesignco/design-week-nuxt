@@ -97,11 +97,7 @@ export default {
   },
 
   computed: {
-    ...mapState(['events', 'options']),
-
-    speakers() {
-      return this.$store.state.speakers;
-    },
+    ...mapState(['speakers', 'events', 'options']),
 
     speaker() {
       return this.speakers.find((speaker) => speaker.slug === this.slug);

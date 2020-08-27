@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-offwhite">
+  <header class="bg-offwhite relative">
     <transition
       name="slide-down"
       enter-active-class="animated slideInDown faster"
@@ -38,36 +38,48 @@
     <!-- landing page header -->
     <template v-else>
       <!-- intro animation -->
-      <div class="absolute inset-x-0 invisible">
+      <div
+        :class="[
+          'absolute inset-x-0 top-1/2 transform -translate-y-1/2',
+          { invisible: !isAnimating },
+        ]"
+      >
         <svg-animated-logo />
-        <div
-          class="absolute bottom-0 mb-8 lg:mb-32 text-xs lg:text-3xl font-mono font-bold uppercase tracking-wide lg:tracking-wider w-full text-center"
+        <!-- <div
+          class="absolute bottom-0 mb-8 lg:mb-48 text-xs lg:text-3xl font-mono font-bold uppercase tracking-wide lg:tracking-wider w-full text-center"
         >
           <span class="text-blue">Cincinnati_</span>
           <span class="text-green">Indianapospans_</span>
           <span class="text-red">Louisville_</span>
           <span class="text-teal">Toledo_</span>
-        </div>
+        </div> -->
       </div>
 
-      <div class="p-6 md:p-16 min-h-16x9">
+      <div
+        :class="[
+          'px-6 pb-6 pt-10 lg:px-16 lg:pb-16 lg:pt-24 min-h-16x9',
+          { invisible: isAnimating },
+        ]"
+      >
         <div class="absolute top-0 right-0 w-20 lg:w-48 z-50">
           <svg-symbol-nav @toggle-nav="SET_NAV_IS_OPEN(!navIsOpen)" />
         </div>
         <div class="w-9/12 lg:w-8/12">
           <svg-title />
         </div>
-        <div class="flex justify-between items-center flex-wrap mt-3 md:mt-8 mb-4 md:mb-20">
+        <div class="flex justify-between items-center flex-wrap mt-3 md:mt-8 mb-4 lg:mb-24">
           <h1
             class="font-mono font-normal text-xs md:text-3xl xl:text-4xl uppercase leading-tight tracking-widest mb-3 md:mb-0"
           >
             A Virtual Design Conference_
           </h1>
-          <time class="text-3xl xl:text-4xl font-mono font-bold tracking-wide block">
+          <time class="text-2xl md:text-3xl xl:text-4xl font-mono font-bold tracking-wide block">
             09/21-25/2020
           </time>
         </div>
-        <div class="grid grid-cols-1fr3 lg:gap-4 items-center md:w-3/4 lg:w-8/12 mx-auto md:mb-12">
+        <div
+          class="grid grid-cols-1fr3 lg:gap-4 items-center md:w-3/4 lg:w-8/12 mx-auto md:mb-12 lg:mb-20"
+        >
           <ul
             class="uppercase text-xxs md:text-sm lg:text-base tracking-wider font-bold text-right font-mono"
           >
