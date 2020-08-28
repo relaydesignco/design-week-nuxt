@@ -45,7 +45,11 @@
       <div
         :class="['px-6 pb-6 pt-10 lg:px-16 lg:pb-16 lg:pt-24 min-h-16x9', { invisible: isIntro }]"
       >
-        <div class="absolute top-0 right-0 w-20 lg:w-48 z-50">
+        <div
+          id="symbolNavWrap"
+          ref="symbolNavWrap"
+          class="absolute top-0 right-0 w-20 lg:w-48 z-50"
+        >
           <svg-symbol-nav @toggle-nav="SET_NAV_IS_OPEN(!navIsOpen)" />
         </div>
         <div class="w-9/12 lg:w-8/12">
@@ -74,13 +78,13 @@
           <ul
             class="uppercase text-xxs md:text-sm lg:text-base tracking-wider font-bold text-right font-mono"
           >
-            <li id="cin" ref="cin" class="cities">Cincinnati</li>
-            <li id="ind" ref="ind" class="cities">Indianapolis</li>
-            <li id="lou" ref="lou" class="cities">Louisville</li>
-            <li id="tol" ref="tol" class="cities">Toledo</li>
+            <li id="cin" ref="cin" class="city-header">Cincinnati</li>
+            <li id="ind" ref="ind" class="city-header">Indianapolis</li>
+            <li id="lou" ref="lou" class="city-header">Louisville</li>
+            <li id="tol" ref="tol" class="city-header">Toledo</li>
           </ul>
 
-          <div id="logo" ref="logo" class="w-16 md:w-32 mx-auto">
+          <div id="logoHeader" ref="logoHeader" class="w-16 md:w-32 mx-auto">
             <svg-logo />
           </div>
 
@@ -142,7 +146,7 @@ export default {
   },
 
   mounted() {
-    gsap.set(['#symbolNav .square', '#hamburger', '#hamburger-close'], { visibility: 'hidden' });
+    gsap.set(['.symbolNavElement', '#hamburger'], { visibility: 'hidden' });
     this.animateHeader();
   },
 
@@ -163,14 +167,15 @@ export default {
         },
       });
 
-      tl.from('.cities', { autoAlpha: 0, y: '150%', stagger: 0.1 });
+      tl.addLabel('start');
+      tl.from('.city-header', { autoAlpha: 0, y: '150%', stagger: 0.1 });
       tl.from(
-        this.$refs.logo,
+        this.$refs.logoHeader,
         { autoAlpha: 0, scale: 0.5, duration: 0.6, ease: 'back.out(1.7)' },
         '-=0.6'
       );
+      tl.addLabel('hash');
       tl.from(this.$refs.hash, { autoAlpha: 0, x: '50%', ease: 'back.out(1.5)' }, '-=0.4');
-      tl.addLabel('button');
       tl.from(
         this.$refs.tickets,
         { autoAlpha: 0, rotateX: 90, duration: 1, ease: 'back.out(4)' },
@@ -190,7 +195,7 @@ export default {
           },
           ease: 'power1.inOut',
         },
-        'button'
+        'hash'
       );
       tl.from(
         '#design .square',
@@ -206,7 +211,7 @@ export default {
           },
           ease: 'power1.inOut',
         },
-        'button+=0.5'
+        'hash+=0.5'
       );
       tl.from(
         '#week .square',
@@ -222,35 +227,36 @@ export default {
           },
           ease: 'power1.inOut',
         },
-        'button+=1'
+        'hash+=1'
       );
       tl.from(this.$refs.subtitle, { autoAlpha: 0, y: '100%' }, '-=1.4');
-      tl.from(this.$refs.subdate, { autoAlpha: 0, x: '50%', ease: 'back.out(1.5)' }, '-=1');
+      tl.from(this.$refs.subdate, { autoAlpha: 0, x: '25%', ease: 'back.out(1.5)' }, '-=1');
+
       tl.from(
-        ['#symbolNav .square'],
+        ['.symbolNavSquare'],
         {
+          duration: 0.4,
           scale: 0.1,
           autoAlpha: 0,
           y: 50,
           stagger: {
             each: 0.1,
-            from: 'center',
-            grid: 'auto',
-            ease: 'power2.in',
+            from: 'random',
+            grid: [2, 2],
           },
-          ease: 'power1.inOut',
         },
-        'button-=1'
+        'start'
       );
       tl.from(
-        ['#hamburger', '#hamburger-close'],
+        ['#hamburger'],
         {
+          duration: 0.4,
           scale: 0.1,
           transformOrigin: '50% 50%',
           autoAlpha: 0,
           ease: 'power1.out',
         },
-        'button'
+        'start+=0.4'
       );
     },
   },
@@ -258,8 +264,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.cities,
-#logo,
+.city-header,
+#logoHeader,
 #hash,
 #tickets,
 .square,

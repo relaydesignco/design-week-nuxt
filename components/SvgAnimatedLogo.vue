@@ -2,7 +2,7 @@
   <div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" class="w-full">
       <title lang="en">AIGA Midwest Design Week logo</title>
-      <g id="logo" ref="logo" style="isolation: isolate">
+      <g id="logoIntro" ref="logoIntro" style="isolation: isolate">
         <rect id="frame" width="1920" height="1080" class="fill-current text-offwhite" />
 
         <rect
@@ -66,10 +66,10 @@
       ref="cityList"
       class="flex justify-center absolute bottom-0 mb-4 lg:mb-48 text-xs lg:text-3xl font-mono font-bold uppercase tracking-wide lg:tracking-wider w-full text-center"
     >
-      <li id="cin" ref="cin" class="cities text-blue">Cincinnati_</li>
-      <li id="ind" ref="ind" class="cities text-green ml-2">Indianapolis_</li>
-      <li id="lou" ref="lou" class="cities text-red ml-2">Louisville_</li>
-      <li id="tol" ref="tol" class="cities text-teal ml-2">Toledo_</li>
+      <li id="cin" ref="cin" class="city-intro text-blue">Cincinnati_</li>
+      <li id="ind" ref="ind" class="city-intro text-green ml-2">Indianapolis_</li>
+      <li id="lou" ref="lou" class="city-intro text-red ml-2">Louisville_</li>
+      <li id="tol" ref="tol" class="city-intro text-teal ml-2">Toledo_</li>
     </ul>
   </div>
 </template>
@@ -103,17 +103,17 @@ export default {
         },
       });
 
-      tl.set(this.$refs.logo, { autoAlpha: 1 });
+      tl.set(this.$refs.logoIntro, { autoAlpha: 1 });
       tl.from(this.$refs.green, { x: 1440, y: 320, ease: 'back.out(0.5)' });
       tl.from(this.$refs.teal, { x: -1020, y: -480, ease: 'back.out(0.5)' }, '-=0.4');
       tl.from(this.$refs.blue, { x: 1280, y: -320, ease: 'back.out(0.5)' }, '-=0.4');
       tl.from(this.$refs.red, { x: -1280, y: 320, ease: 'back.out(0.5)' }, '-=0.4');
       tl.addLabel('cities');
-      tl.from('.cities', { autoAlpha: 0, y: '100%', ease: 'back.out(1.5)', stagger: 0.2 }, '-=0.2');
-      // tl.from(this.$refs.cin, { autoAlpha: 0, y: '100%', ease: 'back.out(1.5)' }, '-=0.2');
-      // tl.from(this.$refs.ind, { autoAlpha: 0, y: '100%', ease: 'back.out(1.5)' }, '-=0.6');
-      // tl.from(this.$refs.lou, { autoAlpha: 0, y: '100%', ease: 'back.out(1.5)' }, '-=0.6');
-      // tl.from(this.$refs.tol, { autoAlpha: 0, y: '100%', ease: 'back.out(1.5)' }, '-=0.6');
+      tl.from(
+        '.city-intro',
+        { autoAlpha: 0, y: '100%', ease: 'back.out(1.5)', stagger: 0.2 },
+        '-=0.2'
+      );
       tl.from(this.$refs.aiga, { autoAlpha: 0 }, 'cities+=0.4');
       tl.addLabel('break');
       tl.to(
@@ -148,7 +148,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-#logo {
+#logoIntro {
   visibility: hidden;
 }
 #cin,

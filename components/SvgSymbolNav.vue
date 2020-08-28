@@ -4,36 +4,32 @@
     <g style="isolation: isolate">
       <g id="symbolNav">
         <rect
-          id="red"
           x="90"
           width="90"
           height="90"
-          class="square fill-current text-red"
+          class="symbolNavSquare fill-current text-red"
           style="mix-blend-mode: multiply"
         />
         <rect
-          id="green"
           width="90"
           height="90"
-          class="square fill-current text-green"
+          class="symbolNavSquare fill-current text-green"
           style="mix-blend-mode: multiply"
         />
         <rect
-          id="teal"
           x="90"
           y="90"
           width="90"
           height="90"
-          class="square fill-current text-teal"
+          class="symbolNavSquare fill-current text-teal"
           style="mix-blend-mode: multiply"
         />
         <rect
-          id="blue"
           x="45"
           y="45"
           width="90"
           height="90"
-          class="square fill-current text-blue hover:text-blue-dark cursor-pointer transition-colors duration-300"
+          class="symbolNavSquare fill-current text-blue hover:text-blue-dark cursor-pointer transition-colors duration-300"
           style="mix-blend-mode: multiply"
           @click="toggleEvent()"
         />
