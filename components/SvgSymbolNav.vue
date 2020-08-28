@@ -2,20 +2,20 @@
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" class="w-full">
     <title lang="en">AIGA Midwest Design Week symbol</title>
     <g style="isolation: isolate">
-      <g id="SymbolNav">
+      <g id="symbolNav">
         <rect
           id="red"
           x="90"
           width="90"
           height="90"
-          class="fill-current text-red"
+          class="square fill-current text-red"
           style="mix-blend-mode: multiply"
         />
         <rect
           id="green"
           width="90"
           height="90"
-          class="fill-current text-green"
+          class="square fill-current text-green"
           style="mix-blend-mode: multiply"
         />
         <rect
@@ -24,7 +24,7 @@
           y="90"
           width="90"
           height="90"
-          class="fill-current text-teal"
+          class="square fill-current text-teal"
           style="mix-blend-mode: multiply"
         />
         <rect
@@ -33,7 +33,7 @@
           y="45"
           width="90"
           height="90"
-          class="fill-current text-blue hover:text-blue-dark cursor-pointer transition-colors duration-300"
+          class="square fill-current text-blue hover:text-blue-dark cursor-pointer transition-colors duration-300"
           style="mix-blend-mode: multiply"
           @click="toggleEvent()"
         />
@@ -74,7 +74,7 @@
             />
           </g>
 
-          <g v-else id="X" key="x" class="pointer-events-none">
+          <g v-else id="hamburger-close" key="x" class="pointer-events-none">
             <line
               x1="77.57"
               y1="102.34"
