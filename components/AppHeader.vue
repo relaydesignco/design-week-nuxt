@@ -163,14 +163,17 @@ export default {
       });
 
       tl.addLabel('start');
-      tl.from('.city-header', { autoAlpha: 0, y: '150%', stagger: 0.1 });
-      tl.from(
-        this.$refs.logoHeader,
-        { autoAlpha: 0, scale: 0.5, duration: 0.6, ease: 'back.out(1.7)' },
-        '-=0.6'
-      );
-      tl.addLabel('hash');
+      tl.from(this.$refs.logoHeader, {
+        autoAlpha: 0,
+        scale: 0.5,
+        duration: 0.6,
+        ease: 'back.out(1.7)',
+      });
+      tl.addLabel('logo');
+      tl.from('.city-header', { autoAlpha: 0, y: '150%', stagger: 0.1 }, '-=0.4');
+      tl.addLabel('list');
       tl.from(this.$refs.hash, { autoAlpha: 0, x: '50%', ease: 'back.out(1.5)' }, '-=0.4');
+      tl.addLabel('hash');
       tl.from(
         this.$refs.tickets,
         { autoAlpha: 0, rotateX: 90, duration: 1, ease: 'back.out(4)' },
@@ -184,14 +187,14 @@ export default {
           autoAlpha: 0,
           y: 50,
           stagger: {
-            amount: 1,
+            amount: 1.2,
             from: 'random',
             grid: 'auto',
             ease: 'power2.in',
           },
           ease: 'power1.inOut',
         },
-        'hash'
+        'logo'
       );
       tl.from(
         '#design .square',
@@ -200,14 +203,14 @@ export default {
           autoAlpha: 0,
           y: 50,
           stagger: {
-            amount: 1,
+            amount: 1.2,
             from: 'random',
             grid: 'auto',
             ease: 'power2.in',
           },
           ease: 'power1.inOut',
         },
-        'hash+=0.5'
+        'logo+=0.5'
       );
       tl.from(
         '#week .square',
@@ -216,14 +219,14 @@ export default {
           autoAlpha: 0,
           y: 50,
           stagger: {
-            amount: 1,
+            amount: 1.2,
             from: 'random',
             grid: 'auto',
             ease: 'power2.in',
           },
           ease: 'power1.inOut',
         },
-        'hash+=1'
+        'logo+=1'
       );
       tl.from(this.$refs.subtitle, { autoAlpha: 0, y: '100%' }, '-=1.4');
       tl.from(this.$refs.subdate, { autoAlpha: 0, x: '25%', ease: 'back.out(1.5)' }, '-=1');
