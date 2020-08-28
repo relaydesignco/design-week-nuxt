@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-offwhite relative">
+  <header class="bg-offwhite relative site-header">
     <transition
       name="slide-down"
       enter-active-class="animated slideInDown faster"
@@ -146,7 +146,6 @@ export default {
   },
 
   mounted() {
-    gsap.set(['.symbolNavElement', '#hamburger'], { visibility: 'hidden' });
     this.animateHeader();
   },
 
@@ -159,12 +158,8 @@ export default {
     },
 
     animateHeader() {
-      const that = this;
       const tl = gsap.timeline({
         defaults: { duration: 0.8 },
-        onComplete() {
-          that.finish();
-        },
       });
 
       tl.addLabel('start');
@@ -181,6 +176,7 @@ export default {
         { autoAlpha: 0, rotateX: 90, duration: 1, ease: 'back.out(4)' },
         '-=0.2'
       );
+      tl.addLabel('button');
       tl.from(
         '#midwest .square',
         {
@@ -189,8 +185,8 @@ export default {
           y: 50,
           stagger: {
             amount: 1,
-            from: 'center',
-            grid: [2, 2],
+            from: 'random',
+            grid: 'auto',
             ease: 'power2.in',
           },
           ease: 'power1.inOut',
@@ -245,18 +241,18 @@ export default {
             grid: [2, 2],
           },
         },
-        'start'
+        'button'
       );
       tl.from(
         ['#hamburger'],
         {
           duration: 0.4,
           scale: 0.1,
-          transformOrigin: '50% 50%',
           autoAlpha: 0,
+          transformOrigin: '50% 50%',
           ease: 'power1.out',
         },
-        'start+=0.4'
+        'button+=0.4'
       );
     },
   },
@@ -264,16 +260,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.city-header,
-#logoHeader,
-#hash,
-#tickets,
-.square,
-#subtitle,
-#subdate {
-  visibility: hidden;
-}
-
 .ticketsWrap {
   perspective: 500;
 }
