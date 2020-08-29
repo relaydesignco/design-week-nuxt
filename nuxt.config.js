@@ -79,12 +79,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~/plugins/events.server.js',
-    '~/plugins/speakers.server.js',
-    '~/plugins/sponsors.server.js',
-    '~/plugins/options.server.js',
-  ],
+  plugins: ['~/plugins/data.server.js'],
   generate: {},
   /*
    ** Nuxt.js dev-modules
