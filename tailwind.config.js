@@ -33,8 +33,8 @@ module.exports = {
       },
       spacing: {
         // '30': '7.5rem',
-        96: '24rem',
         80: '20rem',
+        96: '24rem',
         128: '32rem',
       },
       inset: {

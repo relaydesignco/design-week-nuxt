@@ -36,7 +36,7 @@
 
       <input
         type="submit"
-        class="formEmailButton btn hover:bg-blue-dark focus:outline-none focus:shadow-outline md:w-1/3"
+        class="formEmailButton btn bg-blue hover:bg-blue-dark focus:outline-none focus:shadow-outline md:w-1/3"
         name="submit"
         value="Subscribe"
       />

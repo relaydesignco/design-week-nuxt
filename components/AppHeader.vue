@@ -72,9 +72,7 @@
           </time>
         </div>
 
-        <div
-          class="grid grid-cols-1fr3 lg:gap-4 items-center md:w-3/4 lg:w-8/12 mx-auto md:mb-12 lg:mb-20"
-        >
+        <div class="flex lg:max-w-screen-md items-center mx-auto md:mb-12 lg:mb-20">
           <ul
             class="uppercase text-xxs md:text-sm lg:text-base tracking-wider font-bold text-right font-mono"
           >
@@ -88,7 +86,7 @@
             <svg-logo />
           </div>
 
-          <div id="hash" ref="hash" class="w-36 md:w-80">
+          <div id="hash" ref="hash" class="w-32 md:w-80">
             <svg-hashtag ref="hash" />
           </div>
         </div>
@@ -145,9 +143,9 @@ export default {
     },
   },
 
-  mounted() {
-    this.animateHeader();
-  },
+  // mounted() {
+  //   this.animateHeader();
+  // },
 
   methods: {
     ...mapMutations(['SET_NAV_IS_OPEN']),
