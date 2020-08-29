@@ -9,11 +9,24 @@ export const state = () => ({
   speakers: [],
   sponsors: [],
   navIsOpen: false,
-  options: null,
+  options: {
+    register_link: 'https://www.fonteva.com/',
+  },
+  pages: [],
 });
 
 export const getters = {
   sortedEvents: (state) => {
+    return state.events.slice().sort((a, b) => new Date(a.acf.start) - new Date(b.acf.start));
+  },
+
+  sortedSpeakers: (state) => {
+    return state.speakers
+      .slice()
+      .sort((a, b) => a.title.rendered.split(' ')[1].localeCompare(b.title.rendered.split(' ')[1]));
+  },
+
+  sortedSponsors: (state) => {
     return state.events.slice().sort((a, b) => new Date(a.acf.start) - new Date(b.acf.start));
   },
 };
@@ -33,6 +46,10 @@ export const mutations = {
 
   SET_OPTIONS: (state, options) => {
     state.options = options;
+  },
+
+  SET_PAGES: (state, pages) => {
+    state.pages = pages;
   },
 
   SET_NAV_IS_OPEN: (state, status) => {
@@ -109,6 +126,22 @@ export const actions = {
       commit('SET_OPTIONS', options);
     } catch (err) {
       console.error('getOptions', err);
+    }
+  },
+
+  async getPages({ state, commit }) {
+    if (state.pages.length) return;
+    try {
+      let pages = await cms.get(`/wp-json/wp/v2/pages`).then((res) => res.data);
+      pages = pages.map(({ id, slug, title, content }) => ({
+        id,
+        slug,
+        title,
+        content,
+      }));
+      commit('SET_PAGES', pages);
+    } catch (err) {
+      console.error('getPages', err);
     }
   },
 };

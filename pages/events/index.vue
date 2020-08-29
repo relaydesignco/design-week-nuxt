@@ -143,7 +143,6 @@ export default {
 
   created() {
     this.getEvents();
-    this.getOptions();
     // console.log(this.sortedEvents);
   },
 
@@ -152,7 +151,7 @@ export default {
 
     selectDay(index) {
       this.currentSelectedDayIndex = index;
-      console.log(this.selectedDaysEvents);
+      // console.log(this.selectedDaysEvents);
     },
   },
 

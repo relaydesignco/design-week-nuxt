@@ -122,7 +122,7 @@ export default {
 
   created() {
     this.getSponsors();
-    // this.getOptions();
+    this.getOptions();
   },
 
   methods: {

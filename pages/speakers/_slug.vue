@@ -47,7 +47,7 @@
           </transition>
 
           <transition appear enter-active-class="animated fadeInUp delay-8 fast">
-            <div v-for="session in speaker.acf.sessions" :key="session.event.ID" class="font-bold">
+            <div v-for="session in publishedSessions" :key="session.event.ID" class="font-bold">
               <nuxt-link :to="`/events/${session.event.post_name}`"> </nuxt-link>
               <time class="text-2xl lg:text-3xl font-semibold">
                 {{
@@ -68,7 +68,6 @@
               >
                 Register
               </a>
-              <!-- <h1>{{ getMatchingEventInfo(session.event.post_name).acf.description }}</h1> -->
             </div>
           </transition>
         </template>
@@ -101,6 +100,10 @@ export default {
 
     speaker() {
       return this.speakers.find((speaker) => speaker.slug === this.slug);
+    },
+
+    publishedSessions() {
+      return this.speaker.acf.sessions.filter((session) => session.event.post_status === 'publish');
     },
   },
 

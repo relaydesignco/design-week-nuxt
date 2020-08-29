@@ -9,7 +9,7 @@
     <section class="px-10 py-4 lg:py-10">
       <div class="lg:max-w-screen-lg mx-auto grid gap-x-6 gap-y-12 lg:grid-cols-3">
         <div
-          v-for="speaker in speakers"
+          v-for="speaker in sortedSpeakers"
           :key="speaker.id"
           class="transform hover:scale-105 transition-transform duration-300"
         >
@@ -39,7 +39,7 @@
 <script>
 import AppFooter from '@/components/AppFooter';
 import GetPassCta from '@/components/GetPassCta';
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapActions, mapGetters } from 'vuex';
 export default {
   name: 'Speakers',
 
@@ -50,12 +50,14 @@ export default {
 
   computed: {
     ...mapState(['speakers', 'options']),
+    ...mapGetters(['sortedSpeakers']),
   },
 
   created() {
     this.getSpeakers();
     this.getOptions();
     // console.log(this.speakers);
+    // console.log(this.sortedSpeakers);
   },
 
   methods: {
