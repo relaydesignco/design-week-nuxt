@@ -9,9 +9,7 @@ export const state = () => ({
   speakers: [],
   sponsors: [],
   navIsOpen: false,
-  options: {
-    register_link: 'https://www.fonteva.com/',
-  },
+  options: null,
   pages: [],
 });
 
