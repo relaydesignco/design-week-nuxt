@@ -7,7 +7,18 @@
     </h1>
     <section class="px-6 py-4 lg:py-10">
       <div class="lg:max-w-screen-lg mx-auto">
-        <h2 class="lg:text-3xl font-mono font-normal mb-2 lg:mb-4">September 2020</h2>
+        <div class="flex items-center mb-2 lg:mb-4">
+          <h2 class="lg:text-3xl font-mono font-normal">September 2020</h2>
+          <button
+            :class="[
+              [currentSelectedDayIndex === -1 ? 'bg-green' : 'bg-offwhite-dark'],
+              'ml-4 btn-sm lg:btn text-black lg:text-black transition-all duration-300 hover:shadow-md',
+            ]"
+            @click="selectDay(-1)"
+          >
+            Show All
+          </button>
+        </div>
         <!-- day select buttons -->
         <div class="grid grid-cols-5 gap-2 lg:gap-4 pb-8 lg:pb-16">
           <button
@@ -15,7 +26,7 @@
             :key="index"
             :class="[
               [index === currentSelectedDayIndex ? 'bg-green' : 'bg-offwhite-dark'],
-              'font-mono font-bold text-black leading-none uppercase calendar-button transition-colors duration-300',
+              'font-mono font-bold text-black leading-none uppercase calendar-button transition-all duration-300 hover:shadow-lg',
             ]"
             @click="selectDay(index)"
           >
@@ -135,6 +146,8 @@ export default {
     },
 
     selectedDaysEvents() {
+      if (this.currentSelectedDayIndex === -1) return this.sortedEvents;
+
       return this.sortedEvents.filter(
         (event) => event.acf.start.split('/')[1] === this.days[this.currentSelectedDayIndex].date
       );
@@ -144,6 +157,8 @@ export default {
   created() {
     this.getEvents();
     this.getOptions();
+    this.currentSelectedDayIndex =
+      this.dayOfWeek === 0 || this.dayOfWeek > 5 ? 0 : this.dayOfWeek - 1;
     // console.log(this.sortedEvents);
   },
 
