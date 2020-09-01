@@ -18,6 +18,30 @@ a {
   @apply text-blue;
 }
 
+.page-content {
+  h2,
+  h3,
+  h4 {
+    @apply leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl mb-2;
+  }
+
+  h4 {
+    @apply text-xl mb-2;
+  }
+
+  p {
+    @apply mb-2 leading-relaxed;
+  }
+}
+
 .field {
   @apply appearance-none shadow border w-full py-2 px-3 text-gray-700 leading-tight;
 }
@@ -45,10 +69,6 @@ input[type='email'].field:focus:invalid {
 }
 
 @tailwind utilities;
-
-.place-center {
-  place-items: center;
-}
 
 .delay-1 {
   animation-delay: 0.1s;

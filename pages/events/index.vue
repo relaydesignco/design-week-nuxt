@@ -143,6 +143,7 @@ export default {
 
   created() {
     this.getEvents();
+    this.getOptions();
     // console.log(this.sortedEvents);
   },
 

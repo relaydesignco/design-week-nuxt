@@ -6,8 +6,8 @@
       MWDW Speakers_
     </h1>
 
-    <section class="px-10 py-4 lg:py-10">
-      <div class="lg:max-w-screen-lg mx-auto grid gap-x-6 gap-y-12 lg:grid-cols-3">
+    <section class="px-6 py-4 lg:py-10">
+      <div class="lg:max-w-screen-lg mx-auto grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="speaker in sortedSpeakers"
           :key="speaker.id"
