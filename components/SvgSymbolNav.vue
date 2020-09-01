@@ -25,13 +25,19 @@
           style="mix-blend-mode: multiply"
         />
         <rect
+          ref="navButton"
           x="45"
           y="45"
           width="90"
           height="90"
           class="symbolNavSquare fill-current text-blue hover:text-blue-dark cursor-pointer transition-colors duration-300"
           style="mix-blend-mode: multiply"
-          @click="toggleEvent()"
+          tabindex="1"
+          role="button"
+          aria-expanded="false"
+          @click="toggleEvent"
+          @keydown.enter="toggleEvent"
+          @keydown.space="toggleEvent"
         />
         <transition
           enter-active-class="animated fadeIn faster"
@@ -108,9 +114,28 @@ export default {
     ...mapState(['navIsOpen']),
   },
 
+  mounted() {
+    document.addEventListener('keydown', this.closeNav);
+  },
+
+  beforeDestroy() {
+    document.removeEventListener('keydown', this.closeNav);
+  },
+
   methods: {
-    toggleEvent() {
+    toggleEvent(e) {
       this.$emit('toggle-nav');
+      e.target.setAttribute(
+        'aria-expanded',
+        e.target.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
+      );
+    },
+
+    closeNav(e) {
+      if (e.keyCode === 27) {
+        this.$emit('close-nav');
+        this.$refs.navButton.setAttribute('aria-expanded', 'false');
+      }
     },
   },
 };

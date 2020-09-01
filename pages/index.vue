@@ -57,6 +57,7 @@
             :key="event.id"
             class="transform hover:scale-105 transition-transform duration-300 mx-auto"
           >
+            <!-- TODO make this show next 3 events -->
             <nuxt-link :to="`/events/${event.slug}`">
               <img
                 v-if="event.acf.image"

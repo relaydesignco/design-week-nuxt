@@ -5,7 +5,7 @@
       enter-active-class="animated slideInDown faster"
       leave-active-class="animated slideOutUp faster"
     >
-      <app-nav v-if="navIsOpen" @close-nav="SET_NAV_IS_OPEN(!navIsOpen)" />
+      <app-nav v-if="navIsOpen" @close-nav="SET_NAV_IS_OPEN(false)" />
     </transition>
 
     <!-- regular page header -->
@@ -21,7 +21,7 @@
             <li>Toledo</li>
           </ul>
           <div class="w-16 lg:w-32 mx-auto">
-            <nuxt-link to="/">
+            <nuxt-link to="/" tabindex="-1">
               <svg-logo />
             </nuxt-link>
           </div>
@@ -30,7 +30,10 @@
           </div>
         </div>
         <div class="w-20 lg:w-48 z-50">
-          <svg-symbol-nav @toggle-nav="SET_NAV_IS_OPEN(!navIsOpen)" />
+          <svg-symbol-nav
+            @toggle-nav="SET_NAV_IS_OPEN(!navIsOpen)"
+            @close-nav="SET_NAV_IS_OPEN(false)"
+          />
         </div>
       </div>
     </template>
@@ -50,7 +53,10 @@
           ref="symbolNavWrap"
           class="absolute top-0 right-0 w-20 lg:w-48 z-50"
         >
-          <svg-symbol-nav @toggle-nav="SET_NAV_IS_OPEN(!navIsOpen)" />
+          <svg-symbol-nav
+            @toggle-nav="SET_NAV_IS_OPEN(!navIsOpen)"
+            @close-nav="SET_NAV_IS_OPEN(false)"
+          />
         </div>
         <div class="w-9/12 lg:w-8/12">
           <svg-title />

@@ -5,22 +5,22 @@
     <ul class="text-4xl lg:text-6xl font-mono font-bold tracking-wide">
       <transition appear appear-active-class="animated fadeInDown fast delay-5">
         <li @click="$emit('close-nav')">
-          <nuxt-link to="/" class="text-white">Home_</nuxt-link>
+          <nuxt-link to="/" class="text-white" tabindex="2">Home_</nuxt-link>
         </li>
       </transition>
       <transition appear appear-active-class="animated fadeInDown fast delay-4">
         <li @click="$emit('close-nav')">
-          <nuxt-link exact to="/events" class="text-white">Events_</nuxt-link>
+          <nuxt-link exact to="/events" class="text-white" tabindex="2">Events_</nuxt-link>
         </li>
       </transition>
       <transition appear appear-active-class="animated fadeInDown fast delay-3">
         <li @click="$emit('close-nav')">
-          <nuxt-link to="/speakers" class="text-white">Speakers_</nuxt-link>
+          <nuxt-link to="/speakers" class="text-white" tabindex="2">Speakers_</nuxt-link>
         </li>
       </transition>
       <transition appear appear-active-class="animated fadeInDown fast delay-2">
         <li @click="$emit('close-nav')">
-          <nuxt-link to="/sponsors" class="text-white">Sponsors_</nuxt-link>
+          <nuxt-link to="/sponsors" class="text-white" tabindex="2">Sponsors_</nuxt-link>
         </li>
       </transition>
     </ul>
