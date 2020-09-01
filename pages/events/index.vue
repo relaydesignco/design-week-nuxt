@@ -38,8 +38,8 @@
         </div>
         <!-- events -->
 
-        <div v-for="(event, index) in selectedDaysEvents" :key="event.id">
-          <transition appear enter-active-class="animated fadeInLeft">
+        <div v-for="(event, index) in selectedDaysEvents" :key="`${event.id}-${index}`">
+          <transition appear enter-active-class="animated fadeInLeft" mode="out-in">
             <div
               :key="index"
               :class="`flex lg:max-w-screen-lg pb-8 lg:pb-16`"
