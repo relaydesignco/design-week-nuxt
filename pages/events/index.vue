@@ -47,8 +47,8 @@
             >
               <div class="w-2/5 lg:w-1/4">
                 <time class="lg:text-3xl font-mono">
-                  {{ $dateFns.format(new Date(event.acf.start), 'h:mm') }}-{{
-                    $dateFns.format(new Date(event.acf.end), 'h:mmaaaaa')
+                  {{ $dateFns.format(new Date(event.acf.start), 'E h') }}-{{
+                    $dateFns.format(new Date(event.acf.end), 'haaaaa')
                   }}
                   ET
                 </time>
