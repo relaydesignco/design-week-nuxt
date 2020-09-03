@@ -15,7 +15,7 @@ h4 {
 }
 
 a {
-  @apply text-blue;
+  @apply text-blue font-bold;
 }
 
 .bg-dark a {
@@ -55,7 +55,7 @@ a {
     }
   }
   p {
-    @apply mb-2 leading-relaxed;
+    @apply mb-3 leading-relaxed;
   }
   ul {
     @apply mb-8;
