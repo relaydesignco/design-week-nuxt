@@ -5,11 +5,8 @@
     >
       {{ codeOfConduct.title.rendered }}
     </h1>
-    <section class="px-6 py-4 mb-10 md:mb-20">
-      <div
-        class="lg:max-w-screen-lg mx-auto text-lg page-content"
-        v-html="codeOfConduct.content.rendered"
-      />
+    <section class="px-6 lg:px-0 py-4 mb-10 md:mb-20 lg:max-w-screen-lg mx-auto">
+      <div class="max-w-screen-md text-lg page-content" v-html="codeOfConduct.content.rendered" />
     </section>
     <app-footer />
   </div>
