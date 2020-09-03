@@ -88,7 +88,7 @@
       </div>
     </section>
 
-    <cta-section :button-link="options.register_link" />
+    <cta-section :button-link="options.register_link" :external="true" />
 
     <app-footer />
   </div>

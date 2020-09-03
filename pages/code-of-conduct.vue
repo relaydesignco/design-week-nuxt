@@ -9,7 +9,7 @@
       <div
         class="lg:max-w-screen-lg mx-auto text-lg page-content"
         v-html="codeOfConduct.content.rendered"
-      ></div>
+      />
     </section>
     <app-footer />
   </div>
@@ -19,7 +19,7 @@
 import AppFooter from '@/components/AppFooter.vue';
 import { mapState, mapActions } from 'vuex';
 export default {
-  name: 'Sponsors',
+  name: 'CodeofConduct',
 
   components: {
     AppFooter,
@@ -45,12 +45,12 @@ export default {
 
   head() {
     return {
-      title: `Midwest Design Week | Sponsors`,
+      title: `Midwest Design Week | Code of Conduct`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'List of Sponsors for Midwest Design Week 2020',
+          content: 'Code of Conduct for Midwest Design Week 2020',
         },
       ],
     };

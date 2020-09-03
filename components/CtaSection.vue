@@ -3,12 +3,21 @@
     <p class="text-center lg:text-2xl font-mono">
       {{ props.text }}
       <a
+        v-if="props.external"
         :href="props.buttonLink"
         target="_blank"
         rel="noopener noreferrer"
         class="btn-sm lg:btn bg-blue hover:bg-blue-dark ml-2"
-        >{{ props.buttonText }}</a
       >
+        {{ props.buttonText }}
+      </a>
+      <nuxt-link
+        v-else
+        :to="props.buttonLink"
+        class="btn-sm lg:btn bg-blue hover:bg-blue-dark ml-2"
+      >
+        {{ props.buttonText }}
+      </nuxt-link>
     </p>
   </section>
 </template>
@@ -27,6 +36,10 @@ export default {
     buttonText: {
       type: String,
       default: 'Purchase Now',
+    },
+    external: {
+      type: Boolean,
+      default: false,
     },
   },
 };

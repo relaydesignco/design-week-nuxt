@@ -100,7 +100,6 @@
     <section class="px-6 py-10 lg:py-24">
       <div class="lg:max-w-screen-lg mx-auto">
         <h2 class="text-2xl lg:text-4xl font-mono mb-10 lg:mb-16">Thanks to our Sponsors_</h2>
-        <!-- <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center"> -->
         <div class="flex items-center justify-around">
           <a
             v-for="sponsor in sponsors"
@@ -114,14 +113,10 @@
           </a>
         </div>
       </div>
-      <!-- <div class="text-center mt-6 lg:mt-12">
-        <nuxt-link to="/sponsors" class="btn-sm lg:btn bg-blue hover:bg-blue-dark">
-          See All Sponsors
-        </nuxt-link>
-      </div> -->
     </section>
+
     <cta-section
-      button-link="/sponsors"
+      button-link="/sponsorship"
       text="Interested in Sponsorship?"
       button-text="Learn More"
     />
@@ -150,9 +145,9 @@ export default {
 
     ...mapGetters(['sortedEvents']),
 
-    premier() {
-      return this.sponsors.filter((sponsor) => sponsor.acf.level === 'Premier');
-    },
+    // premier() {
+    //   return this.sponsors.filter((sponsor) => sponsor.acf.level === 'Premier');
+    // },
 
     homePage() {
       return this.pages.find((page) => page.slug === 'home');

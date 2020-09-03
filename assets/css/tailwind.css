@@ -30,19 +30,40 @@ a {
   }
 
   h2 {
-    @apply text-3xl;
+    @apply text-2xl;
   }
 
   h3 {
-    @apply text-2xl mb-2;
-  }
-
-  h4 {
     @apply text-xl mb-2;
   }
 
+  h4 {
+    @apply text-lg mb-2;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    h2 {
+      @apply text-3xl;
+    }
+
+    h3 {
+      @apply text-2xl mb-2;
+    }
+
+    h4 {
+      @apply text-xl mb-2;
+    }
+  }
   p {
     @apply mb-2 leading-relaxed;
+  }
+  ul {
+    @apply mb-8;
+  }
+  li {
+    &:before {
+      content: '- ';
+    }
   }
 }
 

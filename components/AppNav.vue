@@ -20,7 +20,7 @@
       </transition>
       <transition appear appear-active-class="animated fadeInDown fast delay-2">
         <li @click="$emit('close-nav')">
-          <nuxt-link to="/sponsors" class="text-white" tabindex="2">Sponsors_</nuxt-link>
+          <nuxt-link to="/sponsorship" class="text-white" tabindex="2">Sponsorship_</nuxt-link>
         </li>
       </transition>
     </ul>
@@ -33,6 +33,10 @@ export default {
     return {
       links: [
         {
+          route: '/',
+          name: 'Home_',
+        },
+        {
           route: '/events',
           name: 'Events_',
         },
@@ -41,12 +45,8 @@ export default {
           name: 'Speakers_',
         },
         {
-          route: '/sponsors',
-          name: 'Sponsors_',
-        },
-        {
-          route: '/home',
-          name: 'Home_',
+          route: '/sponsorship',
+          name: 'Sponsorship_',
         },
       ],
     };
