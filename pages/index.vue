@@ -100,25 +100,31 @@
     <section class="px-6 py-10 lg:py-24">
       <div class="lg:max-w-screen-lg mx-auto">
         <h2 class="text-2xl lg:text-4xl font-mono mb-10 lg:mb-16">Thanks to our Sponsors_</h2>
-        <div class="grid grid-cols-3 gap-4 items-center">
+        <!-- <div class="grid grid-cols-2 md:grid-cols-4 gap-4 items-center"> -->
+        <div class="flex items-center justify-around">
           <a
-            v-for="sponsor in premier"
+            v-for="sponsor in sponsors"
             :key="sponsor.id"
             :href="`${sponsor.acf.url}`"
             target=" _blank"
             rel="noopener noreferrer"
-            class="transform hover:scale-105 transition-transform duration-300"
+            class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 p-4"
           >
             <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" class="w-64" />
           </a>
         </div>
       </div>
-      <div class="text-center mt-6 lg:mt-12">
+      <!-- <div class="text-center mt-6 lg:mt-12">
         <nuxt-link to="/sponsors" class="btn-sm lg:btn bg-blue hover:bg-blue-dark">
           See All Sponsors
         </nuxt-link>
-      </div>
+      </div> -->
     </section>
+    <cta-section
+      button-link="/sponsors"
+      text="Interested in Sponsorship?"
+      button-text="Learn More"
+    />
     <app-footer />
   </div>
 </template>
@@ -128,6 +134,7 @@ import { mapState, mapGetters, mapActions } from 'vuex';
 import EmailForm from '@/components/EmailForm';
 import AppFooter from '@/components/AppFooter';
 import SvgLogo from '@/components/SvgLogo';
+import CtaSection from '@/components/CtaSection';
 
 export default {
   name: 'Home',
@@ -135,6 +142,7 @@ export default {
     EmailForm,
     AppFooter,
     SvgLogo,
+    CtaSection,
   },
 
   computed: {

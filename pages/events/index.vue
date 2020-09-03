@@ -88,7 +88,7 @@
       </div>
     </section>
 
-    <get-pass-cta :button-link="options.register_link" />
+    <cta-section :button-link="options.register_link" />
 
     <app-footer />
   </div>
@@ -97,7 +97,7 @@
 <script>
 import AppFooter from '@/components/AppFooter';
 import SvgLogo from '@/components/SvgLogo';
-import GetPassCta from '@/components/GetPassCta';
+import CtaSection from '@/components/CtaSection';
 import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
@@ -105,7 +105,7 @@ export default {
   components: {
     AppFooter,
     SvgLogo,
-    GetPassCta,
+    CtaSection,
   },
 
   data() {

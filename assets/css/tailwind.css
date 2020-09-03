@@ -18,6 +18,10 @@ a {
   @apply text-blue;
 }
 
+.bg-dark a {
+  @apply text-blue-light font-bold;
+}
+
 .page-content {
   h2,
   h3,
