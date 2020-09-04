@@ -51,7 +51,7 @@
     <section class="px-6 py-10 lg:py-16">
       <div class="lg:max-w-screen-lg mx-auto">
         <h2 class="text-2xl lg:text-4xl font-mono mb-4">Upcoming Events_</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
             v-for="event in sortedEvents.slice(0, 3)"
             :key="event.id"
@@ -112,7 +112,7 @@
             <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" class="w-64" />
           </a>
         </div>
-        <h2 class="text-xl uppercase lg:text-3xl text-center mb-6 lg:mb-12">Creative Sponsor</h2>
+        <h2 class="text-xl uppercase lg:text-3xl text-center mb-2 lg:mb-8">Creative Sponsor</h2>
         <div
           class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 mx-auto p-4"
         >
