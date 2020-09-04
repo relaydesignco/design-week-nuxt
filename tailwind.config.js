@@ -22,7 +22,7 @@ module.exports = {
         },
         teal: '#4dc1b5',
         blue: {
-          default: '#5d9bcc',
+          default: '#5B9ACC',
           dark: '#427ca8',
           light: '#81ABD4',
         },

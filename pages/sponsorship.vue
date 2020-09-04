@@ -51,13 +51,10 @@
         </a>
       </div>
     </section>
-
-    <app-footer />
   </div>
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter';
 import SvgRelay from '@/components/SvgRelay';
 
 import { mapState, mapActions } from 'vuex';
@@ -65,7 +62,6 @@ export default {
   name: 'Sponsorship',
 
   components: {
-    AppFooter,
     SvgRelay,
   },
 

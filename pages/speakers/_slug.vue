@@ -48,15 +48,16 @@
 
           <transition appear enter-active-class="animated fadeInUp delay-8 fast">
             <div v-for="session in publishedSessions" :key="session.event.ID" class="font-bold">
-              <nuxt-link :to="`/events/${session.event.post_name}`"> </nuxt-link>
-              <time class="text-2xl lg:text-3xl font-semibold">
-                {{
-                  $dateFns.format(
-                    new Date(getMatchingEventInfo(session.event.post_name).acf.start),
-                    'M/d h:mmaaaaa'
-                  )
-                }}
-              </time>
+              <nuxt-link :to="`/events/${session.event.post_name}`">
+                <time class="text-2xl lg:text-3xl font-semibold text-blue-light">
+                  {{
+                    $dateFns.format(
+                      new Date(getMatchingEventInfo(session.event.post_name).acf.start),
+                      'M/d h:mmaaaaa'
+                    )
+                  }}
+                </time>
+              </nuxt-link>
               <h4 class="text-xl font-normal leading-tight mb-3">
                 {{ session.event.post_title }}
               </h4>
@@ -73,19 +74,16 @@
         </template>
       </div>
     </div>
-    <app-footer />
   </section>
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter';
 import CloseButton from '@/components/CloseButton';
 import { mapActions, mapState } from 'vuex';
 export default {
   name: 'Speaker',
 
   components: {
-    AppFooter,
     CloseButton,
   },
 

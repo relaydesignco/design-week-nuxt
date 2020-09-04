@@ -8,7 +8,9 @@
       </a>
       <ul class="mb-4 text-base">
         <li class="mb-2">
-          <nuxt-link to="/code-of-conduct" class="text-white">Code of Conduct</nuxt-link>
+          <nuxt-link to="/code-of-conduct" class="text-white hover:text-blue-light"
+            >Code of Conduct</nuxt-link
+          >
         </li>
       </ul>
       <div class="text-xs lg:text-sm flex flex-col justify-between">
@@ -28,7 +30,7 @@
               href="//relaydesign.co"
               target="_blank"
               rel="noopener noreferrer"
-              class="font-mono text-base lg:text-lg"
+              class="font-mono text-base lg:text-lg text-blue-light"
               >relay design co.</a
             >
           </p>

@@ -1,5 +1,5 @@
 <template functional>
-  <nuxt-link :to="props.toRoute" class="btn bg-black">
+  <nuxt-link :to="props.toRoute" class="btn bg-black" aria-label="close">
     <div class="pb-1 w-4 lg:w-6">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.75 28.75" class="w-full">
         <g>

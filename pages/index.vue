@@ -128,14 +128,12 @@
       text="Interested in Sponsorship?"
       button-text="Learn More"
     />
-    <app-footer />
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
 import EmailForm from '@/components/EmailForm';
-import AppFooter from '@/components/AppFooter';
 import SvgLogo from '@/components/SvgLogo';
 import SvgRelay from '@/components/SvgRelay';
 import CtaSection from '@/components/CtaSection';
@@ -144,7 +142,6 @@ export default {
   name: 'Home',
   components: {
     EmailForm,
-    AppFooter,
     SvgLogo,
     SvgRelay,
     CtaSection,

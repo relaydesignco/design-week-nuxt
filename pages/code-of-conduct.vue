@@ -8,19 +8,13 @@
     <section class="px-6 lg:px-0 py-4 mb-10 md:mb-20 lg:max-w-screen-lg mx-auto">
       <div class="max-w-screen-md text-lg page-content" v-html="codeOfConduct.content.rendered" />
     </section>
-    <app-footer />
   </div>
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter.vue';
 import { mapState, mapActions } from 'vuex';
 export default {
   name: 'CodeofConduct',
-
-  components: {
-    AppFooter,
-  },
 
   computed: {
     ...mapState(['pages']),

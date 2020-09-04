@@ -31,20 +31,16 @@
     </section>
 
     <cta-section :button-link="options.register_link" :external="true" />
-
-    <app-footer />
   </div>
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter';
 import CtaSection from '@/components/CtaSection';
 import { mapState, mapActions, mapGetters } from 'vuex';
 export default {
   name: 'Speakers',
 
   components: {
-    AppFooter,
     CtaSection,
   },
 

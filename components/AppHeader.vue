@@ -1,13 +1,5 @@
 <template>
   <header class="bg-offwhite relative site-header">
-    <transition
-      name="slide-down"
-      enter-active-class="animated slideInDown faster"
-      leave-active-class="animated slideOutUp faster"
-    >
-      <app-nav v-if="navIsOpen" @close-nav="SET_NAV_IS_OPEN(false)" />
-    </transition>
-
     <!-- regular page header -->
     <template v-if="!isHomePage">
       <div class="flex justify-between items-center">
@@ -35,6 +27,13 @@
             @close-nav="SET_NAV_IS_OPEN(false)"
           />
         </div>
+        <transition
+          name="slide-down"
+          enter-active-class="animated slideInDown faster"
+          leave-active-class="animated slideOutUp faster"
+        >
+          <app-nav v-if="navIsOpen" @close-nav="SET_NAV_IS_OPEN(false)" />
+        </transition>
       </div>
     </template>
 
@@ -58,6 +57,13 @@
             @close-nav="SET_NAV_IS_OPEN(false)"
           />
         </div>
+        <transition
+          name="slide-down"
+          enter-active-class="animated slideInDown faster"
+          leave-active-class="animated slideOutUp faster"
+        >
+          <app-nav v-if="navIsOpen" @close-nav="SET_NAV_IS_OPEN(false)" />
+        </transition>
         <div class="w-9/12 lg:w-8/12">
           <svg-title />
         </div>

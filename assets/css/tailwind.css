@@ -18,9 +18,9 @@ a {
   @apply text-blue font-bold;
 }
 
-.bg-dark a {
+/* .bg-dark a {
   @apply text-blue-light font-bold;
-}
+} */
 
 .page-content {
   h2,

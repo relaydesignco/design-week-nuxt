@@ -65,19 +65,16 @@
         </div>
       </div>
     </section>
-    <app-footer />
   </div>
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter';
 import CloseButton from '@/components/CloseButton';
 import SvgLogo from '@/components/SvgLogo';
 import { mapActions, mapState } from 'vuex';
 export default {
   name: 'Event',
   components: {
-    AppFooter,
     CloseButton,
     SvgLogo,
   },

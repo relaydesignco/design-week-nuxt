@@ -4,6 +4,9 @@ export default {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'en',
+    },
     title: 'Midwest Design Week',
     meta: [
       { charset: 'utf-8' },

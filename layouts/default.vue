@@ -1,17 +1,21 @@
 <template>
   <div>
     <app-header />
-
-    <nuxt />
+    <main>
+      <nuxt />
+    </main>
+    <app-footer />
   </div>
 </template>
 
 <script>
 import AppHeader from '@/components/AppHeader';
+import AppFooter from '@/components/AppFooter';
 
 export default {
   components: {
     AppHeader,
+    AppFooter,
   },
 };
 </script>

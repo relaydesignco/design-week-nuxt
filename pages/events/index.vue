@@ -87,15 +87,11 @@
         </div>
       </div>
     </section>
-
     <cta-section :button-link="options.register_link" :external="true" />
-
-    <app-footer />
   </div>
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter';
 import SvgLogo from '@/components/SvgLogo';
 import CtaSection from '@/components/CtaSection';
 import { mapActions, mapGetters, mapState } from 'vuex';
@@ -103,7 +99,6 @@ import { mapActions, mapGetters, mapState } from 'vuex';
 export default {
   name: 'Events',
   components: {
-    AppFooter,
     SvgLogo,
     CtaSection,
   },
