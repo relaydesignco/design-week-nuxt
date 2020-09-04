@@ -100,7 +100,7 @@
     <section class="px-6 py-10 lg:py-24">
       <div class="lg:max-w-screen-lg mx-auto">
         <h2 class="text-2xl lg:text-4xl font-mono mb-10 lg:mb-16">Thanks to our Sponsors_</h2>
-        <div class="flex items-center justify-around">
+        <div class="flex items-center justify-around mb-6 lg:mb-16">
           <a
             v-for="sponsor in sponsors"
             :key="sponsor.id"
@@ -110,6 +110,14 @@
             class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 p-4"
           >
             <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" class="w-64" />
+          </a>
+        </div>
+        <h2 class="text-xl uppercase lg:text-3xl text-center mb-6 lg:mb-12">Creative Sponsor</h2>
+        <div
+          class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 mx-auto p-4"
+        >
+          <a href="//relaydesign.co" target=" _blank" rel="noopener noreferrer">
+            <svg-relay />
           </a>
         </div>
       </div>
@@ -129,6 +137,7 @@ import { mapState, mapGetters, mapActions } from 'vuex';
 import EmailForm from '@/components/EmailForm';
 import AppFooter from '@/components/AppFooter';
 import SvgLogo from '@/components/SvgLogo';
+import SvgRelay from '@/components/SvgRelay';
 import CtaSection from '@/components/CtaSection';
 
 export default {
@@ -137,6 +146,7 @@ export default {
     EmailForm,
     AppFooter,
     SvgLogo,
+    SvgRelay,
     CtaSection,
   },
 
