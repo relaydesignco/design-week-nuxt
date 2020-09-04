@@ -6,12 +6,20 @@
           <svg-aiga-full-logo />
         </div>
       </a>
+      <ul class="mb-4 text-base">
+        <li class="mb-2">
+          <nuxt-link to="/code-of-conduct" class="text-white">Code of Conduct</nuxt-link>
+        </li>
+      </ul>
       <div class="text-xs lg:text-sm flex flex-col justify-between">
-        <ul class="mb-4 text-base">
-          <li class="mb-2">
-            <nuxt-link to="/code-of-conduct" class="text-white">Code of Conduct</nuxt-link>
-          </li>
-        </ul>
+        <a
+          href="//facebook.com/MidwestDesignWeek/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-12 block mb-4"
+        >
+          <svg-facebook />
+        </a>
         <div>
           <p>© {{ year }} AIGA Midwest Design Week</p>
           <p>
@@ -32,10 +40,12 @@
 
 <script>
 import SvgAigaFullLogo from '@/components/SvgAigaFullLogo';
+import SvgFacebook from '@/components/SvgFacebook';
 export default {
   name: 'AppFooter',
   components: {
     SvgAigaFullLogo,
+    SvgFacebook,
   },
   data() {
     return {
