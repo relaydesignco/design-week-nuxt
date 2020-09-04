@@ -31,14 +31,14 @@
           </div>
           <div class="lg:w-3/5 lg:pl-8">
             <transition appear enter-active-class="animated fadeIn">
-              <a
+              <!-- <a
                 :href="options.register_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-sm lg:btn bg-blue hover:bg-blue-dark mb-4"
               >
                 Register
-              </a>
+              </a> -->
             </transition>
 
             <transition appear enter-active-class="animated fadeInUp delay-7">

@@ -61,14 +61,14 @@
               <h4 class="text-xl font-normal leading-tight mb-3">
                 {{ session.event.post_title }}
               </h4>
-              <a
+              <!-- <a
                 :href="options.register_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-sm lg:btn bg-blue hover:bg-blue-dark mb-8"
               >
                 Register
-              </a>
+              </a> -->
             </div>
           </transition>
         </template>

@@ -29,14 +29,14 @@
           <h4 class="text-xl font-normal pt-4 pb-5 leading-tight">
             {{ keynote.title.rendered }}
           </h4>
-          <a
+          <!-- <a
             :href="options.register_link"
             target="_blank"
             rel="noopener noreferrer"
             class="btn bg-blue hover:bg-blue-dark mr-2"
           >
             Register
-          </a>
+          </a> -->
           <nuxt-link
             :to="`/events/${keynote.slug}`"
             class="btn bg-green hover:bg-green-dark mb-2 mr-2"
@@ -72,9 +72,9 @@
             </time>
             <h3 class="font-mono text-2xl">{{ event.acf.speaker }}</h3>
             <h4 class="font-mono font-normal text-lg leading-tight">
-              <a :href="`${options.register_link}`" target=" _blank" rel="noopener noreferrer">{{
+              <!-- <a :href="`${options.register_link}`" target=" _blank" rel="noopener noreferrer">{{
                 event.title.rendered
-              }}</a>
+              }}</a> -->
             </h4>
           </div>
         </div>

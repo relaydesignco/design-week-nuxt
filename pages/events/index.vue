@@ -73,34 +73,34 @@
                 >
                   Event Info
                 </nuxt-link>
-                <a
+                <!-- <a
                   :href="options.register_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn-sm lg:btn bg-blue hover:bg-blue-dark"
                 >
                   Register
-                </a>
+                </a> -->
               </div>
             </div>
           </transition>
         </div>
       </div>
     </section>
-    <cta-section :button-link="options.register_link" :external="true" />
+    <!-- <cta-section :button-link="options.register_link" :external="true" /> -->
   </div>
 </template>
 
 <script>
 import SvgLogo from '@/components/SvgLogo';
-import CtaSection from '@/components/CtaSection';
+// import CtaSection from '@/components/CtaSection';
 import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
   name: 'Events',
   components: {
     SvgLogo,
-    CtaSection,
+    // CtaSection,
   },
 
   data() {

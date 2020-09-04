@@ -103,7 +103,7 @@
           </div>
         </div>
 
-        <div ref="ticketsWrap" class="w-full text-center mt-4">
+        <!-- <div ref="ticketsWrap" class="w-full text-center mt-4">
           <a
             id="tickets"
             ref="tickets"
@@ -112,6 +112,9 @@
           >
             Tickets
           </a>
+        </div> -->
+        <div ref="ticketsWrap" class="w-full text-center mt-4">
+          <h2 ref="tickets" class="text-4xl">Tickets go on sale the week of September 7th!</h2>
         </div>
       </div>
     </template>

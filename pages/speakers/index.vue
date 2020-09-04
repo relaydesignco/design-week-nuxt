@@ -30,18 +30,18 @@
       </div>
     </section>
 
-    <cta-section :button-link="options.register_link" :external="true" />
+    <!-- <cta-section :button-link="options.register_link" :external="true" /> -->
   </div>
 </template>
 
 <script>
-import CtaSection from '@/components/CtaSection';
+// import CtaSection from '@/components/CtaSection';
 import { mapState, mapActions, mapGetters } from 'vuex';
 export default {
   name: 'Speakers',
 
   components: {
-    CtaSection,
+    // CtaSection,
   },
 
   computed: {
