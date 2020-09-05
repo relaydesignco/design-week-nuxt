@@ -40,6 +40,7 @@ module.exports = {
       },
       inset: {
         '1/2': '50%',
+        '1/8': '12.5%',
       },
       gridTemplateColumns: {
         '1fr3': '1fr 1fr 1fr',

@@ -64,7 +64,7 @@
     <ul
       id="cityList"
       ref="cityList"
-      class="flex justify-center absolute bottom-0 mb-4 lg:mb-32 xl:mb-48 text-xs lg:text-3xl font-mono font-bold uppercase tracking-wide lg:tracking-wider w-full text-center"
+      class="flex justify-center absolute mb-4 bottom-0 sm:bottom-1/8 text-xs md:text-base lg:text-3xl font-mono font-bold uppercase tracking-wide lg:tracking-wider w-full text-center"
     >
       <li id="cin" ref="cin" class="city-intro text-blue">Cincinnati_</li>
       <li id="ind" ref="ind" class="city-intro text-green ml-2">Indianapolis_</li>
