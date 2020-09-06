@@ -125,8 +125,8 @@
 
     <cta-section
       button-link="/sponsorship"
-      text="Interested in Sponsorship?"
-      button-text="Learn More"
+      text="Are you intersted in becoming a Sponsor?"
+      button-text="Visit Sponsorship Page"
     />
   </div>
 </template>
