@@ -45,7 +45,10 @@
       </div>
 
       <div
-        :class="['px-6 pb-6 pt-10 lg:px-16 lg:pb-16 lg:pt-24 min-h-16x9', { invisible: isIntro }]"
+        :class="[
+          'px-6 pb-6 pt-10 lg:px-16 lg:pb-12 xxl:pb-16 lg:pt-24 xl:min-h-screen flex flex-col justify-between',
+          { invisible: isIntro },
+        ]"
       >
         <div
           id="symbolNavWrap"
@@ -64,27 +67,29 @@
         >
           <app-nav v-if="navIsOpen" @close-nav="SET_NAV_IS_OPEN(false)" />
         </transition>
-        <div class="w-9/12 lg:w-8/12">
-          <svg-title />
-        </div>
-        <div class="flex justify-between items-center flex-wrap mt-3 md:mt-8 mb-4 lg:mb-24">
-          <h1
-            id="subtitle"
-            ref="subtitle"
-            class="font-mono font-normal text-xs md:text-3xl xl:text-4xl uppercase leading-tight tracking-widest mb-3 md:mb-0"
-          >
-            A Virtual Design Conference_
-          </h1>
-          <time
-            id="subdate"
-            ref="subdate"
-            class="text-2xl md:text-3xl xl:text-4xl font-mono font-bold tracking-wide block"
-          >
-            09/21-25/2020
-          </time>
+        <div>
+          <div class="w-9/12 lg:w-8/12">
+            <svg-title />
+          </div>
+          <div class="flex justify-between items-center flex-wrap mt-3 md:mt-8 mb-6 xl:mb-0">
+            <h1
+              id="subtitle"
+              ref="subtitle"
+              class="font-mono font-normal text-xs md:text-3xl xxl:text-4xl uppercase leading-tight tracking-widest mb-3 md:mb-0"
+            >
+              A Virtual Design Conference_
+            </h1>
+            <time
+              id="subdate"
+              ref="subdate"
+              class="text-2xl md:text-3xl xxl:text-4xl font-mono font-bold tracking-wide block"
+            >
+              09/21-25/2020
+            </time>
+          </div>
         </div>
 
-        <div class="flex lg:max-w-screen-md items-center mx-auto md:mb-12 lg:mb-20">
+        <div class="flex w-full lg:max-w-screen-md items-center mx-auto md:mb-12 lg:mb-0">
           <ul
             class="uppercase text-xxs md:text-sm lg:text-base tracking-wider font-bold text-right font-mono"
           >
@@ -103,7 +108,7 @@
           </div>
         </div>
 
-        <!-- <div ref="ticketsWrap" class="w-full text-center mt-4">
+        <!-- <div ref="ticketsWrap" class="w-full text-center mt-4 lg:mt-6">
           <a
             id="tickets"
             ref="tickets"
@@ -113,7 +118,7 @@
             Tickets
           </a>
         </div> -->
-        <div ref="ticketsWrap" class="w-full text-center mt-4">
+        <div ref="ticketsWrap" class="w-full text-center mt-4 lg:mt-6">
           <h2 ref="tickets" class="text-xl lg:text-4xl leading-relaxed">
             Tickets go on sale the week of September 7th!
           </h2>
