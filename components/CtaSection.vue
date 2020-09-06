@@ -1,6 +1,6 @@
 <template functional>
   <section class="bg-offwhite-dark px-6 py-4 lg:py-10">
-    <p class="text-center lg:text-2xl font-mono">
+    <p class="text-center lg:text-2xl font-mono leading-loose">
       {{ props.text }}
       <a
         v-if="props.external"
