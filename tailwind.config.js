@@ -32,8 +32,11 @@ module.exports = {
           dark: '#f1f1e6',
         },
       },
+      screens: {
+        xxl: '1560px',
+        // => @media (min-width: 1560px) { ... }
+      },
       spacing: {
-        // '30': '7.5rem',
         80: '20rem',
         96: '24rem',
         128: '32rem',
