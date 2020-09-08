@@ -25,7 +25,9 @@
     </section>
     <section class="px-6 pt-4 pb-8 lg:pt-10 lg:pb-20">
       <h2 class="text-xl uppercase lg:text-3xl text-center mb-6 lg:mb-16">Our Current Sponsors</h2>
-      <div class="lg:max-w-screen-lg mx-auto flex items-center justify-around mb-6 lg:mb-16">
+      <div
+        class="lg:max-w-screen-lg mx-auto flex flex-wrap items-center justify-around mb-6 lg:mb-16"
+      >
         <div
           v-for="sponsor in sponsors"
           :key="sponsor.id"

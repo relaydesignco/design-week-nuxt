@@ -100,7 +100,7 @@
     <section class="px-6 py-10 lg:py-24">
       <div class="lg:max-w-screen-lg mx-auto">
         <h2 class="text-2xl lg:text-4xl font-mono mb-10 lg:mb-16">Thanks to our Sponsors_</h2>
-        <div class="flex items-center justify-around mb-6 lg:mb-16">
+        <div class="flex flex-wrap items-center justify-around mb-6 lg:mb-16">
           <a
             v-for="sponsor in sponsors"
             :key="sponsor.id"
