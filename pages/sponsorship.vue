@@ -20,7 +20,7 @@
         <br />
         <br />
         If interested or if you have questions, contact
-        <a href="mailto:nico1a@aigacincinnati.org">Nicola Cimino.</a>
+        <a href="mailto:nicola@aigacincinnati.org">Nicola Cimino.</a>
       </p>
     </section>
     <section class="px-6 pt-4 pb-8 lg:pt-10 lg:pb-20">
