@@ -27,7 +27,7 @@ export default {
   created() {
     this.getSponsors();
     this.getOptions();
-    console.log(this.codeOfConduct);
+    // console.log(this.codeOfConduct);
   },
 
   methods: {

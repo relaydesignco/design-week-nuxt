@@ -46,7 +46,7 @@
 
       <div
         :class="[
-          'px-6 pb-6 pt-10 lg:px-16 lg:pb-12 xxl:pb-16 lg:pt-24 xl:min-h-screen flex flex-col justify-between',
+          'px-6 pb-6 pt-10 lg:px-16 lg:pb-8 xxl:pb-16 lg:pt-24 xl:min-h-screen flex flex-col justify-between',
           { invisible: isIntro },
         ]"
       >
@@ -118,6 +118,22 @@
             Tickets
           </a>
         </div>
+        <p class="text-xs lg:text-sm text-center mt-4 xl:mt-2">
+          Need
+          <a
+            href="//docs.google.com/forms/d/e/1FAIpQLScuJBlZFvo4mNhyAe_pXjYo4-NAgru5EFNQfIKJv6OqMHbMXw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            >financial aid</a
+          >
+          assistance? Are you a
+          <a
+            href="//www.eventbrite.com/e/midwest-design-week-student-full-access-weekly-pass-tickets-120093489861"
+            target="_blank"
+            rel="noopener noreferrer"
+            >student</a
+          >?
+        </p>
       </div>
     </template>
   </header>
