@@ -118,7 +118,7 @@
             Tickets
           </a>
         </div>
-        <p class="text-xs lg:text-sm text-center mt-4 xl:mt-2">
+        <p id="student-aid" ref="studentAid" class="text-xs lg:text-sm text-center mt-4 xl:mt-2">
           Need
           <a
             href="//docs.google.com/forms/d/e/1FAIpQLScuJBlZFvo4mNhyAe_pXjYo4-NAgru5EFNQfIKJv6OqMHbMXw/viewform"
@@ -210,6 +210,7 @@ export default {
         { autoAlpha: 0, rotateX: 90, duration: 1, ease: 'back.out(4)' },
         '-=0.2'
       );
+      tl.from(this.$refs.studentAid, { autoAlpha: 0, x: '-15%', ease: 'back.out(1.5)' }, '-=0.4');
       tl.addLabel('button');
       tl.from(
         '#midwest .square',
