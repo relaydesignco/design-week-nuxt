@@ -152,10 +152,6 @@ export default {
 
     ...mapGetters(['sortedEvents']),
 
-    // premier() {
-    //   return this.sponsors.filter((sponsor) => sponsor.acf.level === 'Premier');
-    // },
-
     homePage() {
       return this.pages.find((page) => page.slug === 'home');
     },
@@ -170,6 +166,7 @@ export default {
     this.getSponsors();
     this.getOptions();
     this.getPages();
+    // console.log(this.sortedEvents);
   },
 
   methods: {
