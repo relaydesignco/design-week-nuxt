@@ -6,13 +6,57 @@
           <svg-aiga-full-logo />
         </div>
       </a>
-      <ul class="mb-4 text-base">
-        <li class="mb-2">
-          <nuxt-link to="/code-of-conduct" class="text-white hover:text-blue-light"
-            >Code of Conduct</nuxt-link
-          >
-        </li>
-      </ul>
+      <div>
+        <ul class="mb-4 lg:mb-8 text-base">
+          <li class="mb-2">
+            <nuxt-link
+              to="/code-of-conduct"
+              class="text-white hover:text-blue-light font-mono text-base lg:text-lg"
+            >
+              Code of Conduct
+            </nuxt-link>
+          </li>
+        </ul>
+        <h2 class="text-lg mb-2">Support Contacts</h2>
+        <ul class="mb-6 text-base lg:mb-0">
+          <li class="mb-2">
+            Cincinnati -
+            <a
+              href="mailto:communications@aigacincinnati.org"
+              class="text-white hover:text-blue-light font-mono font-normal"
+            >
+              communications@aigacincinnati.org</a
+            >
+          </li>
+          <li class="mb-2">
+            Indianapolis -
+            <a
+              href="mailto:president@indianapolis.aiga.org"
+              class="text-white hover:text-blue-light font-mono font-normal"
+            >
+              president@indianapolis.aiga.org</a
+            >
+          </li>
+          <li class="mb-2">
+            Louisville -
+            <a
+              href="mailto:contact@aigalou.org"
+              class="text-white hover:text-blue-light font-mono font-normal"
+            >
+              contact@aigalou.org
+            </a>
+          </li>
+          <li class="mb-2">
+            Toledo -
+            <a
+              href="mailto:president@toledo.aiga.org"
+              class="text-white hover:text-blue-light font-mono font-normal"
+            >
+              president@toledo.aiga.org
+            </a>
+          </li>
+        </ul>
+      </div>
       <div class="text-xs lg:text-sm flex flex-col justify-between">
         <a
           href="//facebook.com/MidwestDesignWeek/"
