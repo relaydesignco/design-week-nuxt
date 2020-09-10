@@ -53,7 +53,7 @@
         <h2 class="text-2xl lg:text-4xl font-mono mb-4">Upcoming Events_</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
-            v-for="event in sortedEvents.slice(0, 3)"
+            v-for="event in upcomingEvents.slice(0, 3)"
             :key="event.id"
             class="transform hover:scale-105 transition-transform duration-300 mx-auto"
           >
@@ -147,6 +147,12 @@ export default {
     CtaSection,
   },
 
+  data() {
+    return {
+      upcomingEvents: [],
+    };
+  },
+
   computed: {
     ...mapState(['events', 'sponsors', 'options', 'pages']),
 
@@ -166,7 +172,11 @@ export default {
     this.getSponsors();
     this.getOptions();
     this.getPages();
-    // console.log(this.sortedEvents);
+
+    this.upcomingEvents = this.sortedEvents.filter((event) =>
+      this.$dateFns.isAfter(new Date(event.acf.end), new Date())
+    );
+    // console.log(this.upcomingEvents);
   },
 
   methods: {
