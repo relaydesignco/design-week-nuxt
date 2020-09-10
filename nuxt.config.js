@@ -88,6 +88,9 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: ['@nuxtjs/tailwindcss', 'nuxt-webfontloader', '@nuxtjs/date-fns'],
+  dateFns: {
+    methods: ['format', 'getDay', 'isAfter'],
+  },
   /*
    ** Build configuration
    */
