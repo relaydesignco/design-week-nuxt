@@ -86,14 +86,20 @@ input[type='email'].field:focus:invalid {
 @responsive {
   .btn {
     @apply pt-3 pb-2 px-4 tracking-wide leading-none text-white text-lg uppercase font-mono font-bold inline-block transition-colors duration-300;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
 
   .btn-sm {
     @apply pt-2 pb-1 px-2 tracking-wide leading-none text-white text-sm uppercase font-mono font-bold inline-block transition-colors duration-300;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
 }
 
 @tailwind utilities;
+
+/* .text-shadow {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+} */
 
 .delay-1 {
   animation-delay: 0.1s;
