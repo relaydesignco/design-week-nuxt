@@ -1,4 +1,4 @@
-# Headless Wordpress on the JAMstack
+# Midwest Design Week 2020
 
 ## Build Setup
 
