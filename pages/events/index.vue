@@ -12,7 +12,7 @@
           <button
             :class="[
               [currentSelectedDayIndex === -1 ? 'bg-green' : 'bg-offwhite-dark'],
-              'ml-4 btn-sm lg:btn text-black lg:text-black transition-all duration-300 hover:shadow-md',
+              'ml-4 btn-sm lg:btn text-black lg:text-black transition-all duration-300 hover:shadow-md show-all',
             ]"
             @click="selectDay(-1)"
           >
@@ -198,5 +198,8 @@ export default {
       line-height: 0.9375em;
     }
   }
+}
+.show-all {
+  text-shadow: none !important;
 }
 </style>
