@@ -113,6 +113,8 @@
             id="tickets"
             ref="tickets"
             :href="options.register_link"
+            target="_blank"
+            rel="noopener noreferrer"
             class="btn-sm lg:btn bg-blue hover:bg-blue-dark lg:text-3xl lg:px-6"
           >
             Tickets
