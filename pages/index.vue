@@ -102,7 +102,7 @@
         <h2 class="text-2xl lg:text-4xl font-mono mb-10 lg:mb-16">Thanks to our Sponsors_</h2>
         <div class="flex flex-wrap items-center justify-around mb-6 lg:mb-16">
           <a
-            v-for="sponsor in sponsors"
+            v-for="sponsor in sortedSponsors"
             :key="sponsor.id"
             :href="`${sponsor.acf.url}`"
             target=" _blank"
@@ -110,14 +110,6 @@
             class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 p-4"
           >
             <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" class="w-64" />
-          </a>
-        </div>
-        <h2 class="text-xl uppercase lg:text-3xl text-center mb-2 lg:mb-8">Creative Sponsor</h2>
-        <div
-          class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 mx-auto p-4"
-        >
-          <a href="//relaydesign.co" target=" _blank" rel="noopener noreferrer">
-            <svg-relay />
           </a>
         </div>
       </div>
@@ -135,7 +127,6 @@
 import { mapState, mapGetters, mapActions } from 'vuex';
 import EmailForm from '@/components/EmailForm';
 import SvgLogo from '@/components/SvgLogo';
-import SvgRelay from '@/components/SvgRelay';
 import CtaSection from '@/components/CtaSection';
 
 export default {
@@ -143,7 +134,6 @@ export default {
   components: {
     EmailForm,
     SvgLogo,
-    SvgRelay,
     CtaSection,
   },
 
@@ -156,7 +146,7 @@ export default {
   computed: {
     ...mapState(['events', 'sponsors', 'options', 'pages']),
 
-    ...mapGetters(['sortedEvents']),
+    ...mapGetters(['sortedEvents', 'sortedSponsors']),
 
     homePage() {
       return this.pages.find((page) => page.slug === 'home');

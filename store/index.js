@@ -25,7 +25,7 @@ export const getters = {
   },
 
   sortedSponsors: (state) => {
-    return state.events.slice().sort((a, b) => new Date(a.acf.start) - new Date(b.acf.start));
+    return state.sponsors.slice().sort((a, b) => a.title.rendered.localeCompare(b.title.rendered));
   },
 };
 
