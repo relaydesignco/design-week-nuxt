@@ -26,7 +26,7 @@
         </div>
       </div>
     </section>
-    <section class="px-6 pt-4 pb-8 lg:pt-10 lg:pb-12">
+    <section class="px-6 pt-4 pb-12 lg:pt-10 lg:pb-20">
       <h2 class="text-xl uppercase lg:text-3xl text-center mb-6 lg:mb-16">Sponsorship Info</h2>
       <div
         class="lg:max-w-screen-lg mx-auto text-base md:text-lg page-content mb-12 md:mb-16"
