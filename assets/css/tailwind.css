@@ -95,6 +95,22 @@ input[type='email'].field:focus:invalid {
   }
 }
 
+.btn-blue {
+  @apply bg-blue;
+}
+
+.btn-blue:hover {
+  @apply bg-blue-dark;
+}
+
+.btn-green {
+  @apply bg-green;
+}
+
+.btn-green:hover {
+  @apply bg-green-dark;
+}
+
 @tailwind utilities;
 
 /* .text-shadow {

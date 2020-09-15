@@ -65,7 +65,7 @@
                 :href="options.register_link"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn-sm lg:btn bg-blue hover:bg-blue-dark mb-8"
+                class="btn-sm lg:btn btn-blue mb-8"
               >
                 Register
               </a>

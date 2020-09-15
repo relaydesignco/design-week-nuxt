@@ -33,14 +33,11 @@
             :href="options.register_link"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn bg-blue hover:bg-blue-dark mr-2"
+            class="btn btn-blue mr-2"
           >
             Register
           </a>
-          <nuxt-link
-            :to="`/events/${keynote.slug}`"
-            class="btn bg-green hover:bg-green-dark mb-2 mr-2"
-          >
+          <nuxt-link :to="`/events/${keynote.slug}`" class="btn btn-green mb-2 mr-2">
             Event Info
           </nuxt-link>
         </div>
@@ -79,9 +76,7 @@
           </div>
         </div>
         <div class="w-full text-center mt-12">
-          <nuxt-link to="/events" class="btn bg-blue hover:bg-blue-dark"
-            >See Full Schedule
-          </nuxt-link>
+          <nuxt-link to="/events" class="btn btn-blue">See Full Schedule </nuxt-link>
         </div>
       </div>
     </section>

@@ -7,15 +7,11 @@
         :href="props.buttonLink"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn-sm lg:btn bg-blue hover:bg-blue-dark ml-2"
+        class="btn-sm lg:btn btn-blue ml-2"
       >
         {{ props.buttonText }}
       </a>
-      <nuxt-link
-        v-else
-        :to="props.buttonLink"
-        class="btn-sm lg:btn bg-blue hover:bg-blue-dark ml-2"
-      >
+      <nuxt-link v-else :to="props.buttonLink" class="btn-sm lg:btn btn-blue ml-2">
         {{ props.buttonText }}
       </nuxt-link>
     </p>

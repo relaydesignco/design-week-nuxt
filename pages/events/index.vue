@@ -47,7 +47,7 @@
           <transition appear enter-active-class="animated fadeInLeft" mode="out-in">
             <div
               :key="index"
-              :class="`flex lg:max-w-screen-lg pb-8 lg:pb-16`"
+              class="flex lg:max-w-screen-lg pb-8 lg:pb-16"
               :style="`animationDelay: ${index}00ms`"
             >
               <div class="w-2/5 lg:w-1/4">
@@ -72,17 +72,14 @@
                 <h3 class="text-sm lg:text-2xl font-bold mb-3 lg:mb-8">
                   {{ event.acf.speaker }}
                 </h3>
-                <nuxt-link
-                  :to="`/events/${event.slug}`"
-                  class="btn-sm lg:btn bg-green hover:bg-green-dark mb-2 mr-2"
-                >
+                <nuxt-link :to="`/events/${event.slug}`" class="btn-sm lg:btn btn-green mb-2 mr-2">
                   Event Info
                 </nuxt-link>
                 <a
                   :href="options.register_link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="btn-sm lg:btn bg-blue hover:bg-blue-dark"
+                  class="btn-sm lg:btn btn-blue"
                 >
                   Register
                 </a>
