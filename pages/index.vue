@@ -95,9 +95,25 @@
     <section class="px-6 py-10 lg:py-24">
       <div class="lg:max-w-screen-lg mx-auto">
         <h2 class="text-2xl lg:text-4xl font-mono mb-10 lg:mb-16">Thanks to our Sponsors_</h2>
+        <div class="flex flex-wrap items-center justify-around mb-4 lg:mb-8">
+          <a
+            v-for="sponsor in premier"
+            :key="sponsor.id"
+            :href="`${sponsor.acf.url}`"
+            target=" _blank"
+            rel="noopener noreferrer"
+            class="transform hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-4"
+          >
+            <img
+              :src="sponsor.acf.image.sizes.large"
+              :alt="sponsor.acf.image.alt"
+              class="mx-auto"
+            />
+          </a>
+        </div>
         <div class="flex flex-wrap items-center justify-around mb-6 lg:mb-16">
           <a
-            v-for="sponsor in sortedSponsors"
+            v-for="sponsor in notPremier"
             :key="sponsor.id"
             :href="`${sponsor.acf.url}`"
             target=" _blank"
@@ -149,6 +165,14 @@ export default {
 
     keynote() {
       return this.events.find((event) => event.acf.is_keynote === true);
+    },
+
+    premier() {
+      return this.sortedSponsors.filter((sponsor) => sponsor.acf.level === 'Premier');
+    },
+
+    notPremier() {
+      return this.sortedSponsors.filter((sponsor) => sponsor.acf.level !== 'Premier');
     },
   },
 
