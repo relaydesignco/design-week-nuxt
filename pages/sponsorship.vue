@@ -5,12 +5,35 @@
     >
       Sponsors_
     </h1>
-    <section class="px-6 pt-4 pb-8 lg:pt-10 lg:pb-12">
-      <div
-        class="lg:max-w-screen-lg mx-auto flex flex-wrap items-center justify-around mb-6 lg:mb-16"
-      >
+    <section class="px-6 pt-6 pb-10 lg:pt-10 lg:pb-16">
+      <h2 class="text-xl lg:text-2xl text-center mb-2">Premier</h2>
+      <div class="lg:max-w-screen-lg mx-auto flex flex-wrap items-center justify-around">
         <div
-          v-for="sponsor in sortedSponsors"
+          v-for="sponsor in premier"
+          :key="sponsor.id"
+          class="transform hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-4"
+        >
+          <a
+            v-if="sponsor.acf.url"
+            :href="sponsor.acf.url"
+            target=" _blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              :src="sponsor.acf.image.sizes.large"
+              :alt="sponsor.acf.image.alt"
+              class="mx-auto"
+            />
+          </a>
+          <img v-else :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
+        </div>
+      </div>
+    </section>
+    <section class="px-6 pt-6 pb-10 lg:pt-10 lg:pb-16">
+      <h2 class="text-xl lg:text-2xl text-center mb-2">Event</h2>
+      <div class="lg:max-w-screen-lg mx-auto flex flex-wrap items-center justify-around">
+        <div
+          v-for="sponsor in event"
           :key="sponsor.id"
           class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 p-4"
         >
@@ -26,8 +49,68 @@
         </div>
       </div>
     </section>
-    <section class="px-6 pt-4 pb-12 lg:pt-10 lg:pb-20">
-      <h2 class="text-xl uppercase lg:text-3xl text-center mb-6 lg:mb-16">Sponsorship Info</h2>
+    <section class="px-6 pt-6 pb-10 lg:pt-10 lg:pb-16">
+      <h2 class="text-xl lg:text-2xl text-center mb-2">Supporting</h2>
+      <div class="lg:max-w-screen-lg mx-auto flex flex-wrap items-center justify-around">
+        <div
+          v-for="sponsor in supporting"
+          :key="sponsor.id"
+          class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 p-4"
+        >
+          <a
+            v-if="sponsor.acf.url"
+            :href="sponsor.acf.url"
+            target=" _blank"
+            rel="noopener noreferrer"
+          >
+            <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
+          </a>
+          <img v-else :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
+        </div>
+      </div>
+    </section>
+    <section class="px-6 pt-6 pb-10 lg:pt-10 lg:pb-16">
+      <h2 class="text-xl lg:text-2xl text-center mb-2">In-Kind</h2>
+      <div class="lg:max-w-screen-lg mx-auto flex flex-wrap items-center justify-around">
+        <div
+          v-for="sponsor in inKind"
+          :key="sponsor.id"
+          class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 p-4"
+        >
+          <a
+            v-if="sponsor.acf.url"
+            :href="sponsor.acf.url"
+            target=" _blank"
+            rel="noopener noreferrer"
+          >
+            <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
+          </a>
+          <img v-else :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
+        </div>
+      </div>
+    </section>
+    <section class="px-6 pt-6 pb-10 lg:pt-10 lg:pb-16">
+      <h2 class="text-xl lg:text-2xl text-center mb-2">Creative</h2>
+      <div class="lg:max-w-screen-lg mx-auto flex flex-wrap items-center justify-around">
+        <div
+          v-for="sponsor in creative"
+          :key="sponsor.id"
+          class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 p-4"
+        >
+          <a
+            v-if="sponsor.acf.url"
+            :href="sponsor.acf.url"
+            target=" _blank"
+            rel="noopener noreferrer"
+          >
+            <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
+          </a>
+          <img v-else :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
+        </div>
+      </div>
+    </section>
+    <section class="px-6 pt-6 pb-12 lg:pt-10 lg:pb-20 bg-offwhite">
+      <h2 class="text-xl uppercase lg:text-3xl text-center mb-4 lg:mb-8">Sponsorship Info</h2>
       <div
         class="lg:max-w-screen-lg mx-auto text-base md:text-lg page-content mb-12 md:mb-16"
         v-html="sponsorship.content.rendered"
@@ -62,21 +145,25 @@ export default {
       return this.pages.find((page) => page.slug === 'sponsorship');
     },
 
-    // premier() {
-    //   return this.sponsors.filter((sponsor) => sponsor.acf.level === 'Premier');
-    // },
+    premier() {
+      return this.sortedSponsors.filter((sponsor) => sponsor.acf.level === 'Premier');
+    },
 
-    // event() {
-    //   return this.sponsors.filter((sponsor) => sponsor.acf.level === 'Event');
-    // },
+    event() {
+      return this.sortedSponsors.filter((sponsor) => sponsor.acf.level === 'Event');
+    },
 
-    // supporting() {
-    //   return this.sponsors.filter((sponsor) => sponsor.acf.level === 'Supporting');
-    // },
+    supporting() {
+      return this.sortedSponsors.filter((sponsor) => sponsor.acf.level === 'Supporting');
+    },
 
-    // inKind() {
-    //   return this.sponsors.filter((sponsor) => sponsor.acf.level === 'In-Kind');
-    // },
+    inKind() {
+      return this.sortedSponsors.filter((sponsor) => sponsor.acf.level === 'In-Kind');
+    },
+
+    creative() {
+      return this.sortedSponsors.filter((sponsor) => sponsor.acf.level === 'Creative');
+    },
   },
 
   created() {
