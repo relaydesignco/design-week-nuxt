@@ -7,11 +7,11 @@
     </h1>
     <section class="px-6 py-4 lg:py-10">
       <div class="lg:max-w-screen-lg mx-auto">
-        <img
+        <!-- <img
           src="~/assets/images/2020-MWDW-Week-Events.jpg"
           alt="Midwest Design Week Calendar"
           class="mb-4 lg:mb-8"
-        />
+        /> -->
         <div class="flex items-center mb-2 lg:mb-4">
           <h2 class="lg:text-3xl font-mono font-normal">September 2020</h2>
           <button
