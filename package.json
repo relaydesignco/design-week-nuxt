@@ -11,8 +11,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "axios": "^0.19.2",
-    "gsap": "^3.5.0",
+    "axios": "^0.21.1",
+    "gsap": "^3.6.0",
     "nuxt": "^2.13.3"
   },
   "devDependencies": {
