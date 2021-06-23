@@ -1,8 +1,8 @@
 export default {
-  mode: 'universal',
-  /*
-   ** Headers of the page
-   */
+  // Target: https://go.nuxtjs.dev/config-target
+  target: 'static',
+
+  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     htmlAttrs: {
       lang: 'en',
@@ -57,43 +57,45 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  env: {
-    // baseUrl: process.env.BASE_URL || 'http://midwestdesignweekapi.local',
-    baseUrl: process.env.BASE_URL || 'https://mwdwaiga.wpengine.com',
-  },
-  /*
-   ** Customize the progress-bar color
-   */
+  // Customize the progress-bar color
   loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://midwestdesignweek21.local',
+    // baseUrl: process.env.BASE_URL || 'https://mwdwaiga.wpengine.com',
+  },
+
+  // Customize the progress-bar color
+  loading: { color: '#fff' },
+
+  // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~assets/css/animate.css'], // stylesheet being loaded by @nuxt/tailwindcss
 
   webfontloader: {
-    // typekit: {
-    //   id: 'xxxxxx', // for Adobe Typekit fonts
-    // },
     google: {
       families: ['Open Sans:400,600,700', 'Lekton:400,700'],
     },
   },
 
-  /*
-   ** Plugins to load before mounting the App
-   */
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['~/plugins/data.server.js'],
+
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
+
   generate: {},
-  /*
-   ** Nuxt.js dev-modules
-   */
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [],
+
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ['@nuxtjs/tailwindcss', 'nuxt-webfontloader', '@nuxtjs/date-fns'],
+
   dateFns: {
     methods: ['format', 'getDay', 'isAfter'],
   },
-  /*
-   ** Build configuration
-   */
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
       // Add plugin names as key and arguments as value

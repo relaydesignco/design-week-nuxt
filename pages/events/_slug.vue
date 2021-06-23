@@ -69,16 +69,9 @@
 </template>
 
 <script>
-import CloseButton from '@/components/CloseButton';
-import SvgLogo from '@/components/SvgLogo';
 import { mapActions, mapState } from 'vuex';
 export default {
   name: 'Event',
-  components: {
-    CloseButton,
-    SvgLogo,
-  },
-
   data() {
     return {
       slug: this.$route.params.slug,

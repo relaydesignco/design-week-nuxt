@@ -78,14 +78,9 @@
 </template>
 
 <script>
-import CloseButton from '@/components/CloseButton';
 import { mapActions, mapState } from 'vuex';
 export default {
   name: 'Speaker',
-
-  components: {
-    CloseButton,
-  },
 
   data() {
     return {

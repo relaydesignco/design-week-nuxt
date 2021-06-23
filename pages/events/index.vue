@@ -1,7 +1,17 @@
 <template>
   <div>
     <h1
-      class="font-mono text-2xl lg:text-4xl px-6 pb-4 lg:pb-8 pt-12 lg:pt-32 lg:px-0 lg:max-w-screen-lg mx-auto"
+      class="
+        font-mono
+        text-2xl
+        lg:text-4xl
+        px-6
+        pb-4
+        lg:pb-8
+        pt-12
+        lg:pt-32 lg:px-0 lg:max-w-screen-lg
+        mx-auto
+      "
     >
       Events Schedule_
     </h1>
@@ -94,17 +104,10 @@
 </template>
 
 <script>
-import SvgLogo from '@/components/SvgLogo';
-import CtaSection from '@/components/CtaSection';
 import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
   name: 'Events',
-  components: {
-    SvgLogo,
-    CtaSection,
-  },
-
   data() {
     return {
       days: [

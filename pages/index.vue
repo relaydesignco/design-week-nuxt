@@ -12,7 +12,7 @@
     <section class="bg-offwhite p-6 lg:py-16">
       <div class="md:flex justify-center items-center lg:max-w-screen-md mx-auto">
         <img
-          v-if="keynote.acf.image"
+          v-if="keynote.acf"
           :src="keynote.acf.image.sizes.large"
           :alt="keynote.acf.image.alt"
           class="w-96 h-96 object-cover md:mr-10"
@@ -136,18 +136,9 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
-import EmailForm from '@/components/EmailForm';
-import SvgLogo from '@/components/SvgLogo';
-import CtaSection from '@/components/CtaSection';
 
 export default {
   name: 'Home',
-  components: {
-    EmailForm,
-    SvgLogo,
-    CtaSection,
-  },
-
   data() {
     return {
       upcomingEvents: [],

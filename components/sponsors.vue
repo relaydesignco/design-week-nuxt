@@ -91,15 +91,9 @@
 </template>
 
 <script>
-import AppFooter from '@/components/AppFooter.vue';
 import { mapState, mapActions } from 'vuex';
 export default {
   name: 'Sponsors',
-
-  components: {
-    AppFooter,
-  },
-
   computed: {
     ...mapState(['sponsors']),
 

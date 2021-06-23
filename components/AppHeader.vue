@@ -5,7 +5,16 @@
       <div class="flex justify-between items-center">
         <div class="grid grid-cols-3 gap-1 lg:gap-4 items-center ml-4 lg:ml-12">
           <ul
-            class="uppercase text-xxs lg:text-base tracking-wider font-bold text-right font-mono leading-tight"
+            class="
+              uppercase
+              text-xxs
+              lg:text-base
+              tracking-wider
+              font-bold
+              text-right
+              font-mono
+              leading-tight
+            "
           >
             <li>Cincinnati</li>
             <li>Indianapolis</li>
@@ -75,7 +84,17 @@
             <h1
               id="subtitle"
               ref="subtitle"
-              class="font-mono font-normal text-xs md:text-3xl xxl:text-4xl uppercase leading-tight tracking-widest mb-3 md:mb-0"
+              class="
+                font-mono font-normal
+                text-xs
+                md:text-3xl
+                xxl:text-4xl
+                uppercase
+                leading-tight
+                tracking-widest
+                mb-3
+                md:mb-0
+              "
             >
               A Virtual Design Conference_
             </h1>
@@ -91,7 +110,16 @@
 
         <div class="flex w-full lg:max-w-screen-md items-center mx-auto md:mb-12 lg:mb-0">
           <ul
-            class="uppercase text-xxs md:text-sm lg:text-base tracking-wider font-bold text-right font-mono"
+            class="
+              uppercase
+              text-xxs
+              md:text-sm
+              lg:text-base
+              tracking-wider
+              font-bold
+              text-right
+              font-mono
+            "
           >
             <li id="cin" ref="cin" class="city-header">Cincinnati</li>
             <li id="ind" ref="ind" class="city-header">Indianapolis</li>
@@ -142,27 +170,11 @@
 </template>
 
 <script>
-import SvgSymbolNav from '@/components/SvgSymbolNav';
-import SvgLogo from '@/components/SvgLogo';
-import SvgMwdw from '@/components/SvgMwdw';
-import AppNav from '@/components/AppNav';
-import SvgTitle from '@/components/SvgTitle';
-import SvgHashtag from '@/components/SvgHashtag';
-import SvgAnimatedLogo from '@/components/SvgAnimatedLogo';
 import { mapState, mapMutations } from 'vuex';
 import { gsap } from 'gsap';
 
 export default {
   name: 'AppHeader',
-  components: {
-    SvgLogo,
-    SvgSymbolNav,
-    SvgMwdw,
-    AppNav,
-    SvgTitle,
-    SvgHashtag,
-    SvgAnimatedLogo,
-  },
   data() {
     return {
       year: new Date().getFullYear(),

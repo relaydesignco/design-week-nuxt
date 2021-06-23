@@ -85,14 +85,8 @@
 </template>
 
 <script>
-import SvgAigaFullLogo from '@/components/SvgAigaFullLogo';
-import SvgFacebook from '@/components/SvgFacebook';
 export default {
   name: 'AppFooter',
-  components: {
-    SvgAigaFullLogo,
-    SvgFacebook,
-  },
   data() {
     return {
       year: new Date().getFullYear(),

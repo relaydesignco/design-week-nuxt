@@ -34,19 +34,8 @@
 </template>
 
 <script>
-import SvgTitle from '@/components/SvgTitle';
-import SvgHashtag from '@/components/SvgHashtag';
-import SvgSymbolNav from '@/components/SvgSymbolNav';
-import SvgLogo from '@/components/SvgLogo';
-
 export default {
   name: 'AppHero',
-  components: {
-    SvgTitle,
-    SvgHashtag,
-    SvgSymbolNav,
-    SvgLogo,
-  },
   data() {
     return {
       tagline: 'Midwest Design Week',

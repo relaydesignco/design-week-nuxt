@@ -1,7 +1,5 @@
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 
 body {
   @apply text-dark;
@@ -72,7 +70,7 @@ a {
 }
 
 .field:focus {
-  @apply outline-none shadow-outline;
+  @apply outline-none ring;
 }
 
 .field-label {
@@ -113,10 +111,7 @@ input[type='email'].field:focus:invalid {
 
 @tailwind utilities;
 
-/* .text-shadow {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-} */
-
+/* Animation */
 .delay-1 {
   animation-delay: 0.1s;
 }

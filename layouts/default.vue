@@ -9,15 +9,7 @@
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader';
-import AppFooter from '@/components/AppFooter';
-
-export default {
-  components: {
-    AppHeader,
-    AppFooter,
-  },
-};
+export default {};
 </script>
 
 <style lang="postcss"></style>
