@@ -11,13 +11,7 @@
           style="mix-blend-mode: multiply"
           class="fill-current text-red"
         />
-        <rect
-          id="green"
-          width="180"
-          height="180"
-          style="mix-blend-mode: multiply"
-          class="fill-current text-green"
-        />
+        <rect id="green" width="180" height="180" style="mix-blend-mode: multiply" class="fill-current text-green" />
         <rect
           id="blue"
           x="90"

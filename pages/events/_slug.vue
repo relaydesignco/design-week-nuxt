@@ -78,6 +78,19 @@ export default {
     };
   },
 
+  head() {
+    return {
+      title: `Midwest Design Week | ${this.event.title.rendered}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.event.title.rendered} information`,
+        },
+      ],
+    };
+  },
+
   computed: {
     ...mapState(['events', 'options']),
 
@@ -93,19 +106,6 @@ export default {
 
   methods: {
     ...mapActions(['getEvents', 'getOptions']),
-  },
-
-  head() {
-    return {
-      title: `Midwest Design Week | ${this.event.title.rendered}`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: `${this.event.title.rendered} information`,
-        },
-      ],
-    };
   },
 };
 </script>

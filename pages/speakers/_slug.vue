@@ -14,10 +14,7 @@
         </transition>
 
         <transition appear enter-active-class="animated fadeIn delay-1s">
-          <section
-            class="hidden lg:block leading-relaxed mb-6"
-            v-html="speaker.content.rendered"
-          ></section>
+          <section class="hidden lg:block leading-relaxed mb-6" v-html="speaker.content.rendered"></section>
         </transition>
       </div>
 
@@ -35,10 +32,7 @@
         </transition>
 
         <transition appear enter-active-class="animated fadeIn delay-1s">
-          <section
-            class="lg:hidden leading-relaxed mb-6"
-            v-html="speaker.content.rendered"
-          ></section>
+          <section class="lg:hidden leading-relaxed mb-6" v-html="speaker.content.rendered"></section>
         </transition>
 
         <template v-if="speaker.acf.sessions">
@@ -51,10 +45,7 @@
               <nuxt-link :to="`/events/${session.event.post_name}`">
                 <time class="text-2xl lg:text-3xl font-semibold text-blue-light">
                   {{
-                    $dateFns.format(
-                      new Date(getMatchingEventInfo(session.event.post_name).acf.start),
-                      'M/d h:mmaaaaa'
-                    )
+                    $dateFns.format(new Date(getMatchingEventInfo(session.event.post_name).acf.start), 'M/d h:mmaaaaa')
                   }}
                 </time>
               </nuxt-link>
@@ -88,6 +79,19 @@ export default {
     };
   },
 
+  head() {
+    return {
+      title: `Midwest Design Week | ${this.speaker.title.rendered}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.speaker.title.rendered} information`,
+        },
+      ],
+    };
+  },
+
   computed: {
     ...mapState(['speakers', 'events', 'options']),
 
@@ -112,19 +116,6 @@ export default {
     getMatchingEventInfo(slug) {
       return this.events.find((event) => event.slug === slug);
     },
-  },
-
-  head() {
-    return {
-      title: `Midwest Design Week | ${this.speaker.title.rendered}`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: `${this.speaker.title.rendered} information`,
-        },
-      ],
-    };
   },
 };
 </script>

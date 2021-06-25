@@ -1,18 +1,6 @@
 <template>
   <div>
-    <h1
-      class="
-        font-mono
-        text-2xl
-        lg:text-4xl
-        px-6
-        pb-4
-        lg:pb-8
-        pt-12
-        lg:pt-32 lg:px-0 lg:max-w-screen-lg
-        mx-auto
-      "
-    >
+    <h1 class="font-mono text-2xl lg:text-4xl px-6 pb-4 lg:pb-8 pt-12 lg:pt-32 lg:px-0 lg:max-w-screen-lg mx-auto">
       MWDW Speakers_
     </h1>
 
@@ -48,6 +36,20 @@
 import { mapState, mapActions, mapGetters } from 'vuex';
 export default {
   name: 'Speakers',
+
+  head() {
+    return {
+      title: `Midwest Design Week | Speakers`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'List of Speakers for Midwest Design Week 2020',
+        },
+      ],
+    };
+  },
+
   computed: {
     ...mapState(['speakers', 'options']),
     ...mapGetters(['sortedSpeakers']),
@@ -62,19 +64,6 @@ export default {
 
   methods: {
     ...mapActions(['getSpeakers', 'getOptions']),
-  },
-
-  head() {
-    return {
-      title: `Midwest Design Week | Speakers`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'List of Speakers for Midwest Design Week 2020',
-        },
-      ],
-    };
   },
 };
 </script>

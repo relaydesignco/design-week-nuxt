@@ -14,8 +14,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content:
-          'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
+        content: 'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
       },
       {
         hid: 'twitter:card',
@@ -50,8 +49,7 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content:
-          'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
+        content: 'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -64,9 +62,6 @@ export default {
     baseUrl: process.env.BASE_URL || 'http://midwestdesignweek21.local',
     // baseUrl: process.env.BASE_URL || 'https://mwdwaiga.wpengine.com',
   },
-
-  // Customize the progress-bar color
-  loading: { color: '#fff' },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~assets/css/animate.css'], // stylesheet being loaded by @nuxt/tailwindcss

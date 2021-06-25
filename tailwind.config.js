@@ -41,8 +41,7 @@ module.exports = {
         },
       },
       screens: {
-        xxl: '1560px',
-        // => @media (min-width: 1560px) { ... }
+        '2xl': '1560px',
       },
       spacing: {
         80: '20rem',

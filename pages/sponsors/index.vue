@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h1
-      class="font-mono text-2xl lg:text-4xl px-6 pb-4 lg:pb-8 pt-12 lg:pt-32 lg:px-0 lg:max-w-screen-lg mx-auto"
-    >
+    <h1 class="font-mono text-2xl lg:text-4xl px-6 pb-4 lg:pb-8 pt-12 lg:pt-32 lg:px-0 lg:max-w-screen-lg mx-auto">
       Sponsors_
     </h1>
     <section class="px-6 pt-6 pb-10 lg:pt-10 lg:pb-16">
@@ -13,17 +11,8 @@
           :key="sponsor.id"
           class="transform hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-4"
         >
-          <a
-            v-if="sponsor.acf.url"
-            :href="sponsor.acf.url"
-            target=" _blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              :src="sponsor.acf.image.sizes.large"
-              :alt="sponsor.acf.image.alt"
-              class="mx-auto"
-            />
+          <a v-if="sponsor.acf.url" :href="sponsor.acf.url" target=" _blank" rel="noopener noreferrer">
+            <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" class="mx-auto" />
           </a>
           <img v-else :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
         </div>
@@ -37,12 +26,7 @@
           :key="sponsor.id"
           class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 p-4"
         >
-          <a
-            v-if="sponsor.acf.url"
-            :href="sponsor.acf.url"
-            target=" _blank"
-            rel="noopener noreferrer"
-          >
+          <a v-if="sponsor.acf.url" :href="sponsor.acf.url" target=" _blank" rel="noopener noreferrer">
             <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
           </a>
           <img v-else :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
@@ -57,12 +41,7 @@
           :key="sponsor.id"
           class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 p-4"
         >
-          <a
-            v-if="sponsor.acf.url"
-            :href="sponsor.acf.url"
-            target=" _blank"
-            rel="noopener noreferrer"
-          >
+          <a v-if="sponsor.acf.url" :href="sponsor.acf.url" target=" _blank" rel="noopener noreferrer">
             <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
           </a>
           <img v-else :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
@@ -77,12 +56,7 @@
           :key="sponsor.id"
           class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 p-4"
         >
-          <a
-            v-if="sponsor.acf.url"
-            :href="sponsor.acf.url"
-            target=" _blank"
-            rel="noopener noreferrer"
-          >
+          <a v-if="sponsor.acf.url" :href="sponsor.acf.url" target=" _blank" rel="noopener noreferrer">
             <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
           </a>
           <img v-else :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
@@ -97,12 +71,7 @@
           :key="sponsor.id"
           class="transform hover:scale-105 transition-transform duration-300 w-1/2 md:w-1/4 p-4"
         >
-          <a
-            v-if="sponsor.acf.url"
-            :href="sponsor.acf.url"
-            target=" _blank"
-            rel="noopener noreferrer"
-          >
+          <a v-if="sponsor.acf.url" :href="sponsor.acf.url" target=" _blank" rel="noopener noreferrer">
             <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
           </a>
           <img v-else :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" />
@@ -118,9 +87,7 @@
       <p class="lg:max-w-screen-lg mx-auto text-xl">
         <span class="font-bold">
           For additional information, check out our
-          <a href="/MWDW_2020_Sponsorship.pdf" target="_blank" rel="noopener noreferrer"
-            >Sponsorship Packet.</a
-          >
+          <a href="/MWDW_2020_Sponsorship.pdf" target="_blank" rel="noopener noreferrer">Sponsorship Packet.</a>
         </span>
         <br />
         <br />
@@ -134,7 +101,20 @@
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex';
 export default {
-  name: 'Sponsorship',
+  name: 'Sponsors',
+
+  head() {
+    return {
+      title: `Midwest Design Week | Sponsors`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Sponsorship information for Midwest Design Week 2020',
+        },
+      ],
+    };
+  },
 
   computed: {
     ...mapState(['sponsors', 'pages']),
@@ -169,23 +149,11 @@ export default {
   created() {
     this.getSponsors();
     this.getOptions();
+    this.getPages();
   },
 
   methods: {
-    ...mapActions(['getSponsors', 'getOptions']),
-  },
-
-  head() {
-    return {
-      title: `Midwest Design Week | Sponsorship`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Sponsorship information for Midwest Design Week 2020',
-        },
-      ],
-    };
+    ...mapActions(['getSponsors', 'getOptions', 'getPages']),
   },
 };
 </script>

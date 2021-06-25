@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h1
-      class="font-mono text-2xl lg:text-4xl px-6 pb-4 lg:pb-8 pt-12 lg:pt-32 lg:px-0 lg:max-w-screen-lg mx-auto"
-    >
+    <h1 class="font-mono text-2xl lg:text-4xl px-6 pb-4 lg:pb-8 pt-12 lg:pt-32 lg:px-0 lg:max-w-screen-lg mx-auto">
       Sponsors_
     </h1>
     <section class="px-6 pt-4 pb-8 lg:pt-10 lg:pb-20">
@@ -26,9 +24,7 @@
 
     <section class="px-6 pt-4 pb-8 lg:pt-10 lg:pb-20">
       <h2 class="text-xl uppercase lg:text-3xl text-center mb-6 lg:mb-16">Event</h2>
-      <div
-        class="lg:max-w-screen-lg mx-auto grid items-center gap-x-6 gap-y-12 grid-cols-2 lg:grid-cols-3"
-      >
+      <div class="lg:max-w-screen-lg mx-auto grid items-center gap-x-6 gap-y-12 grid-cols-2 lg:grid-cols-3">
         <div
           v-for="sponsor in event"
           :key="sponsor.id"
@@ -47,9 +43,7 @@
 
     <section class="px-6 pt-4 pb-8 lg:pt-10 lg:pb-20">
       <h2 class="text-xl uppercase lg:text-3xl text-center mb-6 lg:mb-16">Supporting</h2>
-      <div
-        class="lg:max-w-screen-lg mx-auto grid items-center gap-x-6 gap-y-12 grid-cols-2 lg:grid-cols-4"
-      >
+      <div class="lg:max-w-screen-lg mx-auto grid items-center gap-x-6 gap-y-12 grid-cols-2 lg:grid-cols-4">
         <div
           v-for="sponsor in supporting"
           :key="sponsor.id"
@@ -68,9 +62,7 @@
 
     <section class="px-6 pt-4 pb-8 lg:pt-10 lg:pb-20">
       <h2 class="text-xl uppercase lg:text-3xl text-center mb-6 lg:mb-16">In-Kind</h2>
-      <div
-        class="lg:max-w-screen-lg mx-auto grid items-center gap-x-6 gap-y-12 grid-cols-3 lg:grid-cols-5"
-      >
+      <div class="lg:max-w-screen-lg mx-auto grid items-center gap-x-6 gap-y-12 grid-cols-3 lg:grid-cols-5">
         <div
           v-for="sponsor in inKind"
           :key="sponsor.id"

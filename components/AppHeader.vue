@@ -4,18 +4,7 @@
     <template v-if="!isHomePage">
       <div class="flex justify-between items-center">
         <div class="grid grid-cols-3 gap-1 lg:gap-4 items-center ml-4 lg:ml-12">
-          <ul
-            class="
-              uppercase
-              text-xxs
-              lg:text-base
-              tracking-wider
-              font-bold
-              text-right
-              font-mono
-              leading-tight
-            "
-          >
+          <ul class="uppercase text-xxs lg:text-base tracking-wider font-bold text-right font-mono leading-tight">
             <li>Cincinnati</li>
             <li>Indianapolis</li>
             <li>Louisville</li>
@@ -31,10 +20,7 @@
           </div>
         </div>
         <div class="w-20 lg:w-48 z-50">
-          <svg-symbol-nav
-            @toggle-nav="SET_NAV_IS_OPEN(!navIsOpen)"
-            @close-nav="SET_NAV_IS_OPEN(false)"
-          />
+          <svg-symbol-nav @toggle-nav="SET_NAV_IS_OPEN(!navIsOpen)" @close-nav="SET_NAV_IS_OPEN(false)" />
         </div>
         <transition
           name="slide-down"
@@ -59,15 +45,8 @@
           { invisible: isIntro },
         ]"
       >
-        <div
-          id="symbolNavWrap"
-          ref="symbolNavWrap"
-          class="absolute top-0 right-0 w-20 lg:w-48 z-50"
-        >
-          <svg-symbol-nav
-            @toggle-nav="SET_NAV_IS_OPEN(!navIsOpen)"
-            @close-nav="SET_NAV_IS_OPEN(false)"
-          />
+        <div id="symbolNavWrap" ref="symbolNavWrap" class="absolute top-0 right-0 w-20 lg:w-48 z-50">
+          <svg-symbol-nav @toggle-nav="SET_NAV_IS_OPEN(!navIsOpen)" @close-nav="SET_NAV_IS_OPEN(false)" />
         </div>
         <transition
           name="slide-down"
@@ -109,18 +88,7 @@
         </div>
 
         <div class="flex w-full lg:max-w-screen-md items-center mx-auto md:mb-12 lg:mb-0">
-          <ul
-            class="
-              uppercase
-              text-xxs
-              md:text-sm
-              lg:text-base
-              tracking-wider
-              font-bold
-              text-right
-              font-mono
-            "
-          >
+          <ul class="uppercase text-xxs md:text-sm lg:text-base tracking-wider font-bold text-right font-mono">
             <li id="cin" ref="cin" class="city-header">Cincinnati</li>
             <li id="ind" ref="ind" class="city-header">Indianapolis</li>
             <li id="lou" ref="lou" class="city-header">Louisville</li>
@@ -219,11 +187,7 @@ export default {
       tl.addLabel('list');
       tl.from(this.$refs.hash, { autoAlpha: 0, x: '50%', ease: 'back.out(1.5)' }, '-=0.4');
       tl.addLabel('hash');
-      tl.from(
-        this.$refs.tickets,
-        { autoAlpha: 0, rotateX: 90, duration: 1, ease: 'back.out(4)' },
-        '-=0.2'
-      );
+      tl.from(this.$refs.tickets, { autoAlpha: 0, rotateX: 90, duration: 1, ease: 'back.out(4)' }, '-=0.2');
       tl.from(this.$refs.studentAid, { autoAlpha: 0, x: '-15%', ease: 'back.out(1.5)' }, '-=0.4');
       tl.addLabel('button');
       tl.from(

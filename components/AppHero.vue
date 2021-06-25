@@ -7,14 +7,10 @@
       <svg-title />
     </div>
     <div class="flex justify-between items-center flex-wrap mt-4 md:mt-8 mb-8 md:mb-20">
-      <h1
-        class="text-xl md:text-3xl lg:text-4xl uppercase leading-tight tracking-widest mb-4 md:mb-0"
-      >
+      <h1 class="text-xl md:text-3xl lg:text-4xl uppercase leading-tight tracking-widest mb-4 md:mb-0">
         A Virtual Design Conference_
       </h1>
-      <time class="text-3xl lg:text-5xl font-mono font-bold tracking-wide block">
-        09/21-25/2020
-      </time>
+      <time class="text-3xl lg:text-5xl font-mono font-bold tracking-wide block"> 09/21-25/2020 </time>
     </div>
     <div class="flex justify-around items-center md:w-3/4 lg:w-7/12 flex-wrap mx-auto md:mb-12">
       <ul class="uppercase text-lg md:text-xl tracking-wider font-bold text-right font-mono">

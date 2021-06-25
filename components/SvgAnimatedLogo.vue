@@ -64,7 +64,23 @@
     <ul
       id="cityList"
       ref="cityList"
-      class="flex justify-center absolute mb-4 bottom-0 sm:bottom-1/8 text-xs md:text-base lg:text-3xl font-mono font-bold uppercase tracking-wide lg:tracking-wider w-full text-center"
+      class="
+        flex
+        justify-center
+        absolute
+        mb-4
+        bottom-0
+        sm:bottom-1/8
+        text-xs
+        md:text-base
+        lg:text-3xl
+        font-mono font-bold
+        uppercase
+        tracking-wide
+        lg:tracking-wider
+        w-full
+        text-center
+      "
     >
       <li id="cin" ref="cin" class="city-intro text-blue">Cincinnati_</li>
       <li id="ind" ref="ind" class="city-intro text-green ml-2">Indianapolis_</li>
@@ -109,33 +125,13 @@ export default {
       tl.from(this.$refs.blue, { x: 1280, y: -320, ease: 'back.out(0.5)' }, '-=0.4');
       tl.from(this.$refs.red, { x: -1280, y: 320, ease: 'back.out(0.5)' }, '-=0.4');
       tl.addLabel('cities');
-      tl.from(
-        '.city-intro',
-        { autoAlpha: 0, y: '100%', ease: 'back.out(1.5)', stagger: 0.2 },
-        '-=0.2'
-      );
+      tl.from('.city-intro', { autoAlpha: 0, y: '100%', ease: 'back.out(1.5)', stagger: 0.2 }, '-=0.2');
       tl.from(this.$refs.aiga, { autoAlpha: 0 }, 'cities+=0.4');
       tl.addLabel('break');
-      tl.to(
-        this.$refs.green,
-        { x: 1440, y: 320, rotate: 10, duration: 0.6, ease: 'back.in(1)' },
-        'break+=0.8'
-      );
-      tl.to(
-        this.$refs.teal,
-        { x: -1020, y: -540, rotate: 15, duration: 0.6, ease: 'back.in(1)' },
-        'break+=0.8'
-      );
-      tl.to(
-        this.$refs.blue,
-        { x: 1280, y: -400, rotate: 10, duration: 0.6, ease: 'back.in(1)' },
-        'break+=0.8'
-      );
-      tl.to(
-        this.$refs.red,
-        { x: -1280, y: 400, rotate: 15, duration: 0.6, ease: 'back.in(1)' },
-        'break+=0.8'
-      );
+      tl.to(this.$refs.green, { x: 1440, y: 320, rotate: 10, duration: 0.6, ease: 'back.in(1)' }, 'break+=0.8');
+      tl.to(this.$refs.teal, { x: -1020, y: -540, rotate: 15, duration: 0.6, ease: 'back.in(1)' }, 'break+=0.8');
+      tl.to(this.$refs.blue, { x: 1280, y: -400, rotate: 10, duration: 0.6, ease: 'back.in(1)' }, 'break+=0.8');
+      tl.to(this.$refs.red, { x: -1280, y: 400, rotate: 15, duration: 0.6, ease: 'back.in(1)' }, 'break+=0.8');
       tl.addLabel('fadeout');
       tl.to(this.$refs.cityList, { autoAlpha: 0 }, '-=0.4');
       tl.to(this.$refs.aiga, { autoAlpha: 0, duration: 0.2 }, 'fadeout');

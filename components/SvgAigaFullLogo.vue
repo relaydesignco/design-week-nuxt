@@ -1,9 +1,5 @@
 <template functional>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 100 200"
-    class="w-full fill-current text-white"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200" class="w-full fill-current text-white">
     <title>AIGA the professional association for design</title>
     <path
       id="for-design"

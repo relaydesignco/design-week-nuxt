@@ -1,27 +1,11 @@
 <template>
   <div>
-    <h1
-      class="
-        font-mono
-        text-2xl
-        lg:text-4xl
-        px-6
-        pb-4
-        lg:pb-8
-        pt-12
-        lg:pt-32 lg:px-0 lg:max-w-screen-lg
-        mx-auto
-      "
-    >
+    <h1 class="font-mono text-2xl lg:text-4xl px-6 pb-4 lg:pb-8 pt-12 lg:pt-32 lg:px-0 lg:max-w-screen-lg mx-auto">
       Events Schedule_
     </h1>
     <section class="px-6 py-4 lg:py-10">
       <div class="lg:max-w-screen-lg mx-auto">
-        <img
-          src="~/assets/images/2020-MWDW-Week-Events.jpg"
-          alt="Midwest Design Week Calendar"
-          class="mb-4 lg:mb-8"
-        />
+        <img src="~/assets/images/2020-MWDW-Week-Events.jpg" alt="Midwest Design Week Calendar" class="mb-4 lg:mb-8" />
         <div class="flex items-center mb-2 lg:mb-4">
           <h2 class="lg:text-3xl font-mono font-normal">September 2020</h2>
           <button
@@ -55,11 +39,7 @@
 
         <div v-for="(event, index) in selectedDaysEvents" :key="`${event.id}-${index}`">
           <transition appear enter-active-class="animated fadeInLeft" mode="out-in">
-            <div
-              :key="index"
-              class="flex lg:max-w-screen-lg pb-8 lg:pb-16"
-              :style="`animationDelay: ${index}00ms`"
-            >
+            <div :key="index" class="flex lg:max-w-screen-lg pb-8 lg:pb-16" :style="`animationDelay: ${index}00ms`">
               <div class="w-2/5 lg:w-1/4">
                 <time class="lg:text-3xl font-mono">
                   {{ $dateFns.format(new Date(event.acf.start), 'E h') }}-{{
@@ -136,6 +116,19 @@ export default {
     };
   },
 
+  head() {
+    return {
+      title: `Midwest Design Week | Events`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Schedule of Events for Midwest Design Week 2020',
+        },
+      ],
+    };
+  },
+
   computed: {
     ...mapState(['options']),
 
@@ -157,8 +150,7 @@ export default {
   created() {
     this.getEvents();
     this.getOptions();
-    this.currentSelectedDayIndex =
-      this.dayOfWeek === 0 || this.dayOfWeek > 5 ? 0 : this.dayOfWeek - 1;
+    this.currentSelectedDayIndex = this.dayOfWeek === 0 || this.dayOfWeek > 5 ? 0 : this.dayOfWeek - 1;
     // console.log(this.sortedEvents);
   },
 
@@ -169,19 +161,6 @@ export default {
       this.currentSelectedDayIndex = index;
       // console.log(this.selectedDaysEvents);
     },
-  },
-
-  head() {
-    return {
-      title: `Midwest Design Week | Events`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Schedule of Events for Midwest Design Week 2020',
-        },
-      ],
-    };
   },
 };
 </script>

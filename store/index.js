@@ -59,9 +59,7 @@ export const actions = {
   async getEvents({ state, commit }) {
     if (state.events.length) return;
     try {
-      let events = await cms
-        .get(`/wp-json/wp/v2/events?page=1&per_page=100&_embed=1`)
-        .then((res) => res.data);
+      let events = await cms.get(`/wp-json/wp/v2/events?page=1&per_page=100&_embed=1`).then((res) => res.data);
 
       events = events.map(({ id, slug, title, content, acf }) => ({
         id,
@@ -80,9 +78,7 @@ export const actions = {
     if (state.speakers.length) return;
 
     try {
-      let speakers = await cms
-        .get(`/wp-json/wp/v2/speakers?page=1&per_page=100&_embed=1`)
-        .then((res) => res.data);
+      let speakers = await cms.get(`/wp-json/wp/v2/speakers?page=1&per_page=100&_embed=1`).then((res) => res.data);
 
       speakers = speakers.map(({ id, slug, title, content, acf }) => ({
         id,
@@ -100,9 +96,7 @@ export const actions = {
   async getSponsors({ state, commit }) {
     if (state.sponsors.length) return;
     try {
-      let sponsors = await cms
-        .get(`/wp-json/wp/v2/sponsors?page=1&per_page=100&_embed=1`)
-        .then((res) => res.data);
+      let sponsors = await cms.get(`/wp-json/wp/v2/sponsors?page=1&per_page=100&_embed=1`).then((res) => res.data);
 
       sponsors = sponsors.map(({ id, slug, title, acf }) => ({
         id,

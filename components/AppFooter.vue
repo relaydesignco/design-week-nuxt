@@ -8,12 +8,9 @@
       </a>
       <div>
         <ul class="mb-4 lg:mb-8 text-base">
-          <li class="mb-2">
-            <nuxt-link
-              to="/code-of-conduct"
-              class="text-white hover:text-blue-light font-mono text-base lg:text-lg"
-            >
-              Code of Conduct
+          <li v-for="page in pages" :key="page.id" class="mb-2">
+            <nuxt-link :to="`/${page.slug}`" class="text-white hover:text-blue-light font-mono text-base lg:text-lg">
+              {{ page.title.rendered }}
             </nuxt-link>
           </li>
         </ul>
@@ -39,31 +36,20 @@
           </li>
           <li class="mb-2">
             Louisville -
-            <a
-              href="mailto:contact@aigalou.org"
-              class="text-white hover:text-blue-light font-mono font-normal"
-            >
+            <a href="mailto:contact@aigalou.org" class="text-white hover:text-blue-light font-mono font-normal">
               contact@aigalou.org
             </a>
           </li>
           <li class="mb-2">
             Toledo -
-            <a
-              href="mailto:president@toledo.aiga.org"
-              class="text-white hover:text-blue-light font-mono font-normal"
-            >
+            <a href="mailto:president@toledo.aiga.org" class="text-white hover:text-blue-light font-mono font-normal">
               president@toledo.aiga.org
             </a>
           </li>
         </ul>
       </div>
       <div class="text-xs lg:text-sm flex flex-col justify-between">
-        <a
-          href="//facebook.com/MidwestDesignWeek/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="w-12 block mb-4"
-        >
+        <a href="//facebook.com/MidwestDesignWeek/" target="_blank" rel="noopener noreferrer" class="w-12 block mb-4">
           <svg-facebook />
         </a>
         <div>
@@ -91,6 +77,12 @@ export default {
     return {
       year: new Date().getFullYear(),
     };
+  },
+  computed: {
+    pages() {
+      const noRender = ['home', 'sponsorship'];
+      return this.$store.state.pages.filter((page) => !noRender.includes(page.slug));
+    },
   },
 };
 </script>

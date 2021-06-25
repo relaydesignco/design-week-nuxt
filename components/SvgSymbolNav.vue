@@ -10,12 +10,7 @@
           class="symbolNavSquare fill-current text-red"
           style="mix-blend-mode: multiply"
         />
-        <rect
-          width="90"
-          height="90"
-          class="symbolNavSquare fill-current text-green"
-          style="mix-blend-mode: multiply"
-        />
+        <rect width="90" height="90" class="symbolNavSquare fill-current text-green" style="mix-blend-mode: multiply" />
         <rect
           x="90"
           y="90"
@@ -30,7 +25,15 @@
           y="45"
           width="90"
           height="90"
-          class="symbolNavSquare fill-current text-blue hover:text-blue-dark cursor-pointer transition-colors duration-300"
+          class="
+            symbolNavSquare
+            fill-current
+            text-blue
+            hover:text-blue-dark
+            cursor-pointer
+            transition-colors
+            duration-300
+          "
           style="mix-blend-mode: multiply"
           tabindex="0"
           role="button"
@@ -40,10 +43,7 @@
           @keydown.enter="toggleEvent"
           @keydown.space="toggleEvent"
         />
-        <transition
-          enter-active-class="animated fadeIn faster"
-          leave-active-class="animated fadeOut faster"
-        >
+        <transition enter-active-class="animated fadeIn faster" leave-active-class="animated fadeOut faster">
           <g v-if="!navIsOpen" id="hamburger" key="h" class="pointer-events-none">
             <line
               x1="72.48"
@@ -126,10 +126,7 @@ export default {
   methods: {
     toggleEvent(e) {
       this.$emit('toggle-nav');
-      e.target.setAttribute(
-        'aria-expanded',
-        e.target.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
-      );
+      e.target.setAttribute('aria-expanded', e.target.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
     },
 
     closeNav(e) {

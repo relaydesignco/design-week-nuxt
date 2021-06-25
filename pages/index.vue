@@ -2,10 +2,7 @@
   <div>
     <!-- opening blurb -->
     <section class="bg-dark p-6 py-10 lg:py-32 text-white lg:text-2xl">
-      <div
-        class="lg:max-w-screen-md mx-auto leading-relaxed blurb"
-        v-html="homePage.content.rendered"
-      ></div>
+      <div class="lg:max-w-screen-md mx-auto leading-relaxed blurb" v-html="homePage.content.rendered"></div>
     </section>
 
     <!-- keynote highlight -->
@@ -29,17 +26,10 @@
           <h4 class="text-xl font-normal pt-4 pb-5 leading-tight">
             {{ keynote.title.rendered }}
           </h4>
-          <a
-            :href="options.register_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-blue mr-2"
-          >
+          <a :href="options.register_link" target="_blank" rel="noopener noreferrer" class="btn btn-blue mr-2">
             Register
           </a>
-          <nuxt-link :to="`/events/${keynote.slug}`" class="btn btn-green mb-2 mr-2">
-            Event Info
-          </nuxt-link>
+          <nuxt-link :to="`/events/${keynote.slug}`" class="btn btn-green mb-2 mr-2"> Event Info </nuxt-link>
         </div>
       </div>
     </section>
@@ -104,11 +94,7 @@
             rel="noopener noreferrer"
             class="transform hover:scale-105 transition-transform duration-300 w-full md:w-1/2 p-4"
           >
-            <img
-              :src="sponsor.acf.image.sizes.large"
-              :alt="sponsor.acf.image.alt"
-              class="mx-auto"
-            />
+            <img :src="sponsor.acf.image.sizes.large" :alt="sponsor.acf.image.alt" class="mx-auto" />
           </a>
         </div>
         <div class="flex flex-wrap items-center justify-around mb-6 lg:mb-16">
