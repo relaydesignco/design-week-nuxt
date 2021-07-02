@@ -4,10 +4,10 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    title: 'Midwest Design Week',
     htmlAttrs: {
       lang: 'en',
     },
-    title: 'Midwest Design Week',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -55,39 +55,48 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  // Customize the progress-bar color
-  loading: { color: '#fff' },
-
-  env: {
-    baseUrl: process.env.BASE_URL || 'http://midwestdesignweek21.local',
-    // baseUrl: process.env.BASE_URL || 'https://mwdwaiga.wpengine.com',
-  },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~assets/css/animate.css'], // stylesheet being loaded by @nuxt/tailwindcss
+  css: ['~assets/css/animate.css'],
 
   webfontloader: {
     google: {
-      families: ['Open Sans:400,600,700', 'Lekton:400,700'],
+      families: ['Hind Siliguri:400,700'], // Google Font with weights 400 and 700
     },
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/data.server.js'],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  generate: {},
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
-
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxtjs/tailwindcss', 'nuxt-webfontloader', '@nuxtjs/date-fns'],
+  buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
+    'nuxt-webfontloader',
+    '@nuxtjs/date-fns',
+  ],
 
   dateFns: {
     methods: ['format', 'getDay', 'isAfter'],
+  },
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/apollo',
+  ],
+
+  // Apollo configuration
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://mwdwgql.local/graphql',
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -99,7 +108,7 @@ export default {
         // Disable a plugin by passing false as value
         'postcss-nested': {},
       },
-      transpile: ['gsap'],
+      // transpile: ['gsap'],
     },
 
     extractCSS: true,

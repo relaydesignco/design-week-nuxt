@@ -1,71 +1,65 @@
 <template>
-  <div>
-    <h1 class="font-mono text-2xl lg:text-4xl px-6 pb-4 lg:pb-8 pt-12 lg:pt-32 lg:px-0 lg:max-w-screen-lg mx-auto">
-      MWDW Speakers_
-    </h1>
-
-    <section class="px-6 py-4 lg:py-10">
-      <div class="lg:max-w-screen-lg mx-auto grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-        <div
-          v-for="speaker in sortedSpeakers"
-          :key="speaker.id"
-          class="transform hover:scale-105 transition-transform duration-300"
-        >
-          <nuxt-link :to="`/speakers/${speaker.slug}`">
-            <img
-              :src="speaker.acf.image.sizes.large"
-              :alt="speaker.acf.image.alt"
-              class="w-64 lg:w-80 h-64 lg:h-80 mb-3 object-cover"
-            />
-          </nuxt-link>
-          <h3 class="font-mono text-2xl lg:text-3xl">
-            <nuxt-link :to="`/speakers/${speaker.slug}`"> {{ speaker.title.rendered }}_ </nuxt-link>
-          </h3>
-          <h4 class="font-mono font-normal text-lg lg:text-xl">
-            {{ speaker.acf.job_title }}
-          </h4>
+  <div class="p-8">
+    <h1 class="font-bold text-2xl mb-8">Speakers</h1>
+    <div class="grid grid-cols-3 gap-8">
+      <article v-for="speaker in speakers" :key="speaker.id" class="flex flex-col items-start">
+        <h2 class="font-bold">{{ speaker.title }}</h2>
+        <div class="">
+          <p>Job: {{ speaker.speakerAcf.jobTitle }}</p>
+          <img :src="speaker.speakerAcf.image.mediaItemUrl" :alt="speaker.speakerAcf.image.altText" />
+          <div v-html="speaker.content" />
         </div>
-      </div>
-    </section>
-
-    <cta-section :button-link="options.register_link" :external="true" />
+        <NuxtLink :to="`/speakers/${speaker.slug}`" class="btn-sm btn-blue"> About </NuxtLink>
+      </article>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions, mapGetters } from 'vuex';
+import gql from 'graphql-tag';
+
+const SPEAKERS_QUERY = gql`
+  query SPEAKERS_QUERY {
+    speakers {
+      nodes {
+        id
+        title
+        content
+        slug
+        speakerAcf {
+          url
+          jobTitle
+          sessions {
+            event {
+              ... on Event {
+                id
+                title
+                slug
+              }
+            }
+          }
+          image {
+            altText
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+`;
+
 export default {
   name: 'Speakers',
-
-  head() {
+  async asyncData({ app }) {
+    const client = app.apolloProvider.defaultClient;
+    const { data } = await client.query({
+      query: SPEAKERS_QUERY,
+    });
     return {
-      title: `Midwest Design Week | Speakers`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'List of Speakers for Midwest Design Week 2020',
-        },
-      ],
+      speakers: data.speakers.nodes,
     };
-  },
-
-  computed: {
-    ...mapState(['speakers', 'options']),
-    ...mapGetters(['sortedSpeakers']),
-  },
-
-  created() {
-    this.getSpeakers();
-    this.getOptions();
-    // console.log(this.speakers);
-    // console.log(this.sortedSpeakers);
-  },
-
-  methods: {
-    ...mapActions(['getSpeakers', 'getOptions']),
   },
 };
 </script>
 
-<style lang="postcss" scoped></style>
+<style></style>

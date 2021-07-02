@@ -1,55 +1,56 @@
 <template>
-  <div>
-    <h1 class="font-mono text-2xl lg:text-4xl px-6 pb-4 lg:pb-8 pt-12 lg:pt-32 lg:px-0 lg:max-w-screen-lg mx-auto">
-      {{ page.title.rendered }}
+  <div class="p-8">
+    <h1 class="text-2xl lg:text-4xl">
+      {{ page.title }}
     </h1>
-    <section class="px-6 lg:px-0 py-4 mb-10 md:mb-20 lg:max-w-screen-lg mx-auto">
-      <div class="max-w-screen-md text-lg page-content" v-html="page.content.rendered" />
+    <section class="">
+      <div class="max-w-screen-md text-lg page-content" v-html="page.content" />
     </section>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import gql from 'graphql-tag';
+
+const PAGE_QUERY = gql`
+  query PAGE_QUERY($id: ID!) {
+    page(id: $id, idType: URI) {
+      id
+      title
+      content
+    }
+  }
+`;
 export default {
   name: 'Page',
 
-  data() {
+  async asyncData({ app, params }) {
+    const client = app.apolloProvider.defaultClient;
+    const { data } = await client.query({
+      query: PAGE_QUERY,
+      variables: {
+        id: `/${params.slug}/`,
+      },
+    });
     return {
-      slug: this.$route.params.slug,
+      page: data.page,
     };
   },
 
   head() {
     return {
-      title: `Midwest Design Week | ${this.page.title.rendered}`,
+      title: `Midwest Design Week | ${this.page.title}`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: `${this.page.title.rendered} for Midwest Design Week 2021`,
+          content: `${this.page.title} for Midwest Design Week 2021`,
         },
       ],
     };
   },
 
-  computed: {
-    ...mapState(['pages']),
-
-    page() {
-      return this.pages.find((page) => page.slug === this.slug);
-    },
-  },
-
-  created() {
-    this.getPages();
-    this.getOptions();
-    // console.log(this.page);
-  },
-
-  methods: {
-    ...mapActions(['getPages', 'getOptions']),
-  },
+  created() {},
 };
 </script>
 

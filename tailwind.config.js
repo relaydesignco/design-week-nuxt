@@ -7,23 +7,17 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: [
-    './components/**/*.{vue,js}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}',
-  ],
+  purge: ['components/**/*.vue', 'layouts/**/*.vue', 'pages/**/*.vue', 'plugins/**/*.js', 'nuxt.config.js'],
   darkMode: false,
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
-        mono: ['Lekton', ...defaultTheme.fontFamily.mono],
+        sans: ['Hind Siliguri', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         black: '#222222',
-        dark: '#3f3e3f',
+        darkgray: '#212120',
+        lightgray: '#A6A6A6',
         green: {
           DEFAULT: '#8fc73e',
           dark: '#77ad1a',
