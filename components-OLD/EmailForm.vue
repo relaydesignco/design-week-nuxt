@@ -30,7 +30,7 @@
 
       <input
         type="submit"
-        class="formEmailButton btn btn-blue focus:outline-none focus:shadow-outline md:w-1/3"
+        class="formEmailButton btn btn-orange focus:outline-none focus:shadow-outline md:w-1/3"
         name="submit"
         value="Subscribe"
       />

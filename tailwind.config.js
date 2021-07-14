@@ -15,23 +15,21 @@ module.exports = {
         sans: ['Hind Siliguri', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        black: '#222222',
-        darkgray: '#212120',
-        lightgray: '#A6A6A6',
-        green: {
-          DEFAULT: '#8fc73e',
-          dark: '#77ad1a',
+        black: '#212120',
+        gray: {
+          light: '#ADADAD',
+          DEFAULT: '#949494',
+          dark: '#787878',
         },
-        teal: '#4dc1b5',
-        blue: {
-          light: '#81ABD4',
-          DEFAULT: '#5B9ACC',
-          dark: '#427ca8',
+        teal: {
+          light: '#48BEBD',
+          DEFAULT: '#389D9C',
+          dark: '#2E7F7F',
         },
-        red: '#cb1d1f',
-        offwhite: {
-          DEFAULT: '#f8f8f2',
-          dark: '#f1f1e6',
+        orange: {
+          light: '#EF6145',
+          DEFAULT: '#EC4B2B',
+          dark: '#DC3514',
         },
       },
       screens: {
@@ -50,8 +48,14 @@ module.exports = {
         '1fr3': '1fr 1fr 1fr',
       },
       fontSize: {
-        xxs: '0.5rem',
-        '4xl': '2.5rem',
+        // base is 25px
+        xs: '0.6rem', // 15px
+        sm: '0.8rem', // 20px
+        lg: '1.2rem', // 30px
+        xl: '1.4rem', // 35px
+        '2xl': '1.6rem', // 40px
+        '3xl': '1.8rem', // 45px
+        '4xl': '2rem', // 50px
       },
       minHeight: {
         '16x9': '56.25vw',

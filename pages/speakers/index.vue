@@ -9,7 +9,7 @@
           <img :src="speaker.speakerAcf.image.mediaItemUrl" :alt="speaker.speakerAcf.image.altText" />
           <div v-html="speaker.content" />
         </div>
-        <NuxtLink :to="`/speakers/${speaker.slug}`" class="btn-sm btn-blue"> About </NuxtLink>
+        <NuxtLink :to="`/speakers/${speaker.slug}`" class="btn-sm btn-orange"> About </NuxtLink>
       </article>
     </div>
   </div>

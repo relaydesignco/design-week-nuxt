@@ -60,7 +60,7 @@ export default {
 
   webfontloader: {
     google: {
-      families: ['Hind Siliguri:400,700'], // Google Font with weights 400 and 700
+      families: ['Hind Siliguri:400,600'], // Google Font with weights 400 and 600
     },
   },
 
@@ -81,6 +81,8 @@ export default {
   ],
 
   dateFns: {
+    defaultLocale: 'en-US',
+    format: 'MMM. d, haaa',
     methods: ['format', 'getDay', 'isAfter'],
   },
 

@@ -1,18 +1,22 @@
 <template>
-  <div class="p-8">
-    <h1 class="font-bold text-2xl mb-8">Events</h1>
-    <div class="grid grid-cols-3 gap-8">
-      <article v-for="event in events" :key="event.id" class="flex flex-col items-start">
-        <h2 class="font-bold">{{ event.title }}</h2>
-        <div class="">
-          <p>Speaker: {{ event.eventAcf.speaker }}</p>
-          <img :src="event.eventAcf.image.mediaItemUrl" :alt="event.eventAcf.image.altText" />
-          <div v-html="event.content" />
-        </div>
-        <NuxtLink :to="`/events/${event.slug}`" class="btn-sm btn-blue"> More Info </NuxtLink>
-      </article>
+  <div class="p-4 lg:p-8">
+    <h1 class="text-3xl mb-8 lg:mb-16 uppercase text-center tracking-wide">Event Schedule</h1>
+
+    <div v-for="day in days" :key="day.date" class="lg:grid grid-cols-4 gap-4 mb-8">
+      <h2 class="col-span-1 mb-4 text-2xl">
+        {{ day.name }}
+        <br />
+        10/{{ day.date }}
+      </h2>
+      <div class="col-span-3">
+        <EventCard
+          v-for="event in events.filter((e) => $dateFns.format(new Date(e.eventAcf.start), 'cccc') === day.name)"
+          :key="event.id"
+          :event="event"
+          :options="options"
+        />
+      </div>
     </div>
-    <a class="btn btn-green" :href="options.registrationLink">REGISTER</a>
   </div>
 </template>
 
@@ -31,11 +35,11 @@ const EVENTS_QUERY = gql`
           speaker
           start
           end
+          type
           image {
             altText
             mediaItemUrl
           }
-          isKeynote
         }
       }
     }
@@ -58,6 +62,36 @@ export default {
       events: data.events.nodes,
       options: data.globalOptions.options,
     };
+  },
+  data() {
+    return {
+      days: [
+        {
+          name: 'Monday',
+          date: '11',
+        },
+        {
+          name: 'Tuesday',
+          date: '12',
+        },
+        {
+          name: 'Wednesday',
+          date: '13',
+        },
+        {
+          name: 'Thursday',
+          date: '14',
+        },
+        {
+          name: 'Friday',
+          date: '15',
+        },
+      ],
+    };
+  },
+  created() {
+    console.log(this.events);
+    console.log(this.options);
   },
 };
 </script>

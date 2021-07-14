@@ -1,15 +1,15 @@
 <template>
   <div class="flex flex-col items-start p-4 space-y-4">
     <h1 class="font-bold text-2xl">{{ event.title }}</h1>
-    <hr class="w-full" />
     <div class="">
-      <p>Speaker: {{ event.eventAcf.speaker }}</p>
-      <time>{{ event.eventAcf.start }} - {{ event.eventAcf.end }}</time>
+      <p v-if="event.eventAcf.speaker">{{ event.eventAcf.speaker }}</p>
+      <time :datetime="event.eventAcf.start">{{ $dateFns.format(new Date(event.eventAcf.start)) }}</time> -
+      <time :datetime="event.eventAcf.end">{{ $dateFns.format(new Date(event.eventAcf.end), 'haaa') }}</time>
     </div>
-    <img :src="event.eventAcf.image.mediaItemUrl" :alt="event.eventAcf.image.altText" />
+    <img v-if="event.eventAcf.image" :src="event.eventAcf.image.mediaItemUrl" :alt="event.eventAcf.image.altText" />
+    <img v-else src="/icon.png" alt="AIGA logo" />
     <div v-html="event.content" />
-    <hr class="w-full" />
-    <NuxtLink to="/events" class="btn btn-blue"> Go back </NuxtLink>
+    <NuxtLink to="/events" class="btn btn-orange"> Go back </NuxtLink>
   </div>
 </template>
 
@@ -27,6 +27,7 @@ const SINGLE_EVENT_QUERY = gql`
         speaker
         start
         end
+        type
         image {
           altText
           mediaItemUrl

@@ -111,7 +111,7 @@
             :href="options.register_link"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-sm lg:btn btn-blue lg:text-3xl lg:px-6"
+            class="btn-sm lg:btn btn-orange lg:text-3xl lg:px-6"
           >
             Tickets
           </a>

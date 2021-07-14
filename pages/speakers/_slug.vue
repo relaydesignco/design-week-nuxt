@@ -5,7 +5,7 @@
     <img :src="speaker.speakerAcf.image.mediaItemUrl" :alt="speaker.speakerAcf.image.altText" />
     <div v-html="speaker.content" />
     <hr class="w-full" />
-    <NuxtLink to="/speakers" class="btn btn-blue"> Go back </NuxtLink>
+    <NuxtLink to="/speakers" class="btn btn-orange"> Go back </NuxtLink>
     <h2 class="font-bold text-xl">Sessions</h2>
     <ul>
       <li v-for="event in speaker.speakerAcf.sessions" :key="event.event.id">

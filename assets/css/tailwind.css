@@ -1,19 +1,19 @@
 @tailwind base;
 @tailwind components;
 
-body {
-  @apply text-lightgray bg-darkgray;
+html {
+  font-size: 25px;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  @apply font-bold tracking-wide leading-none;
+  @apply font-semibold leading-none;
 }
 
-a {
-  @apply text-blue;
+a:not(.btn):not(.btn-sm) {
+  @apply text-orange font-semibold hover:text-orange-dark transition-colors duration-300;
 }
 
 .page-content {
@@ -48,12 +48,15 @@ a {
       @apply text-xl mb-2;
     }
   }
+
   p {
     @apply mb-3 leading-relaxed;
   }
+
   ul {
     @apply mb-8;
   }
+
   li {
     &:before {
       content: '- ';
@@ -74,27 +77,29 @@ a {
 }
 
 input[type='email'].field:focus:invalid {
-  @apply ring-2 ring-red;
+  @apply ring-2 ring-red-500;
 }
 
 @responsive {
   .btn {
-    @apply pt-3 pb-2 px-4 tracking-wide leading-none text-white text-lg uppercase font-mono font-bold inline-block transition-colors duration-300;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    @apply py-2 px-3 leading-none tracking-wide text-white uppercase font-semibold inline-block transition-colors duration-300;
   }
 
   .btn-sm {
-    @apply py-1 px-2 tracking-wide leading-none text-white text-sm uppercase font-mono font-bold inline-block transition-colors duration-300;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    @apply p-2 leading-none text-white text-sm uppercase font-semibold inline-block transition-colors duration-300;
   }
 }
 
-.btn-blue {
-  @apply bg-blue hover:bg-blue-dark;
+.btn-gray {
+  @apply bg-gray hover:bg-gray-dark;
 }
 
-.btn-green {
-  @apply bg-green hover:bg-green-dark;
+.btn-orange {
+  @apply bg-orange hover:bg-orange-dark;
+}
+
+.btn-teal {
+  @apply bg-teal hover:bg-teal-dark;
 }
 
 @tailwind utilities;

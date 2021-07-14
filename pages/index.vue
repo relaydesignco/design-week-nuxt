@@ -45,11 +45,11 @@ const HOME_PAGE_QUERY = gql`
           speaker
           start
           end
+          type
           image {
             altText
             mediaItemUrl
           }
-          isKeynote
         }
       }
     }
