@@ -2,7 +2,7 @@
   <div class="p-8">
     <!-- opening blurb -->
     <section class="">
-      <div class="" v-html="homePage.content"></div>
+      <div class="page-content" v-html="homePage.content"></div>
     </section>
 
     <!-- keynote highlight -->
@@ -10,7 +10,7 @@
     <!-- upcoming events -->
     <section class="">
       <div class="">
-        <nuxt-link to="/events" class="">See Full Schedule </nuxt-link>
+        <nuxt-link to="/events" class="text-link">See Full Schedule </nuxt-link>
       </div>
     </section>
 

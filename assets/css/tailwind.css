@@ -12,7 +12,7 @@ h4 {
   @apply font-semibold leading-none;
 }
 
-a:not(.btn):not(.btn-sm) {
+.text-link {
   @apply text-orange font-semibold hover:text-orange-dark transition-colors duration-300;
 }
 
@@ -33,6 +33,10 @@ a:not(.btn):not(.btn-sm) {
 
   h4 {
     @apply text-lg mb-2;
+  }
+
+  a {
+    @apply text-orange font-semibold hover:text-orange-dark transition-colors duration-300;
   }
 
   @media only screen and (min-width: 1024px) {
