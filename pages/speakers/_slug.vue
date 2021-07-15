@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-start p-4 space-y-4">
-    <h1 class="font-bold text-2xl">{{ speaker.title }}</h1>
+    <h1 class="font-bold text-4xl">{{ speaker.title }}</h1>
     <hr class="w-full" />
     <img :src="speaker.speakerAcf.image.mediaItemUrl" :alt="speaker.speakerAcf.image.altText" />
     <div v-html="speaker.content" />

@@ -106,6 +106,14 @@ input[type='email'].field:focus:invalid {
   @apply bg-teal hover:bg-teal-dark;
 }
 
+.bg-black {
+  @apply text-gray-light;
+
+  .btn-teal {
+    @apply bg-teal-light hover:bg-teal;
+  }
+}
+
 @tailwind utilities;
 
 /* Animation */

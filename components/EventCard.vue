@@ -15,9 +15,9 @@
         {{ event.eventAcf.speaker }}
       </p>
       <NuxtLink :to="`/events/${event.slug}`" class="btn-sm lg:btn btn-gray mr-2 lg:mr-4">Event Info</NuxtLink>
-      <a :href="options.registrationLink" class="btn-sm lg:btn btn-teal" target="_blank" rel="noopener noreferrer"
-        >Register</a
-      >
+      <a :href="options.registrationLink" class="btn-sm lg:btn btn-teal" target="_blank" rel="noopener noreferrer">
+        Register
+      </a>
     </div>
   </article>
 </template>
