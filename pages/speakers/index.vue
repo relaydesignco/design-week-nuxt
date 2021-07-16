@@ -1,8 +1,8 @@
 <template>
   <div class="p-4 lg:p-8">
     <h1 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Our Speakers</h1>
-    <div class="md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-2xl mx-auto">
-      <article v-for="speaker in speakers" :key="speaker.id" class="text-center mb-12 md:mb-4">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 max-w-2xl mx-auto">
+      <article v-for="speaker in sortedSpeakers" :key="speaker.id" class="text-center">
         <NuxtLink :to="`/speakers/${speaker.slug}`">
           <img
             :src="speaker.speakerAcf.image.mediaItemUrl"
@@ -26,6 +26,7 @@ const SPEAKERS_QUERY = gql`
       nodes {
         id
         title
+        lastName
         content
         slug
         speakerAcf {
@@ -57,9 +58,15 @@ export default {
     const { data } = await client.query({
       query: SPEAKERS_QUERY,
     });
+    // console.log(data.speakers.nodes);
     return {
       speakers: data.speakers.nodes,
     };
+  },
+  computed: {
+    sortedSpeakers() {
+      return this.speakers.slice().sort((a, b) => a.lastName.localeCompare(b.lastName));
+    },
   },
 };
 </script>

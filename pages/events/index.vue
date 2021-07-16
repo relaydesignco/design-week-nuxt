@@ -67,6 +67,7 @@ export default {
     const { data } = await client.query({
       query: EVENTS_QUERY,
     });
+    // console.log(data.events.nodes);
     return {
       events: data.events.nodes,
       options: data.globalOptions.options,
