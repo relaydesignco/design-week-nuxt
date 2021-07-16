@@ -112,6 +112,11 @@ input[type='email'].field:focus:invalid {
   .btn-teal {
     @apply bg-teal-light hover:bg-teal;
   }
+
+  .text-link,
+  .page-content a {
+    @apply text-orange font-semibold hover:text-orange-light transition-colors duration-300;
+  }
 }
 
 @tailwind utilities;

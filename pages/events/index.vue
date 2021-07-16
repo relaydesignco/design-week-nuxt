@@ -32,7 +32,16 @@ const EVENTS_QUERY = gql`
         content
         slug
         eventAcf {
-          speaker
+          speakers {
+            speaker {
+              ... on Speaker {
+                id
+                title
+                slug
+              }
+            }
+          }
+          otherSpeakers
           start
           end
           type

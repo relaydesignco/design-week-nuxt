@@ -1,17 +1,39 @@
 <template>
-  <div class="flex flex-col items-start p-4 space-y-4">
-    <h1 class="font-bold text-4xl">{{ speaker.title }}</h1>
-    <hr class="w-full" />
-    <img :src="speaker.speakerAcf.image.mediaItemUrl" :alt="speaker.speakerAcf.image.altText" />
-    <div v-html="speaker.content" />
-    <hr class="w-full" />
-    <NuxtLink to="/speakers" class="btn btn-orange"> Go back </NuxtLink>
-    <h2 class="font-bold text-xl">Sessions</h2>
-    <ul>
-      <li v-for="event in speaker.speakerAcf.sessions" :key="event.event.id">
-        <NuxtLink :to="`/events/${event.event.slug}`">{{ event.event.title }}</NuxtLink>
-      </li>
-    </ul>
+  <div class="px-4 lg:px-8 py-16 lg:py-20 bg-black relative">
+    <div class="absolute right-4 lg:right-8 top-4 lg:top-8 p-1 w-6">
+      <CloseButton to-route="/speakers" />
+    </div>
+    <div class="lg:flex gap-8">
+      <img
+        :src="speaker.speakerAcf.image ? speaker.speakerAcf.image.mediaItemUrl : '/icon.png'"
+        :alt="speaker.speakerAcf.image ? speaker.speakerAcf.image.altText : 'AIGA logo'"
+        class="w-64 h-64 object-cover mb-4"
+      />
+      <div>
+        <h1 class="font-bold text-4xl text-teal-light leading-tight mb-1">
+          <a
+            v-if="speaker.speakerAcf.url"
+            :href="speaker.speakerAcf.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-orange-light transition-colors duration-300"
+          >
+            {{ speaker.title }}
+          </a>
+          <span v-else>{{ speaker.title }}</span>
+        </h1>
+        <h2 v-if="speaker.speakerAcf.jobTitle" class="text-lg font-normal mb-12">{{ speaker.speakerAcf.jobTitle }}</h2>
+        <template v-if="speaker.speakerAcf.sessions">
+          <h3 class="text-teal-light uppercase mb-2">Sessions</h3>
+          <ul class="mb-12">
+            <li v-for="event in speaker.speakerAcf.sessions" :key="event.event.id">
+              <NuxtLink :to="`/events/${event.event.slug}`" class="text-link">{{ event.event.title }}</NuxtLink>
+            </li>
+          </ul>
+        </template>
+        <div class="page-content" v-html="speaker.content" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -55,6 +77,7 @@ export default {
         id: params.slug,
       },
     });
+    console.log(data.speaker);
     return { speaker: data.speaker };
   },
 };

@@ -9,10 +9,18 @@
         :alt="event.eventAcf.image ? event.eventAcf.image.altText : 'AIGA logo'"
         class="w-64 h-64 object-cover mb-4"
       />
-      <div class="">
-        <h1 class="font-bold text-4xl text-teal-light leading-tight mb-2">{{ event.title }}</h1>
-        <h2 v-if="event.eventAcf.speaker" class="text-lg font-normal mb-12">{{ event.eventAcf.speaker }}</h2>
-        <h3 v-if="event.eventAcf.speaker" class="text-teal-light uppercase">Event Time</h3>
+      <div>
+        <h1 class="font-bold text-4xl text-teal-light leading-tight mb-1">{{ event.title }}</h1>
+        <h2 class="text-lg font-normal mb-12">
+          <span v-for="(speaker, index) in event.eventAcf.speakers" :key="speaker.speaker.id">
+            <NuxtLink :to="`/speakers/${speaker.speaker.slug}`" class="text-link">
+              {{ speaker.speaker.title
+              }}<span v-if="index !== event.eventAcf.speakers.length - 1 || event.eventAcf.otherSpeakers">, </span>
+            </NuxtLink>
+          </span>
+          <span v-if="event.eventAcf.otherSpeakers">{{ event.eventAcf.otherSpeakers }}</span>
+        </h2>
+        <h3 v-if="event.eventAcf.speaker" class="text-teal-light uppercase mb-2">Event Time</h3>
         <div class="mb-4">
           <time :datetime="event.eventAcf.start" class="text-lg">
             {{ $dateFns.format(new Date(event.eventAcf.start)) }}
@@ -47,7 +55,16 @@ const SINGLE_EVENT_QUERY = gql`
       content
       slug
       eventAcf {
-        speaker
+        speakers {
+          speaker {
+            ... on Speaker {
+              id
+              title
+              slug
+            }
+          }
+        }
+        otherSpeakers
         start
         end
         type
@@ -74,6 +91,7 @@ export default {
         id: params.slug,
       },
     });
+    console.log(data.event);
     return {
       event: data.event,
       options: data.globalOptions.options,
