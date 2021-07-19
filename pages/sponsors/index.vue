@@ -79,6 +79,18 @@ export default {
       levels: ['Premier', 'Event', 'Supporting', 'In-Kind', 'Creative'],
     };
   },
+  head() {
+    return {
+      title: `Midwest Design Week | Sponsors`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Sponsorship information for Midwest Design Week 2021',
+        },
+      ],
+    };
+  },
 };
 </script>
 

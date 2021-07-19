@@ -99,6 +99,18 @@ export default {
       ],
     };
   },
+  head() {
+    return {
+      title: `Midwest Design Week | Events`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Schedule of Events for Midwest Design Week 2021`,
+        },
+      ],
+    };
+  },
 };
 </script>
 

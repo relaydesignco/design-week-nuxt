@@ -63,6 +63,18 @@ export default {
       speakers: data.speakers.nodes,
     };
   },
+  head() {
+    return {
+      title: `Midwest Design Week | Speakers`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'List of Speakers for Midwest Design Week 2021',
+        },
+      ],
+    };
+  },
   computed: {
     sortedSpeakers() {
       return this.speakers.slice().sort((a, b) => a.lastName.localeCompare(b.lastName));
