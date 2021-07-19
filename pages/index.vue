@@ -42,7 +42,16 @@ const HOME_PAGE_QUERY = gql`
         content
         slug
         eventAcf {
-          speaker
+          speakers {
+            speaker {
+              ... on Speaker {
+                id
+                title
+                slug
+              }
+            }
+          }
+          otherSpeakers
           start
           end
           type

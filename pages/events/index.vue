@@ -99,10 +99,6 @@ export default {
       ],
     };
   },
-  created() {
-    console.log(this.events);
-    console.log(this.options);
-  },
 };
 </script>
 
