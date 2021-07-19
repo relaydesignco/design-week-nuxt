@@ -24,15 +24,15 @@ h4 {
   }
 
   h2 {
-    @apply text-2xl;
+    @apply text-xl;
   }
 
   h3 {
-    @apply text-xl mb-2;
+    @apply text-lg mb-2;
   }
 
   h4 {
-    @apply text-lg mb-2;
+    @apply mb-2;
   }
 
   a {
@@ -41,20 +41,20 @@ h4 {
 
   @media only screen and (min-width: 1024px) {
     h2 {
-      @apply text-3xl;
+      @apply text-2xl;
     }
 
     h3 {
-      @apply text-2xl mb-2;
+      @apply text-xl mb-3;
     }
 
     h4 {
-      @apply text-xl mb-2;
+      @apply text-lg mb-3;
     }
   }
 
   p {
-    @apply mb-3 leading-relaxed;
+    @apply mb-8 leading-relaxed;
   }
 
   ul {

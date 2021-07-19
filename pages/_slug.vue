@@ -4,7 +4,7 @@
       {{ page.title }}
     </h1>
     <section class="">
-      <div class="max-w-screen-md text-lg page-content mx-auto" v-html="page.content" />
+      <div class="max-w-screen-md page-content mx-auto" v-html="page.content" />
     </section>
   </div>
 </template>
