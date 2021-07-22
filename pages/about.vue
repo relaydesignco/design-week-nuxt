@@ -1,36 +1,39 @@
 <template>
-  <div class="p-8">
-    <h1 class="text-2xl lg:text-4xl mb-8 lg:mb-12 uppercase text-center tracking-wide">About Midwest Design Week</h1>
-    <section class="">
-      <div class="max-w-screen-md page-content mx-auto" v-html="aboutPage.content" />
-    </section>
-    <section class="max-w-screen-md mx-auto">
-      <h2 class="text-xl md:text-xl mb-6">Chapters Included</h2>
-      <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <li v-for="chapter in aboutPage.aboutAcf.chapters" :key="chapter.handle" class="flex gap-2">
-          <div class="w-9 flex-shrink-0">
-            <AigaLogo :fill="chapter.color" />
-          </div>
-          <div class="leading-none">
-            <p>
-              <a :href="chapter.website" target="_blank" rel="noopener noreferrer" class="underline"
-                >{{ chapter.name }}
-              </a>
-            </p>
-            <p>
-              <a
-                :href="`http://instagram.com/${chapter.handle}`"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="underline"
-              >
-                @{{ chapter.handle }}
-              </a>
-            </p>
-          </div>
-        </li>
-      </ul>
-    </section>
+  <div>
+    <AppHeader :registration-link="options.registrationLink" />
+    <main class="p-8">
+      <h1 class="text-2xl lg:text-4xl mb-8 lg:mb-12 uppercase text-center tracking-wide">About Midwest Design Week</h1>
+      <section class="">
+        <div class="max-w-screen-md page-content mx-auto" v-html="aboutPage.content" />
+      </section>
+      <section class="max-w-screen-md mx-auto">
+        <h2 class="text-xl md:text-xl mb-6">Chapters Included</h2>
+        <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <li v-for="chapter in aboutPage.aboutAcf.chapters" :key="chapter.handle" class="flex gap-2">
+            <div class="w-9 flex-shrink-0">
+              <AigaLogo :fill="chapter.color" />
+            </div>
+            <div class="leading-none">
+              <p>
+                <a :href="chapter.website" target="_blank" rel="noopener noreferrer" class="underline"
+                  >{{ chapter.name }}
+                </a>
+              </p>
+              <p>
+                <a
+                  :href="`http://instagram.com/${chapter.handle}`"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="underline"
+                >
+                  @{{ chapter.handle }}
+                </a>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
   </div>
 </template>
 

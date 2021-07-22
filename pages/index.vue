@@ -1,22 +1,21 @@
 <template>
-  <div class="p-8">
-    <!-- opening blurb -->
-    <section class="">
-      <div class="page-content" v-html="homePage.content"></div>
-    </section>
-
-    <!-- keynote highlight -->
-
-    <!-- upcoming events -->
-    <section class="">
-      <div class="">
-        <nuxt-link to="/events" class="text-link">See Full Schedule </nuxt-link>
-      </div>
-    </section>
-
-    <!-- email form -->
-
-    <!-- sponsors -->
+  <div>
+    <AppHeader :registration-link="options.registationLink" />
+    <main>
+      <!-- opening blurb -->
+      <section class="p-8">
+        <div class="page-content" v-html="homePage.content"></div>
+      </section>
+      <!-- keynote highlight -->
+      <!-- upcoming events -->
+      <section class="">
+        <div class="">
+          <nuxt-link to="/events" class="text-link">See Full Schedule </nuxt-link>
+        </div>
+      </section>
+      <!-- email form -->
+      <!-- sponsors -->
+    </main>
   </div>
 </template>
 

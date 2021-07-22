@@ -94,6 +94,10 @@ input[type='email'].field:focus:invalid {
   }
 }
 
+.btn-outline {
+  @apply py-2 px-3 leading-none tracking-wide text-orange hover:text-white hover:bg-orange uppercase font-semibold border-4 border-orange transition-colors duration-300;
+}
+
 .btn-gray {
   @apply bg-gray hover:bg-gray-dark;
 }
