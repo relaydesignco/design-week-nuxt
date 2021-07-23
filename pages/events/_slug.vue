@@ -83,19 +83,26 @@ const SINGLE_EVENT_QUERY = gql`
 `;
 
 export default {
-  async asyncData({ app, params }) {
+  async asyncData({ app, params, error }) {
     const client = app.apolloProvider.defaultClient;
-    const { data } = await client.query({
-      query: SINGLE_EVENT_QUERY,
-      variables: {
-        id: params.slug,
-      },
-    });
-    console.log(data.event);
-    return {
-      event: data.event,
-      options: data.globalOptions.options,
-    };
+    try {
+      const { data } = await client.query({
+        query: SINGLE_EVENT_QUERY,
+        variables: {
+          id: params.slug,
+        },
+      });
+      if (data.event == null) {
+        throw new Error('That event was not found.');
+      }
+      // console.log(data.event);
+      return {
+        event: data.event,
+        options: data.globalOptions.options,
+      };
+    } catch (err) {
+      error({ statusCode: 404, message: err.message });
+    }
   },
 };
 </script>

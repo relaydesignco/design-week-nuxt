@@ -69,16 +69,23 @@ const SINGLE_SPEAKER_QUERY = gql`
 `;
 
 export default {
-  async asyncData({ app, params }) {
+  async asyncData({ app, params, error }) {
     const client = app.apolloProvider.defaultClient;
-    const { data } = await client.query({
-      query: SINGLE_SPEAKER_QUERY,
-      variables: {
-        id: params.slug,
-      },
-    });
-    console.log(data.speaker);
-    return { speaker: data.speaker };
+    try {
+      const { data } = await client.query({
+        query: SINGLE_SPEAKER_QUERY,
+        variables: {
+          id: params.slug,
+        },
+      });
+      if (data.speaker == null) {
+        throw new Error('That speaker was not found.');
+      }
+      // console.log(data.speaker);
+      return { speaker: data.speaker };
+    } catch (err) {
+      error({ statusCode: 404, message: err.message });
+    }
   },
 };
 </script>

@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <AppHeader />
+  <div class="bg-black h-screen">
     <Nuxt />
-    <AppFooter />
   </div>
 </template>
 

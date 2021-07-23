@@ -23,13 +23,31 @@
 </template>
 
 <script>
+import gql from 'graphql-tag';
+
+const OPTIONS_QUERY = gql`
+  query OPTIONS_QUERY {
+    globalOptions {
+      options {
+        registrationLink
+      }
+    }
+  }
+`;
+
 export default {
   name: 'AppHeader',
-  props: {
-    registrationLink: {
-      type: String,
-      required: true,
-    },
+  data() {
+    return {
+      registrationLink: '',
+    };
+  },
+  async fetch() {
+    const client = this.$nuxt.context.app.apolloProvider.defaultClient;
+    const { data } = await client.query({
+      query: OPTIONS_QUERY,
+    });
+    this.registrationLink = data.globalOptions.options.registrationLink;
   },
 };
 </script>

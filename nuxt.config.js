@@ -92,6 +92,10 @@ export default {
     '@nuxtjs/apollo',
   ],
 
+  generate: {
+    fallback: '404.html',
+  },
+
   // Apollo configuration
   apollo: {
     clientConfigs: {
@@ -99,6 +103,7 @@ export default {
         httpEndpoint: 'http://mwdwgql.local/graphql',
       },
     },
+    errorHandler: '~/plugins/apollo-error-handler.js',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
