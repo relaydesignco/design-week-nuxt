@@ -22,8 +22,7 @@ const PAGE_QUERY = gql`
   }
 `;
 export default {
-  name: 'Page',
-
+  name: 'SponsorPage',
   async asyncData({ app, params, error }) {
     const client = app.apolloProvider.defaultClient;
     try {

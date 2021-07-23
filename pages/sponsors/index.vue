@@ -4,7 +4,7 @@
       <h1 class="text-3xl mb-8 lg:mb-16 uppercase text-center tracking-wide">Sponsors</h1>
       <div v-for="(level, index) in levels" :key="index">
         <h2 class="text-xl text-center mb-8">{{ level }} Sponsor</h2>
-        <div class="flex flex-wrap justify-around gap-4 md:gap-12 items-center max-w-2xl mx-auto mb-16">
+        <!-- <div class="flex flex-wrap justify-around gap-4 md:gap-12 items-center max-w-2xl mx-auto mb-16">
           <div
             v-for="sponsor in sponsors.filter((sponsor) => sponsor.sponsorAcf.level === level)"
             :key="sponsor.id"
@@ -18,7 +18,8 @@
               />
             </a>
           </div>
-        </div>
+        </div> -->
+        <Sponsors :sponsors="sponsors.filter((sponsor) => sponsor.sponsorAcf.level === level)" />
       </div>
     </section>
     <section class="bg-black px-4 lg:px-8 py-16 text-center">
@@ -60,7 +61,7 @@ const SPONSORS_QUERY = gql`
 `;
 
 export default {
-  name: 'Sponsors',
+  name: 'SponsorsPage',
   async asyncData({ app }) {
     const client = app.apolloProvider.defaultClient;
     const { data } = await client.query({

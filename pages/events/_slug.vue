@@ -83,6 +83,7 @@ const SINGLE_EVENT_QUERY = gql`
 `;
 
 export default {
+  name: 'EventPage',
   async asyncData({ app, params, error }) {
     const client = app.apolloProvider.defaultClient;
     try {

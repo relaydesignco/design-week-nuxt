@@ -86,7 +86,8 @@ input[type='email'].field:focus:invalid {
 
 @responsive {
   .btn {
-    @apply py-2 px-3 leading-none tracking-wide text-white uppercase font-semibold inline-block transition-colors duration-300;
+    @apply pb-2 px-4 leading-none tracking-wide text-white uppercase font-semibold inline-block transition-colors duration-300;
+    padding-top: 0.6rem;
   }
 
   .btn-sm {

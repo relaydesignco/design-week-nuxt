@@ -60,7 +60,7 @@ const EVENTS_QUERY = gql`
 `;
 
 export default {
-  name: 'Events',
+  name: 'EventsPage',
   async asyncData({ app }) {
     const client = app.apolloProvider.defaultClient;
     const { data } = await client.query({

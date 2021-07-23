@@ -55,8 +55,7 @@ const ABOUT_PAGE_QUERY = gql`
   }
 `;
 export default {
-  name: 'About',
-
+  name: 'AboutPage',
   async asyncData({ app }) {
     const client = app.apolloProvider.defaultClient;
     const { data } = await client.query({
