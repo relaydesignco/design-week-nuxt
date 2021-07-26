@@ -16,9 +16,12 @@
         >
           Buy Tickets
         </a>
-        <ButtonHamburger />
+        <ButtonHamburger @clicked="$nuxt.$emit('openNav')" />
       </div>
     </div>
+    <!-- <transition enter-active-class="animated slideInRight faster" leave-active-class="animated slideOutRight faster">
+      <AppNav v-if="navIsOpen" @close="navIsOpen = false" />
+    </transition> -->
   </header>
 </template>
 
@@ -40,6 +43,7 @@ export default {
   data() {
     return {
       registrationLink: '',
+      navIsOpen: false,
     };
   },
   async fetch() {

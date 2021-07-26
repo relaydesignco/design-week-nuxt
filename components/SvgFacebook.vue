@@ -8,7 +8,7 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'SvgFacebook',
+};
 </script>
-
-<style lang="postcss" scoped></style>

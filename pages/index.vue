@@ -1,10 +1,8 @@
 <template>
   <div>
     <div class="bg-black hero">
-      <header>
-        <div class="container mx-auto p-4 lg:p-8 flex justify-end items-center">
-          <ButtonHamburger />
-        </div>
+      <header class="container mx-auto p-4 lg:p-8 flex justify-end items-center text-gray-light">
+        <ButtonHamburger @clicked="$nuxt.$emit('openNav')" />
       </header>
       <!-- hero -->
       <section class="px-8 pb-8">
@@ -163,7 +161,7 @@ const HOME_PAGE_QUERY = gql`
 
 export default {
   name: 'HomePage',
-  layout: 'home',
+  // layout: 'home',
   // get events, get sponsors,
   async asyncData({ app }) {
     const client = app.apolloProvider.defaultClient;

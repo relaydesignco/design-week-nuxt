@@ -1,5 +1,5 @@
 <template>
-  <footer :class="[{ 'bg-black': !bgTransparent }, 'p-4 lg:px-8']">
+  <footer :class="[{ 'bg-black': !bgTransparent }, 'p-4 py-8 lg:py-16']">
     <div class="max-w-screen-lg mx-auto lg:flex justify-between gap-4 text-xs">
       <a href="//aiga.org" target="_blank" rel="noopener noreferrer">
         <div class="w-24 mb-8 lg:mb-0">
@@ -16,32 +16,42 @@
         </ul>
         <h2 class="mb-2">Support Contacts</h2>
         <ul class="mb-6 lg:mb-0">
-          <li class="mb-2">
-            Cincinnati -
-            <a href="mailto:communications@aigacincinnati.org" class="font-mono font-normal">
-              communications@aigacincinnati.org</a
-            >
-          </li>
-          <li class="mb-2">
-            Indianapolis -
-            <a href="mailto:president@indianapolis.aiga.org" class="font-mono font-normal">
-              president@indianapolis.aiga.org</a
-            >
-          </li>
-          <li class="mb-2">
-            Louisville -
-            <a href="mailto:contact@aigalou.org" class="font-mono font-normal"> contact@aigalou.org </a>
-          </li>
-          <li class="mb-2">
-            Toledo -
-            <a href="mailto:president@toledo.aiga.org" class="font-mono font-normal"> president@toledo.aiga.org </a>
+          <li v-for="contact in options.supportContacts" :key="contact.chapter" class="mb-2">
+            {{ contact.chapter }} -
+            <a :href="`mailto:${contact.email}`" class="font-mono font-normal">{{ contact.email }}</a>
           </li>
         </ul>
       </div>
       <div class="flex flex-col justify-between">
-        <a href="//facebook.com/MidwestDesignWeek/" target="_blank" rel="noopener noreferrer" class="w-12 block mb-4">
-          <SvgFacebook />
-        </a>
+        <div class="mb-4">
+          <a
+            v-if="options.facebook"
+            :href="`//facebook.com/${options.facebook}/`"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-12 inline-block mr-4"
+          >
+            <SvgFacebook />
+          </a>
+          <a
+            v-if="options.instagram"
+            :href="`//instagram.com/${options.instagram}/`"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-12 inline-block mr-4"
+          >
+            <SvgInstagram />
+          </a>
+          <a
+            v-if="options.twitter"
+            :href="`//twitter.com/${options.twitter}/`"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-12 inline-block mr-4"
+          >
+            <SvgTwitter />
+          </a>
+        </div>
         <div>
           <p>© {{ year }} AIGA Midwest Design Week</p>
           <p>
@@ -59,14 +69,26 @@
 <script>
 import gql from 'graphql-tag';
 
-const PAGES_QUERY = gql`
-  query PAGES_QUERY {
+const FOOTER_QUERY = gql`
+  query FOOTER_QUERY {
     pages {
       nodes {
         id
         slug
         isFrontPage
         title
+      }
+    }
+    globalOptions {
+      options {
+        registrationLink
+        supportContacts {
+          chapter
+          email
+        }
+        facebook
+        instagram
+        twitter
       }
     }
   }
@@ -82,15 +104,17 @@ export default {
   data() {
     return {
       pages: [],
+      options: [],
       year: new Date().getFullYear(),
     };
   },
   async fetch() {
     const client = this.$nuxt.context.app.apolloProvider.defaultClient;
     const { data } = await client.query({
-      query: PAGES_QUERY,
+      query: FOOTER_QUERY,
     });
     this.pages = data.pages.nodes;
+    this.options = data.globalOptions.options;
   },
   computed: {
     footerPages() {

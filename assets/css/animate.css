@@ -73,6 +73,7 @@
     opacity: 1;
   }
 }
+
 .fadeIn {
   animation-name: fadeIn;
 }
@@ -86,6 +87,7 @@
     transform: translateZ(0);
   }
 }
+
 .fadeInDown {
   animation-name: fadeInDown;
 }
@@ -99,6 +101,7 @@
     transform: translateZ(0);
   }
 }
+
 .fadeInLeft {
   animation-name: fadeInLeft;
 }
@@ -112,6 +115,7 @@
     transform: translateZ(0);
   }
 }
+
 .fadeInRight {
   animation-name: fadeInRight;
 }
@@ -125,6 +129,7 @@
     transform: translateZ(0);
   }
 }
+
 .fadeInUp {
   animation-name: fadeInUp;
 }
@@ -136,6 +141,7 @@
     opacity: 0;
   }
 }
+
 .fadeOut {
   animation-name: fadeOut;
 }
@@ -148,6 +154,7 @@
     transform: translate3d(0, 100%, 0);
   }
 }
+
 .fadeOutDown {
   animation-name: fadeOutDown;
 }
@@ -160,6 +167,7 @@
     transform: translate3d(-100%, 0, 0);
   }
 }
+
 .fadeOutLeft {
   animation-name: fadeOutLeft;
 }
@@ -172,6 +180,7 @@
     transform: translate3d(100%, 0, 0);
   }
 }
+
 .fadeOutRight {
   animation-name: fadeOutRight;
 }
@@ -184,6 +193,7 @@
     transform: translate3d(0, -100%, 0);
   }
 }
+
 .fadeOutUp {
   animation-name: fadeOutUp;
 }
@@ -199,6 +209,59 @@
 .slideInDown {
   animation-name: slideInDown;
 }
+
+.slideInLeft {
+  animation-name: slideInLeft;
+}
+@keyframes slideInRight {
+  0% {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translateZ(0);
+  }
+}
+
+.slideInRight {
+  animation-name: slideInRight;
+}
+@keyframes slideInUp {
+  0% {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translateZ(0);
+  }
+}
+
+.slideOutLeft {
+  animation-name: slideOutLeft;
+}
+@keyframes slideOutRight {
+  0% {
+    transform: translateZ(0);
+  }
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.slideOutRight {
+  animation-name: slideOutRight;
+}
+@keyframes slideOutUp {
+  0% {
+    transform: translateZ(0);
+  }
+  to {
+    visibility: hidden;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
 @keyframes slideOutUp {
   0% {
     transform: translateZ(0);
