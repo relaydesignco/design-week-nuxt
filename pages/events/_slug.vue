@@ -5,7 +5,7 @@
     </div>
     <div class="lg:flex gap-8">
       <img
-        :src="event.eventAcf.image ? event.eventAcf.image.mediaItemUrl : '/icon.png'"
+        :src="event.eventAcf.image ? event.eventAcf.image.sourceUrl : '/icon.png'"
         :alt="event.eventAcf.image ? event.eventAcf.image.altText : 'AIGA logo'"
         class="w-64 h-64 object-cover mb-4"
       />
@@ -70,7 +70,7 @@ const SINGLE_EVENT_QUERY = gql`
         type
         image {
           altText
-          mediaItemUrl
+          sourceUrl(size: LARGE)
         }
       }
     }

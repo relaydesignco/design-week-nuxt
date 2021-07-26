@@ -6,7 +6,7 @@
       class="transform hover:scale-105 transition-transform duration-300 w-48"
     >
       <a :href="sponsor.sponsorAcf.url" target="_blank" rel="noopener noreferrer">
-        <img :src="sponsor.sponsorAcf.image.mediaItemUrl" :alt="sponsor.sponsorAcf.image.altText" class="w-full" />
+        <img :src="sponsor.sponsorAcf.image.sourceUrl" :alt="sponsor.sponsorAcf.image.altText" class="w-full" />
       </a>
     </div>
   </div>

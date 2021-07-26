@@ -1,7 +1,7 @@
 <template>
   <article class="lg:flex pb-8 lg:pb-14">
     <img
-      :src="event.eventAcf.image ? event.eventAcf.image.mediaItemUrl : '/icon.png'"
+      :src="event.eventAcf.image ? event.eventAcf.image.sourceUrl : '/icon.png'"
       :alt="event.eventAcf.image ? event.eventAcf.image.altText : 'AIGA logo'"
       class="w-40 h-40 object-cover mr-8 mb-2"
     />

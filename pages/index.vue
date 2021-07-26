@@ -31,7 +31,7 @@
       </div>
     </section>
     <!-- upcoming events -->
-    <section class="bg-black p-4 lg:p-8 container mx-auto">
+    <section class="bg-black px-4 py-8 lg:py-16">
       <h1 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Calendar of Events</h1>
       <div class="text-center my-12">
         <nuxt-link to="/events" class="btn btn-orange">See Full Schedule </nuxt-link>
@@ -43,6 +43,30 @@
       <h1 class="text-3xl mb-2 uppercase tracking-wide">We Love Our Sponsors</h1>
       <p class="text-lg mb-8 lg:mb-12">Please follow them, show some love, try out their products or services.</p>
       <Sponsors :sponsors="randomSponsors" />
+    </section>
+    <!-- stay in touch -->
+    <section class="bg-black px-4 py-8 lg:py-16">
+      <h1 class="text-3xl mb-12 uppercase tracking-wide text-center">Stay In Touch</h1>
+      <div class="flex gap-8 max-w-screen-lg mx-auto">
+        <img
+          :src="homePage.featuredImage.node.sourceUrl"
+          :alt="homePage.featuredImage.node.altText"
+          class="w-80 h-60 object-cover"
+        />
+        <div class="text-left">
+          <p class="text-lg mb-8 lg:mb-12">
+            Sign up to become an AIGA Member, follow any of our chapters, or get updates about this MWDW Conference.
+          </p>
+          <a
+            href="https://www.aiga.org/membership-community/aiga-membership"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-teal"
+          >
+            Join Today
+          </a>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -61,6 +85,11 @@ const HOME_PAGE_QUERY = gql`
       id
       title
       content
+      featuredImage {
+        node {
+          sourceUrl(size: LARGE)
+        }
+      }
     }
     speakers {
       nodes {
@@ -83,7 +112,7 @@ const HOME_PAGE_QUERY = gql`
           }
           image {
             altText
-            mediaItemUrl
+            sourceUrl(size: LARGE)
           }
         }
       }
@@ -110,7 +139,7 @@ const HOME_PAGE_QUERY = gql`
           type
           image {
             altText
-            mediaItemUrl
+            sourceUrl(size: LARGE)
           }
         }
       }
@@ -122,7 +151,7 @@ const HOME_PAGE_QUERY = gql`
         sponsorAcf {
           image {
             altText
-            mediaItemUrl
+            sourceUrl(size: LARGE)
           }
           level
           url
@@ -141,6 +170,7 @@ export default {
     const { data } = await client.query({
       query: HOME_PAGE_QUERY,
     });
+    // console.log(data);
     return {
       options: data.globalOptions.options,
       homePage: data.page,
@@ -179,13 +209,6 @@ export default {
   mounted() {
     this.randomSpeakers = [...this.speakers].sort(() => Math.random() - 0.5).slice(0, 3);
     this.randomSponsors = [...this.sponsors].sort(() => Math.random() - 0.5).slice(0, 6);
-  },
-
-  created() {
-    // console.log('EVENTS', this.events);
-    // console.log('SPONSORS', this.sponsors);
-    // console.log('OPTIONS', this.options);
-    // console.log('HOMEPAGE', this.homePage);
   },
 };
 </script>

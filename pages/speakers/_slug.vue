@@ -7,7 +7,7 @@
         </div>
         <div class="lg:flex gap-8">
           <img
-            :src="speaker.speakerAcf.image ? speaker.speakerAcf.image.mediaItemUrl : '/icon.png'"
+            :src="speaker.speakerAcf.image ? speaker.speakerAcf.image.sourceUrl : '/icon.png'"
             :alt="speaker.speakerAcf.image ? speaker.speakerAcf.image.altText : 'AIGA logo'"
             class="w-64 h-64 object-cover mb-4"
           />
@@ -68,7 +68,7 @@ const SINGLE_SPEAKER_QUERY = gql`
         }
         image {
           altText
-          mediaItemUrl
+          sourceUrl(size: LARGE)
         }
       }
     }

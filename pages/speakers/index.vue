@@ -31,7 +31,7 @@ const SPEAKERS_QUERY = gql`
           }
           image {
             altText
-            mediaItemUrl
+            sourceUrl(size: LARGE)
           }
         }
       }

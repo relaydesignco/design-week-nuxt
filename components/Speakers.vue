@@ -3,7 +3,7 @@
     <article v-for="speaker in speakers" :key="speaker.id" class="text-center">
       <NuxtLink :to="`/speakers/${speaker.slug}`">
         <img
-          :src="speaker.speakerAcf.image.mediaItemUrl"
+          :src="speaker.speakerAcf.image.sourceUrl"
           :alt="speaker.speakerAcf.image.altText"
           class="w-48 h-48 object-cover mx-auto mb-2 lg:mb-3"
         />

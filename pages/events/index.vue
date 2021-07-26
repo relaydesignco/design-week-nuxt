@@ -46,7 +46,7 @@ const EVENTS_QUERY = gql`
           type
           image {
             altText
-            mediaItemUrl
+            sourceUrl(size: LARGE)
           }
         }
       }
