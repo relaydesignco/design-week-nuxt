@@ -16,12 +16,9 @@
         >
           Buy Tickets
         </a>
-        <ButtonHamburger @clicked="$nuxt.$emit('openNav')" />
+        <ButtonHamburger @clicked="$store.commit('SET_NAV_IS_OPEN', true)" />
       </div>
     </div>
-    <!-- <transition enter-active-class="animated slideInRight faster" leave-active-class="animated slideOutRight faster">
-      <AppNav v-if="navIsOpen" @close="navIsOpen = false" />
-    </transition> -->
   </header>
 </template>
 

@@ -1,11 +1,11 @@
 <template>
   <footer :class="[{ 'bg-black': !bgTransparent }, 'p-4 py-8 lg:py-16']">
-    <div class="max-w-screen-lg mx-auto lg:flex justify-between gap-4 text-xs">
-      <a href="//aiga.org" target="_blank" rel="noopener noreferrer">
-        <div class="w-24 mb-8 lg:mb-0">
+    <div class="max-w-screen-lg mx-auto md:flex flex-wrap justify-between gap-4 text-xs">
+      <div class="w-24 mb-8 lg:mb-0">
+        <a href="//aiga.org" target="_blank" rel="noopener noreferrer">
           <SvgAigaFullLogo />
-        </div>
-      </a>
+        </a>
+      </div>
       <div>
         <ul class="mb-4 lg:mb-8">
           <li v-for="page in footerPages" :key="page.id" class="mb-2">

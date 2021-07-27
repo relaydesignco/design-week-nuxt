@@ -2,20 +2,24 @@
   <div>
     <div class="bg-black hero">
       <header class="container mx-auto p-4 lg:p-8 flex justify-end items-center text-gray-light">
-        <ButtonHamburger @clicked="$nuxt.$emit('openNav')" />
+        <ButtonHamburger @clicked="$store.commit('SET_NAV_IS_OPEN', true)" />
       </header>
       <!-- hero -->
-      <section class="px-8 pb-8">
+      <section class="px-4 lg:px-8 pb-8">
         <div class="max-w-screen-lg mx-auto">
-          <h2 class="uppercase text-2xl mb-3">October 11-15, 2021</h2>
-          <img src="~/assets/images/mwdw-2021-logo.png" alt="MWDW" class="hero-logo mb-4" />
-          <img src="~/assets/images/midwest-design-week-aiga.svg" alt="MWDW" class="w-64 ml-auto mb-16" />
-          <div class="text-center mb-20">
+          <h2 class="uppercase lg:text-2xl mb-1 lg:mb-3">October 11-15, 2021</h2>
+          <img src="~/assets/images/mwdw-2021-logo.png" alt="MWDW" class="hero-logo mb-2 lg:mb-4" />
+          <img
+            src="~/assets/images/midwest-design-week-aiga.svg"
+            alt="MWDW"
+            class="w-32 lg:w-64 ml-auto mb-8 lg:mb-16"
+          />
+          <div class="text-center mb-10 lg:mb-20">
             <a :href="options.registrationLink" target="_blank" rel="noopener noreferrer" class="btn btn-orange">
               Buy Tickets
             </a>
           </div>
-          <div class="page-content max-w-xl mx-auto text-lg text-white" v-html="homePage.content"></div>
+          <div class="page-content max-w-xl mx-auto lg:text-lg text-white text-center" v-html="homePage.content"></div>
         </div>
       </section>
     </div>
@@ -44,15 +48,15 @@
     </section>
     <!-- stay in touch -->
     <section class="bg-black px-4 py-8 lg:py-16">
-      <h1 class="text-3xl mb-12 uppercase tracking-wide text-center">Stay In Touch</h1>
-      <div class="flex gap-8 max-w-screen-lg mx-auto">
+      <h1 class="text-3xl mb-4 lg:mb-12 uppercase tracking-wide text-center">Stay In Touch</h1>
+      <div class="md:flex gap-8 max-w-screen-lg mx-auto">
         <img
           :src="homePage.featuredImage.node.sourceUrl"
           :alt="homePage.featuredImage.node.altText"
-          class="w-80 h-60 object-cover"
+          class="w-80 h-60 object-cover mb-4 md:mb-0 mx-auto"
         />
-        <div class="text-left">
-          <p class="text-lg mb-8 lg:mb-12">
+        <div class="text-center lg:text-left">
+          <p class="lg:text-lg mb-4 lg:mb-12">
             Sign up to become an AIGA Member, follow any of our chapters, or get updates about this MWDW Conference.
           </p>
           <a
@@ -161,7 +165,6 @@ const HOME_PAGE_QUERY = gql`
 
 export default {
   name: 'HomePage',
-  // layout: 'home',
   // get events, get sponsors,
   async asyncData({ app }) {
     const client = app.apolloProvider.defaultClient;

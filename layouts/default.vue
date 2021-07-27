@@ -1,7 +1,7 @@
 <template>
-  <div class="relative">
+  <div>
     <transition enter-active-class="animated slideInRight faster" leave-active-class="animated slideOutRight faster">
-      <AppNav v-if="navIsOpen" />
+      <AppNav v-if="$store.state.navIsOpen" />
     </transition>
     <AppHeader v-if="$route.path !== '/'" />
     <Nuxt />
@@ -11,30 +11,18 @@
 
 <script>
 export default {
-  data() {
+  head() {
     return {
-      navIsOpen: false,
+      bodyAttrs: {
+        class: this.$store.state.navIsOpen ? 'overflow-hidden' : '',
+      },
     };
   },
   watch: {
     // close nav on route change
     $route() {
-      this.navIsOpen = false;
+      this.$store.commit('SET_NAV_IS_OPEN', false);
     },
-  },
-  created() {
-    this.$nuxt.$on('openNav', () => {
-      this.navIsOpen = true;
-    });
-    this.$nuxt.$on('closeNav', () => {
-      this.navIsOpen = false;
-    });
-  },
-  beforeDestroy() {
-    this.$nuxt.$off('openNav');
-    this.$nuxt.$off('closeNav');
   },
 };
 </script>
-
-<style lang="scss" scoped></style>
