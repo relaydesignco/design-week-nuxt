@@ -1,5 +1,5 @@
 <template>
-  <header :class="[{ 'bg-black': !hideElements }, 'fixed top-0 w-full z-40 transition-colors duration-500']">
+  <header :class="[{ 'bg-black shadow-md': !hideElements }, 'fixed top-0 w-full z-40 transition duration-500']">
     <div class="container mx-auto px-4 lg:px-8 flex justify-between items-center h-16 lg:h-20">
       <transition name="page">
         <div v-show="!hideElements">
