@@ -1,5 +1,5 @@
 <template>
-  <main class="p-4 lg:p-8 container mx-auto">
+  <div class="p-4 lg:p-8 pb-16 pt-24 lg:pt-28 container mx-auto">
     <h1 class="text-3xl mb-8 lg:mb-16 uppercase text-center tracking-wide">Event Schedule</h1>
     <div v-for="day in days" :key="day.date" class="lg:grid grid-cols-4 gap-4 mb-8">
       <h2 class="col-span-1 mb-4 text-2xl">
@@ -16,7 +16,7 @@
         />
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>

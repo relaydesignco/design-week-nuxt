@@ -124,53 +124,87 @@ input[type='email'].field:focus:invalid {
   }
 }
 
+@responsive {
+  .pad-top {
+    padding-top: 99.6px;
+  }
+  .pad-top-lg {
+    padding-top: 137.5px;
+  }
+}
+
+@responsive {
+  .unpad-top {
+    margin-top: -99.6px;
+  }
+  .unpad-top-lg {
+    margin-top: -137.5px;
+  }
+}
+
 @tailwind utilities;
 
 /* Animation */
-.delay-1 {
-  animation-delay: 0.1s;
+.page-enter-active {
+  transition: opacity 0.5s ease-in-out;
 }
-
-.delay-2 {
-  animation-delay: 0.2s;
-}
-
-.delay-3 {
-  animation-delay: 0.3s;
-}
-
-.delay-4 {
-  animation-delay: 0.4s;
-}
-
-.delay-5 {
-  animation-delay: 0.5s;
-}
-
-.delay-6 {
-  animation-delay: 0.6s;
-}
-
-.delay-7 {
-  animation-delay: 0.7s;
-}
-
-.delay-8 {
-  animation-delay: 0.8s;
-}
-
-.delay-9 {
-  animation-delay: 0.9s;
-}
-
-.page-enter-active,
-.fading-leave-active {
-  transition-duration: 0.5s;
-  transition-property: opacity;
-  transition-timing-function: ease-in-out;
-}
-
-.page-enter,
 .page-leave-active {
+  transition: opacity 0.5s ease-in-out;
+}
+.page-enter,
+.page-leave-to {
   opacity: 0;
+}
+
+.nav-enter-active {
+  transition: visibility 0s linear 0s, transform 0.3s ease-out;
+}
+.nav-leave-active {
+  transition: visibility 0s linear 0.3s, transform 0.3s ease-in;
+}
+.nav-enter,
+.nav-leave-to {
+  transform: translate3d(100%, 0, 0);
+  visibility: hidden;
+}
+
+.pageSlide-enter-active {
+  transition: visibility 0s linear 0s, transform 0.3s ease-out, opacity 0.3s;
+}
+.pageSlide-leave-active {
+  transition: visibility 0s linear 0.3s, transform 0.3s ease-in, opacity 0.3s;
+}
+.pageSlide-enter {
+  transform: translate3d(-5%, 0, 0);
+  visibility: hidden;
+  opacity: 0;
+}
+.pageSlide-leave-to {
+  transform: translate3d(5%, 0, 0);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.slideDownUp-enter-active {
+  transition: visibility 0s linear 0s, transform 0.3s ease-out;
+}
+.slideDownUp-leave-active {
+  transition: visibility 0s linear 0.3s, transform 0.3s ease-in;
+}
+.slideDownUp-enter,
+.slideDownUp-leave-to {
+  transform: translate3d(0, -100%, 0);
+  visibility: hidden;
+}
+
+.slideUpDown-enter-active {
+  transition: visibility 0s linear 0s, transform 0.3s ease-out;
+}
+.slideUpDown-leave-active {
+  transition: visibility 0s linear 0.3s, transform 0.3s ease-in;
+}
+.slideUpDown-enter,
+.slideUpDown-leave-to {
+  transform: translate3d(0, -100%, 0);
+  visibility: hidden;
 }

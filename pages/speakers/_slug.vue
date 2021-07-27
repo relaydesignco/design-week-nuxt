@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black squares">
+  <div class="squares pt-16 lg:pt-20">
     <div class="px-4 lg:px-8 py-16 relative">
       <div class="max-w-screen-xl mx-auto">
         <div class="absolute right-4 lg:right-8 top-4 lg:top-8 p-1 w-6">
@@ -77,6 +77,7 @@ const SINGLE_SPEAKER_QUERY = gql`
 
 export default {
   name: 'SpeakerPage',
+  transition: 'pageSlide',
   async asyncData({ app, params, error }) {
     const client = app.apolloProvider.defaultClient;
     try {
@@ -94,6 +95,24 @@ export default {
     } catch (err) {
       error({ statusCode: 404, message: err.message });
     }
+  },
+  head() {
+    return {
+      title: `Midwest Design Week | ${this.speaker.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Info about ${this.speaker.title}, a speaker at MWDW 2021`,
+        },
+      ],
+    };
+  },
+  created() {
+    this.$store.commit('SET_BG_IS_DARK', true);
+  },
+  beforeDestroy() {
+    this.$store.commit('SET_BG_IS_DARK', false);
   },
 };
 </script>

@@ -1,12 +1,14 @@
 <template>
-  <main class="p-8">
-    <h1 class="text-2xl lg:text-4xl mb-8 lg:mb-12 uppercase text-center tracking-wide">
-      {{ page.title }}
-    </h1>
-    <section class="">
-      <div class="max-w-screen-md page-content mx-auto" v-html="page.content" />
+  <div class="pt-16 lg:pt-20">
+    <section class="p-8">
+      <h1 class="text-2xl lg:text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">
+        {{ page.title }}
+      </h1>
+      <section class="">
+        <div class="max-w-screen-md page-content mx-auto" v-html="page.content" />
+      </section>
     </section>
-  </main>
+  </div>
 </template>
 
 <script>

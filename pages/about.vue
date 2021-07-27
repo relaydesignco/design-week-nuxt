@@ -1,6 +1,6 @@
 <template>
-  <main class="p-8">
-    <h1 class="text-2xl lg:text-4xl mb-8 lg:mb-12 uppercase text-center tracking-wide">About Midwest Design Week</h1>
+  <div class="pt-24 lg:pt-28 px-8 pb-8">
+    <h1 class="text-2xl lg:text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">About Midwest Design Week</h1>
     <section class="">
       <div class="max-w-screen-md page-content mx-auto" v-html="aboutPage.content" />
     </section>
@@ -31,7 +31,7 @@
         </li>
       </ul>
     </section>
-  </main>
+  </div>
 </template>
 
 <script>

@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div class="bg-black hero">
-      <header class="container mx-auto p-4 lg:p-8 flex justify-end items-center text-gray-light">
-        <ButtonHamburger @clicked="$store.commit('SET_NAV_IS_OPEN', true)" />
-      </header>
+    <div class="bg-black hero pt-16 lg:pt-20">
       <!-- hero -->
       <section class="px-4 lg:px-8 pb-8">
         <div class="max-w-screen-lg mx-auto">

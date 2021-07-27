@@ -1,8 +1,8 @@
 <template>
-  <main class="p-4 lg:p-8 container mx-auto">
+  <div class="px-4 lg:px-8 pb-16 pt-24 lg:pt-28 container mx-auto">
     <h1 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Our Speakers</h1>
     <Speakers :speakers="sortedSpeakers" />
-  </main>
+  </div>
 </template>
 
 <script>
