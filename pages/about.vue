@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-24 lg:pt-28 px-8 pb-8">
+  <div class="pt-20 lg:pt-28 px-4 lg:px-8 pb-8">
     <h1 class="text-2xl lg:text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">About Midwest Design Week</h1>
     <section class="">
       <div class="max-w-screen-md page-content mx-auto" v-html="aboutPage.content" />

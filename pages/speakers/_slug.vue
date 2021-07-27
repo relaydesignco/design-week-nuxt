@@ -12,7 +12,7 @@
             class="w-64 h-64 object-cover mb-4"
           />
           <div>
-            <h1 class="font-bold text-4xl text-teal-light leading-tight mb-1">
+            <h1 class="font-bold text-2xl lg:text-4xl text-teal-light leading-tight mb-1">
               <a
                 v-if="speaker.speakerAcf.url"
                 :href="speaker.speakerAcf.url"
@@ -24,12 +24,12 @@
               </a>
               <span v-else>{{ speaker.title }}</span>
             </h1>
-            <h2 v-if="speaker.speakerAcf.jobTitle" class="text-lg font-normal mb-12">
+            <h2 v-if="speaker.speakerAcf.jobTitle" class="text-lg font-normal mb-8 lg:mb-12">
               {{ speaker.speakerAcf.jobTitle }}
             </h2>
             <template v-if="speaker.speakerAcf.sessions">
               <h3 class="text-teal-light uppercase mb-2">Sessions</h3>
-              <ul class="mb-12">
+              <ul class="mb-8 lg:mb-12">
                 <li v-for="event in speaker.speakerAcf.sessions" :key="event.event.id">
                   <NuxtLink :to="`/events/${event.event.slug}`" class="text-link">{{ event.event.title }}</NuxtLink>
                 </li>

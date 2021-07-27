@@ -12,8 +12,8 @@
             class="w-64 h-64 object-cover mb-4"
           />
           <div>
-            <h1 class="font-bold text-4xl text-teal-light leading-tight mb-1">{{ event.title }}</h1>
-            <h2 class="text-lg lg:text-xl font-normal mb-12">
+            <h1 class="font-bold text-2xl lg:text-4xl text-teal-light leading-tight mb-2">{{ event.title }}</h1>
+            <h2 class="text-lg lg:text-xl font-normal mb-6 lg:mb-12">
               <span v-for="(speaker, index) in event.eventAcf.speakers" :key="speaker.speaker.id">
                 <NuxtLink :to="`/speakers/${speaker.speaker.slug}`" class="text-link">
                   {{ speaker.speaker.title
@@ -34,7 +34,7 @@
             </div>
             <a
               :href="options.registrationLink"
-              class="btn-sm lg:btn btn-teal mb-12"
+              class="btn-sm lg:btn btn-teal mb-8 lg:mb-12"
               target="_blank"
               rel="noopener noreferrer"
             >
