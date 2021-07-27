@@ -22,7 +22,7 @@
     </div>
     <!-- keynote highlight -->
     <!-- speakers -->
-    <section class="p-4 lg:p-8 container mx-auto">
+    <section class="px-4 py-8 lg:py-12 container mx-auto">
       <h1 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Our Speakers</h1>
       <Speakers :speakers="randomSpeakers" />
       <div class="text-center my-12">
@@ -30,7 +30,7 @@
       </div>
     </section>
     <!-- upcoming events -->
-    <section class="bg-black px-4 py-8 lg:py-16">
+    <section class="bg-black px-4 py-8 lg:py-14">
       <h1 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Calendar of Events</h1>
       <div class="text-center my-12">
         <nuxt-link to="/events" class="btn btn-orange">See Full Schedule </nuxt-link>
@@ -38,13 +38,13 @@
     </section>
     <!-- email form -->
     <!-- sponsors -->
-    <section class="p-4 lg:p-8 container mx-auto text-center">
+    <section class="px-4 py-8 lg:py-12 container mx-auto text-center">
       <h1 class="text-3xl mb-2 uppercase tracking-wide">We Love Our Sponsors</h1>
-      <p class="text-lg mb-8 lg:mb-12">Please follow them, show some love, try out their products or services.</p>
+      <p class="lg:text-lg mb-8 lg:mb-12">Please follow them, show some love, try out their products or services.</p>
       <Sponsors :sponsors="randomSponsors" />
     </section>
     <!-- stay in touch -->
-    <section class="bg-black px-4 py-8 lg:py-16">
+    <section class="bg-black px-4 py-8 lg:py-14">
       <h1 class="text-3xl mb-4 lg:mb-12 uppercase tracking-wide text-center">Stay In Touch</h1>
       <div class="md:flex gap-8 max-w-screen-lg mx-auto">
         <img
