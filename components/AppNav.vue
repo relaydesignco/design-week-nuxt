@@ -1,52 +1,50 @@
 <template>
-  <nav
-    class="px-10 py-20 lg:px-32 lg:py-40 mx-auto w-screen h-screen bg-black bg-opacity-90 fixed z-40 top-0 left-0"
-  >
-    <ul class="text-4xl lg:text-6xl font-mono font-bold tracking-wide">
-      <transition appear appear-active-class="animated fadeInDown fast delay-5">
-        <li @click="$emit('close-nav')">
-          <nuxt-link to="/" class="text-white">Home_</nuxt-link>
-        </li>
-      </transition>
-      <transition appear appear-active-class="animated fadeInDown fast delay-4">
-        <li @click="$emit('close-nav')">
-          <nuxt-link exact to="/events" class="text-white">Events_</nuxt-link>
-        </li>
-      </transition>
-      <transition appear appear-active-class="animated fadeInDown fast delay-3">
-        <li @click="$emit('close-nav')">
-          <nuxt-link to="/speakers" class="text-white">Speakers_</nuxt-link>
-        </li>
-      </transition>
-      <transition appear appear-active-class="animated fadeInDown fast delay-2">
-        <li @click="$emit('close-nav')">
-          <nuxt-link to="/sponsorship" class="text-white">Sponsors_</nuxt-link>
-        </li>
-      </transition>
-    </ul>
+  <nav class="bg-black fixed inset-0 z-50">
+    <div class="container mx-auto p-4 lg:p-8">
+      <div class="text-right">
+        <ButtonClose wide="6" @clicked="$store.commit('SET_NAV_IS_OPEN', false)" />
+      </div>
+      <div class="text-center">
+        <NuxtLink v-for="link in links" :key="link.name" :to="link.route" class="text-xl">{{ link.name }}</NuxtLink>
+      </div>
+      <div class="my-10 text-center">
+        <a :href="registrationLink" target="_blank" rel="noopener noreferrer" class="btn-outline"> Buy Tickets </a>
+      </div>
+    </div>
   </nav>
 </template>
 
 <script>
 export default {
+  name: 'AppNav',
+  props: {
+    registrationLink: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
       links: [
         {
           route: '/',
-          name: 'Home_',
+          name: 'Home',
+        },
+        {
+          route: '/about',
+          name: 'About',
         },
         {
           route: '/events',
-          name: 'Events_',
+          name: 'Events',
         },
         {
           route: '/speakers',
-          name: 'Speakers_',
+          name: 'Speakers',
         },
         {
-          route: '/sponsorship',
-          name: 'Sponsors_',
+          route: '/sponsors',
+          name: 'Sponsors',
         },
       ],
     };
@@ -54,4 +52,11 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+a:not(.btn-outline) {
+  @apply block mb-2 hover:text-orange-light transition-colors duration-200;
+}
+.nuxt-link-exact-active {
+  @apply font-bold;
+}
+</style>

@@ -1,21 +1,20 @@
 export default {
-  mode: 'universal',
-  /*
-   ** Headers of the page
-   */
+  // Target: https://go.nuxtjs.dev/config-target
+  target: 'static',
+
+  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    title: 'Midwest Design Week',
     htmlAttrs: {
       lang: 'en',
     },
-    title: 'Midwest Design Week',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content:
-          'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
+        content: 'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
       },
       {
         hid: 'twitter:card',
@@ -50,50 +49,64 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content:
-          'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
+        content: 'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  env: {
-    // baseUrl: process.env.BASE_URL || 'http://midwestdesignweekapi.local',
-    baseUrl: process.env.BASE_URL || 'https://mwdwaiga.wpengine.com',
-  },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
-  css: ['~assets/css/animate.css'], // stylesheet being loaded by @nuxt/tailwindcss
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  css: [],
 
   webfontloader: {
-    // typekit: {
-    //   id: 'xxxxxx', // for Adobe Typekit fonts
-    // },
     google: {
-      families: ['Open Sans:400,600,700', 'Lekton:400,700'],
+      families: ['Hind Siliguri:400,600'], // Google Font with weights 400 and 600
     },
   },
 
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: ['~/plugins/data.server.js'],
-  generate: {},
-  /*
-   ** Nuxt.js dev-modules
-   */
-  buildModules: ['@nuxtjs/tailwindcss', 'nuxt-webfontloader', '@nuxtjs/date-fns'],
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  plugins: [],
+
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
+
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
+    'nuxt-webfontloader',
+    '@nuxtjs/date-fns',
+  ],
+
   dateFns: {
-    methods: ['format', 'getDay', 'isAfter'],
+    defaultLocale: 'en-US',
+    format: 'MMM. d, haaa',
+    methods: ['format', 'getDay', 'isAfter'], // TODO remove unused
   },
-  /*
-   ** Build configuration
-   */
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/apollo',
+  ],
+
+  generate: {
+    fallback: '404.html',
+  },
+
+  // Apollo configuration
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: process.env.BASE_URL || 'https://mwdw.wpengine.com/graphql',
+      },
+    },
+    errorHandler: '~/plugins/apollo-error-handler.js',
+  },
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
       // Add plugin names as key and arguments as value
@@ -102,7 +115,7 @@ export default {
         // Disable a plugin by passing false as value
         'postcss-nested': {},
       },
-      transpile: ['gsap'],
+      // transpile: ['gsap'],
     },
 
     extractCSS: true,

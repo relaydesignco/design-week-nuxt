@@ -4,9 +4,7 @@
       <input type="hidden" name="u" :value="mcU" />
       <input type="hidden" name="id" :value="mcId" />
       <div class="mb-4">
-        <label class="field-label" for="MERGE0">
-          Email Address <span class="req asterisk">*</span>
-        </label>
+        <label class="field-label" for="MERGE0"> Email Address <span class="req asterisk">*</span> </label>
         <input
           id="MERGE0"
           type="email"
@@ -21,22 +19,18 @@
       </div>
 
       <div class="mb-4">
-        <label for="MERGE1" class="field-label">
-          First Name <span class="req asterisk">*</span></label
-        >
+        <label for="MERGE1" class="field-label"> First Name <span class="req asterisk">*</span></label>
         <input id="MERGE1" type="text" name="MERGE1" size="25" value="" required class="field" />
       </div>
 
       <div class="mb-4">
-        <label for="MERGE2" class="field-label">
-          Last Name <span class="req asterisk">*</span>
-        </label>
+        <label for="MERGE2" class="field-label"> Last Name <span class="req asterisk">*</span> </label>
         <input id="MERGE2" type="text" name="MERGE2" size="25" value="" required class="field" />
       </div>
 
       <input
         type="submit"
-        class="formEmailButton btn btn-blue focus:outline-none focus:shadow-outline md:w-1/3"
+        class="formEmailButton btn btn-orange focus:outline-none focus:shadow-outline md:w-1/3"
         name="submit"
         value="Subscribe"
       />

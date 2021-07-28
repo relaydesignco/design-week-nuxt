@@ -1,137 +1,127 @@
 <template>
-  <section class="p-6 bg-dark text-white">
-    <div class="w-full text-right lg:pr-32">
-      <close-button to-route="/speakers" />
-    </div>
-    <div class="lg:max-w-screen-lg mx-auto lg:flex pb-8 lg:pb-16">
-      <div class="lg:w-2/5">
-        <transition appear enter-active-class="animated fadeIn delay-5">
+  <div class="squares pt-16 lg:pt-20">
+    <div class="px-4 lg:px-8 py-16 relative">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="absolute right-4 lg:right-8 top-4 lg:top-8 p-1 w-6">
+          <LinkClose to-route="/speakers" />
+        </div>
+        <div class="lg:flex gap-8">
           <img
-            :src="speaker.acf.image.sizes.large"
-            :alt="speaker.acf.image.alt"
-            class="w-auto h-64 lg:w-full lg:h-96 object-cover mb-4 lg:mb-8"
+            :src="speaker.speakerAcf.image ? speaker.speakerAcf.image.sourceUrl : '/icon.png'"
+            :alt="speaker.speakerAcf.image ? speaker.speakerAcf.image.altText : 'AIGA logo'"
+            class="w-64 h-64 object-cover mb-4"
           />
-        </transition>
-
-        <transition appear enter-active-class="animated fadeIn delay-1s">
-          <section
-            class="hidden lg:block leading-relaxed mb-6"
-            v-html="speaker.content.rendered"
-          ></section>
-        </transition>
-      </div>
-
-      <div class="lg:w-3/5 lg:pl-8">
-        <transition appear enter-active-class="animated fadeInRight fast delay-5">
-          <h1 class="text-2xl lg:text-4xl font-bold font-mono leading-tight">
-            {{ speaker.title.rendered }}
-          </h1>
-        </transition>
-
-        <transition appear enter-active-class="animated fadeIn fadeInRight fast delay-6">
-          <h2 class="text-xl lg:text-2xl font-normal font-mono leading-tight mb-2 lg:mb-16">
-            {{ speaker.acf.job_title }}
-          </h2>
-        </transition>
-
-        <transition appear enter-active-class="animated fadeIn delay-1s">
-          <section
-            class="lg:hidden leading-relaxed mb-6"
-            v-html="speaker.content.rendered"
-          ></section>
-        </transition>
-
-        <template v-if="speaker.acf.sessions">
-          <transition appear enter-active-class="animated fadeInUp delay-7">
-            <h3 class="lg:text-xl uppercase mb-2">Sessions</h3>
-          </transition>
-
-          <transition appear enter-active-class="animated fadeInUp delay-8 fast">
-            <div v-for="session in publishedSessions" :key="session.event.ID" class="font-bold">
-              <nuxt-link :to="`/events/${session.event.post_name}`">
-                <time class="text-2xl lg:text-3xl font-semibold text-blue-light">
-                  {{
-                    $dateFns.format(
-                      new Date(getMatchingEventInfo(session.event.post_name).acf.start),
-                      'M/d h:mmaaaaa'
-                    )
-                  }}
-                </time>
-              </nuxt-link>
-              <h4 class="text-xl font-normal leading-tight mb-3">
-                {{ session.event.post_title }}
-              </h4>
+          <div>
+            <h1 class="font-bold text-2xl lg:text-4xl text-teal-light leading-tight mb-1">
               <a
-                :href="options.register_link"
+                v-if="speaker.speakerAcf.url"
+                :href="speaker.speakerAcf.url"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn-sm lg:btn btn-blue mb-8"
+                class="hover:text-orange-light transition-colors duration-300"
               >
-                Register
+                {{ speaker.title }}
               </a>
-            </div>
-          </transition>
-        </template>
+              <span v-else>{{ speaker.title }}</span>
+            </h1>
+            <h2 v-if="speaker.speakerAcf.jobTitle" class="text-lg font-normal mb-8 lg:mb-12">
+              {{ speaker.speakerAcf.jobTitle }}
+            </h2>
+            <template v-if="speaker.speakerAcf.sessions">
+              <h3 class="text-teal-light uppercase mb-2">Sessions</h3>
+              <ul class="mb-8 lg:mb-12">
+                <li v-for="event in speaker.speakerAcf.sessions" :key="event.event.id">
+                  <NuxtLink :to="`/events/${event.event.slug}`" class="text-link">{{ event.event.title }}</NuxtLink>
+                </li>
+              </ul>
+            </template>
+            <div class="page-content" v-html="speaker.content" />
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+    <AppFooter :bg-transparent="true" />
+  </div>
 </template>
 
 <script>
-import CloseButton from '@/components/CloseButton';
-import { mapActions, mapState } from 'vuex';
+import gql from 'graphql-tag';
+
+const SINGLE_SPEAKER_QUERY = gql`
+  query SINGLE_SPEAKER_QUERY($id: ID!) {
+    speaker(id: $id, idType: SLUG) {
+      id
+      title
+      content
+      slug
+      speakerAcf {
+        url
+        jobTitle
+        sessions {
+          event {
+            ... on Event {
+              id
+              title
+              slug
+            }
+          }
+        }
+        image {
+          altText
+          sourceUrl(size: LARGE)
+        }
+      }
+    }
+  }
+`;
+
 export default {
-  name: 'Speaker',
-
-  components: {
-    CloseButton,
+  name: 'SpeakerPage',
+  transition: 'pageSlide',
+  async asyncData({ app, params, error }) {
+    const client = app.apolloProvider.defaultClient;
+    try {
+      const { data } = await client.query({
+        query: SINGLE_SPEAKER_QUERY,
+        variables: {
+          id: params.slug,
+        },
+      });
+      if (data.speaker == null) {
+        throw new Error('That speaker was not found.');
+      }
+      // console.log(data.speaker);
+      return { speaker: data.speaker };
+    } catch (err) {
+      error({ statusCode: 404, message: err.message });
+    }
   },
-
-  data() {
-    return {
-      slug: this.$route.params.slug,
-    };
-  },
-
-  computed: {
-    ...mapState(['speakers', 'events', 'options']),
-
-    speaker() {
-      return this.speakers.find((speaker) => speaker.slug === this.slug);
-    },
-
-    publishedSessions() {
-      return this.speaker.acf.sessions.filter((session) => session.event.post_status === 'publish');
-    },
-  },
-
-  created() {
-    this.getSpeakers();
-    this.getEvents();
-    this.getOptions();
-  },
-
-  methods: {
-    ...mapActions(['getSpeakers', 'getEvents', 'getOptions']),
-
-    getMatchingEventInfo(slug) {
-      return this.events.find((event) => event.slug === slug);
-    },
-  },
-
   head() {
     return {
-      title: `Midwest Design Week | ${this.speaker.title.rendered}`,
+      title: `Midwest Design Week | ${this.speaker.title}`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: `${this.speaker.title.rendered} information`,
+          content: `Info about ${this.speaker.title}, a speaker at MWDW 2021`,
         },
       ],
     };
   },
+  created() {
+    this.$store.commit('SET_BG_IS_DARK', true);
+  },
+  beforeDestroy() {
+    this.$store.commit('SET_BG_IS_DARK', false);
+  },
 };
 </script>
 
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+.squares {
+  background-image: url(~/assets/images/bg-squares.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 8rem;
+}
+</style>

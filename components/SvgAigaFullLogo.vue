@@ -1,9 +1,5 @@
 <template functional>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 100 200"
-    class="w-full fill-current text-white"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200" class="w-full fill-current">
     <title>AIGA the professional association for design</title>
     <path
       id="for-design"
@@ -24,7 +20,7 @@
 
     <g id="mark">
       <path id="square" class="st1" d="M-.1 0h91.6v91.6H-.1V0z" />
-      <g class="fill-current text-dark">
+      <g class="fill-current text-black">
         <path
           id="A-2"
           d="M82.4 45.7c0 .5-.2.7-1 .7h-5.5c-.9 0-.8-.5-.5-.8.3-.4 6.1-6.6 6.3-6.8.4-.5.8-.4.8.2 0 .6-.1 6.3-.1 6.7M88.8 57c-.3-.1-2.3-1-2.8-1.2-.6-.3-.6-.7-.6-1.1 0-.3.3-21.3.2-21.5 0-.1-.2-.1-.3 0-.3.3-20.6 22.4-21 22.6-.7.6-2.1 1.1-2.2 1.1-.1 0-.1.2 0 .2h10.7c.1 0 .2-.1.1-.2-.8-.2-4.2-.9-4.8-1-.6-.2-.6-.5-.4-.8s5.7-7 6-7.3c.5-.4.7-.4 1.6-.4h3.4c1.3 0 2.5.1 2.9.2.8.1.7.7.7 1s-.2 5.2-.3 6.1c0 .9-.2 1-.7 1.2-.3-.1-3.9 1.1-4 1.1s0 .1 0 .1h11.3c.2 0 .3-.1.2-.1"
