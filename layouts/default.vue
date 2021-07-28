@@ -6,11 +6,18 @@
       'transition-colors duration-500 ease-in-out',
     ]"
   >
-    <transition name="nav">
-      <AppNav v-if="$store.state.navIsOpen" :registration-link="registrationLink" />
-    </transition>
+    <div class="text-gray-light fixed z-50 h-16 lg:h-20 flex items-center top-0 right-4 lg:right-8">
+      <ButtonHamburger @clicked="handleClick" />
+    </div>
     <transition name="slideDownUp">
       <AppHeader :hide-elements="$route.path === '/' && !hasScrolled" :registration-link="registrationLink" />
+    </transition>
+    <transition name="nav">
+      <AppNav
+        v-show="$store.state.navIsOpen"
+        :registration-link="registrationLink"
+        :is-open="$store.state.navIsOpen ? 'true' : 'false'"
+      />
     </transition>
     <main class="min-h-screen">
       <Nuxt />
@@ -80,6 +87,9 @@ export default {
         // console.log('under 650');
         this.hasScrolled = false;
       }
+    },
+    handleClick() {
+      this.$store.commit('TOGGLE_NAV_IS_OPEN', true);
     },
   },
 };
