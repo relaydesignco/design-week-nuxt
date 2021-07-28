@@ -122,11 +122,5 @@ export default {
       ],
     };
   },
-  created() {
-    this.$store.commit('SET_BG_IS_DARK', true);
-  },
-  beforeDestroy() {
-    this.$store.commit('SET_BG_IS_DARK', false);
-  },
 };
 </script>

@@ -107,20 +107,7 @@ export default {
       ],
     };
   },
-  created() {
-    this.$store.commit('SET_BG_IS_DARK', true);
-  },
-  beforeDestroy() {
-    this.$store.commit('SET_BG_IS_DARK', false);
-  },
 };
 </script>
 
-<style lang="postcss" scoped>
-/* .squares {
-  background-image: url(~/assets/images/bg-squares.svg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 8rem;
-} */
-</style>
+<style lang="postcss" scoped></style>

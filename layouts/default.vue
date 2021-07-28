@@ -1,8 +1,8 @@
 <template>
   <div
     :class="[
-      { 'bg-black': $store.state.bgIsDark },
-      { squares: makeFooterTransparent },
+      { 'bg-black': isEventOrSpeaker },
+      { squares: isEventOrSpeaker },
       'transition-colors duration-500 ease-in-out',
     ]"
   >
@@ -12,12 +12,10 @@
     <transition name="slideDownUp">
       <AppHeader :hide-elements="$route.path === '/' && !hasScrolled" :registration-link="registrationLink" />
     </transition>
-    <main class="min-h-screen transition-colors duration-500 ease-in-out">
+    <main class="min-h-screen">
       <Nuxt />
     </main>
-    <transition name="slideUpDown">
-      <AppFooter :bg-transparent="makeFooterTransparent" />
-    </transition>
+    <AppFooter :bg-transparent="isEventOrSpeaker" />
   </div>
 </template>
 
@@ -56,7 +54,7 @@ export default {
     };
   },
   computed: {
-    makeFooterTransparent() {
+    isEventOrSpeaker() {
       return this.$route.path.includes('/speakers/') || this.$route.path.includes('/events/');
     },
   },

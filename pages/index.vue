@@ -1,5 +1,5 @@
 <template>
-  <div class="circles">
+  <div class="bg-black circles">
     <div class="pt-16 lg:pt-20">
       <!-- hero -->
       <section class="px-4 lg:px-8 pb-8">
@@ -194,12 +194,6 @@ export default {
     //     .sort((a, b) => new Date(a.eventAcf.start) - new Date(b.eventAcf.start))
     //     .filter((event) => this.$dateFns.isAfter(new Date(event.eventAcf.end), new Date()));
     // },
-  },
-  created() {
-    this.$store.commit('SET_BG_IS_DARK', true);
-  },
-  beforeDestroy() {
-    this.$store.commit('SET_BG_IS_DARK', false);
   },
   mounted() {
     this.randomSpeakers = [...this.speakers].sort(() => Math.random() - 0.5).slice(0, 3);

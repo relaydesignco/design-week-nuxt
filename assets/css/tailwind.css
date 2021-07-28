@@ -196,15 +196,3 @@ input[type='email'].field:focus:invalid {
   transform: translate3d(0, -100%, 0);
   visibility: hidden;
 }
-
-.slideUpDown-enter-active {
-  transition: visibility 0s linear 0s, transform 0.3s ease-out;
-}
-.slideUpDown-leave-active {
-  transition: visibility 0s linear 0.3s, transform 0.3s ease-in;
-}
-.slideUpDown-enter,
-.slideUpDown-leave-to {
-  transform: translate3d(0, -100%, 0);
-  visibility: hidden;
-}
