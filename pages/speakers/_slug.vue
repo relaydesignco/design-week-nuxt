@@ -1,5 +1,5 @@
 <template>
-  <div class="squares pt-16 lg:pt-20">
+  <div class="pt-16 lg:pt-20 min-h-screen">
     <div class="px-4 lg:px-8 py-16 relative">
       <div class="max-w-screen-xl mx-auto">
         <div class="absolute right-4 lg:right-8 top-4 lg:top-8 p-1 w-6">
@@ -40,7 +40,6 @@
         </div>
       </div>
     </div>
-    <AppFooter :bg-transparent="true" />
   </div>
 </template>
 
@@ -118,10 +117,10 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.squares {
+/* .squares {
   background-image: url(~/assets/images/bg-squares.svg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 8rem;
-}
+} */
 </style>

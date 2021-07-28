@@ -7,7 +7,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  mode: 'jit', // TODO turn this off
+  // mode: 'jit', // TODO turn this off in prod
   purge: ['components/**/*.vue', 'layouts/**/*.vue', 'pages/**/*.vue', 'plugins/**/*.js', 'nuxt.config.js'],
   darkMode: false,
   theme: {

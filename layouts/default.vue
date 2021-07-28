@@ -1,16 +1,22 @@
 <template>
-  <div>
+  <div
+    :class="[
+      { 'bg-black': $store.state.bgIsDark },
+      { squares: makeFooterTransparent },
+      'transition-colors duration-500 ease-in-out',
+    ]"
+  >
     <transition name="nav">
       <AppNav v-if="$store.state.navIsOpen" :registration-link="registrationLink" />
     </transition>
     <transition name="slideDownUp">
       <AppHeader :hide-elements="$route.path === '/' && !hasScrolled" :registration-link="registrationLink" />
     </transition>
-    <main :class="[{ 'bg-black': $store.state.bgIsDark }, 'min-h-screen transition-colors duration-500 ease-in-out']">
+    <main class="min-h-screen transition-colors duration-500 ease-in-out">
       <Nuxt />
     </main>
     <transition name="slideUpDown">
-      <AppFooter v-if="!$route.path.includes('/speakers/')" />
+      <AppFooter :bg-transparent="makeFooterTransparent" />
     </transition>
   </div>
 </template>
@@ -49,6 +55,11 @@ export default {
       },
     };
   },
+  computed: {
+    makeFooterTransparent() {
+      return this.$route.path.includes('/speakers/') || this.$route.path.includes('/events/');
+    },
+  },
   watch: {
     // close nav on route change
     $route() {
@@ -76,4 +87,11 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+.squares {
+  background-image: url(~/assets/images/bg-squares.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 8rem;
+}
+</style>

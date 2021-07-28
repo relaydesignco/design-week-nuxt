@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="bg-black hero pt-16 lg:pt-20">
+  <div class="circles">
+    <div class="pt-16 lg:pt-20">
       <!-- hero -->
       <section class="px-4 lg:px-8 pb-8">
         <div class="max-w-screen-lg mx-auto">
@@ -22,15 +22,17 @@
     </div>
     <!-- keynote highlight -->
     <!-- speakers -->
-    <section class="px-4 py-8 lg:py-12 container mx-auto">
-      <h1 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Our Speakers</h1>
-      <Speakers :speakers="randomSpeakers" />
-      <div class="text-center my-12">
-        <NuxtLink to="/speakers" class="btn btn-orange"> Full Speaker List </NuxtLink>
+    <section class="bg-white">
+      <div class="px-4 py-8 lg:py-12 container mx-auto">
+        <h1 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Our Speakers</h1>
+        <Speakers :speakers="randomSpeakers" />
+        <div class="text-center my-12">
+          <NuxtLink to="/speakers" class="btn btn-orange"> Full Speaker List </NuxtLink>
+        </div>
       </div>
     </section>
     <!-- upcoming events -->
-    <section class="bg-black px-4 py-8 lg:py-14">
+    <section class="px-4 py-8 lg:py-14">
       <h1 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Calendar of Events</h1>
       <div class="text-center my-12">
         <nuxt-link to="/events" class="btn btn-orange">See Full Schedule </nuxt-link>
@@ -38,13 +40,15 @@
     </section>
     <!-- email form -->
     <!-- sponsors -->
-    <section class="px-4 py-8 lg:py-12 container mx-auto text-center">
-      <h1 class="text-3xl mb-2 uppercase tracking-wide">We Love Our Sponsors</h1>
-      <p class="lg:text-lg mb-8 lg:mb-12">Please follow them, show some love, try out their products or services.</p>
-      <Sponsors :sponsors="randomSponsors" />
+    <section class="bg-white">
+      <div class="px-4 py-8 lg:py-12 container mx-auto text-center">
+        <h1 class="text-3xl mb-2 uppercase tracking-wide">We Love Our Sponsors</h1>
+        <p class="lg:text-lg mb-8 lg:mb-12">Please follow them, show some love, try out their products or services.</p>
+        <Sponsors :sponsors="randomSponsors" />
+      </div>
     </section>
     <!-- stay in touch -->
-    <section class="bg-black px-4 py-8 lg:py-14">
+    <section class="px-4 py-8 lg:py-14">
       <h1 class="text-3xl mb-4 lg:mb-12 uppercase tracking-wide text-center">Stay In Touch</h1>
       <div class="md:flex gap-8 max-w-screen-lg mx-auto">
         <img
@@ -190,20 +194,13 @@ export default {
     //     .sort((a, b) => new Date(a.eventAcf.start) - new Date(b.eventAcf.start))
     //     .filter((event) => this.$dateFns.isAfter(new Date(event.eventAcf.end), new Date()));
     // },
-    // keynote() {
-    //   return this.events.find((event) => event.eventAcf.is_keynote === true);
-    // },
-    // premier() {
-    //   return this.sponsors.filter((sponsor) => sponsor.sponsorAcf.level === 'Premier');
-    // },
-    // notPremier() {
-    //   return this.sponsors.filter((sponsor) => sponsor.sponsorAcf.level !== 'Premier');
-    // },
-    // randomSpeakers() {
-    //   return [...this.speakers].sort(() => Math.random() - 0.5).slice(0, 3);
-    // },
   },
-
+  created() {
+    this.$store.commit('SET_BG_IS_DARK', true);
+  },
+  beforeDestroy() {
+    this.$store.commit('SET_BG_IS_DARK', false);
+  },
   mounted() {
     this.randomSpeakers = [...this.speakers].sort(() => Math.random() - 0.5).slice(0, 3);
     this.randomSponsors = [...this.sponsors].sort(() => Math.random() - 0.5).slice(0, 6);
@@ -212,7 +209,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.hero {
+.circles {
   background-image: url(~/assets/images/bg-circles.svg);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -220,5 +217,8 @@ export default {
 }
 .hero-logo {
   max-width: 102%;
+}
+.bg-white {
+  @apply text-black;
 }
 </style>
