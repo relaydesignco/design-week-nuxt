@@ -59,7 +59,7 @@ export default {
 
   env: {
     // baseUrl: process.env.BASE_URL || 'http://midwestdesignweekapi.local',
-    baseUrl: process.env.BASE_URL || 'https://mwdwaiga.wpengine.com',
+    baseUrl: process.env.BASE_URL || 'https://aigalou.wpengine.com',
   },
   /*
    ** Customize the progress-bar color
