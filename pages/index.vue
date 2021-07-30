@@ -45,6 +45,10 @@
         <h1 class="text-3xl mb-2 uppercase tracking-wide">We Love Our Sponsors</h1>
         <p class="lg:text-lg mb-8 lg:mb-12">Please follow them, show some love, try out their products or services.</p>
         <Sponsors :sponsors="randomSponsors" />
+        <p class="text-gray font-bold mb-8 lg:mb-12">
+          Interested in becoming a Sponsor? We’d love that.
+          <NuxtLink to="/sponsors#sponsorship" class="text-link">Learn More.</NuxtLink>
+        </p>
       </div>
     </section>
     <!-- stay in touch -->

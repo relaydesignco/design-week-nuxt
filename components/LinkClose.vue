@@ -1,6 +1,6 @@
 <template functional>
   <nuxt-link :to="props.toRoute" aria-label="close">
-    <SvgClose />
+    <SvgClose aria-hidden="true" />
   </nuxt-link>
 </template>
 

@@ -1,25 +1,23 @@
 <template>
-  <nav class="bg-black fixed inset-0 z-40" :aria-expanded="isOpen">
+  <div class="bg-black fixed inset-0 z-40 pt-12">
     <div class="container mx-auto p-4 lg:p-8">
-      <div class="text-center">
-        <NuxtLink v-for="link in links" :key="link.name" :to="link.route" class="text-xl">{{ link.name }}</NuxtLink>
-      </div>
-      <div class="my-10 text-center">
-        <a :href="registrationLink" target="_blank" rel="noopener noreferrer" class="btn-outline"> Buy Tickets </a>
+      <div id="main-menu" class="text-center" role="menu">
+        <NuxtLink v-for="link in links" :key="link.name" :to="link.route" class="text-xl" role="menuitem">
+          {{ link.name }}
+        </NuxtLink>
+        <a :href="registrationLink" target="_blank" rel="noopener noreferrer" class="btn-outline inline-block mt-6">
+          Buy Tickets
+        </a>
       </div>
     </div>
-  </nav>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'AppNav',
+  name: 'AppMainMenu',
   props: {
     registrationLink: {
-      type: String,
-      required: true,
-    },
-    isOpen: {
       type: String,
       required: true,
     },

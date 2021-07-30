@@ -6,19 +6,23 @@
       'transition-colors duration-500 ease-in-out',
     ]"
   >
-    <div class="text-gray-light fixed z-50 h-16 lg:h-20 flex items-center top-0 right-4 lg:right-8">
-      <ButtonHamburger @clicked="handleClick" />
-    </div>
-    <transition name="slideDownUp">
-      <AppHeader :hide-elements="$route.path === '/' && !hasScrolled" :registration-link="registrationLink" />
-    </transition>
-    <transition name="nav">
-      <AppNav
-        v-show="$store.state.navIsOpen"
-        :registration-link="registrationLink"
-        :is-open="$store.state.navIsOpen ? 'true' : 'false'"
-      />
-    </transition>
+    <nav>
+      <div class="text-gray-light fixed z-50 h-16 lg:h-20 flex items-center top-0 right-4 lg:right-8">
+        <button
+          class="w-8"
+          aria-label="Menu"
+          aria-controls="main-menu"
+          :aria-expanded="$store.state.navIsOpen ? 'true' : 'false'"
+          @click="$store.commit('TOGGLE_NAV_IS_OPEN')"
+        >
+          <SvgHamburger aria-hidden="true" />
+        </button>
+      </div>
+      <transition name="nav">
+        <AppMainMenu v-show="$store.state.navIsOpen" :registration-link="registrationLink" />
+      </transition>
+    </nav>
+    <AppHeader :hide-elements="$route.path === '/' && !hasScrolled" :registration-link="registrationLink" />
     <main class="min-h-screen">
       <Nuxt />
     </main>
@@ -87,9 +91,6 @@ export default {
         // console.log('under 650');
         this.hasScrolled = false;
       }
-    },
-    handleClick() {
-      this.$store.commit('TOGGLE_NAV_IS_OPEN', true);
     },
   },
 };
