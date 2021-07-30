@@ -19,8 +19,8 @@
         </span>
         <span v-if="event.eventAcf.otherSpeakers">{{ event.eventAcf.otherSpeakers }}</span>
       </p>
-      <NuxtLink :to="`/events/${event.slug}`" class="btn-sm lg:btn btn-gray mr-2 lg:mr-4">Event Info</NuxtLink>
-      <a :href="options.registrationLink" class="btn-sm lg:btn btn-teal" target="_blank" rel="noopener noreferrer">
+      <NuxtLink :to="`/events/${event.slug}`" class="btn-sm btn-gray mb-2 mr-2 lg:mr-3">Event Info</NuxtLink>
+      <a :href="options.registrationLink" class="btn-sm btn-teal" target="_blank" rel="noopener noreferrer">
         Register
       </a>
     </div>

@@ -4,11 +4,11 @@
       <!-- hero -->
       <section class="px-4 lg:px-8 pb-8">
         <div class="max-w-screen-lg mx-auto">
-          <h2 class="uppercase lg:text-2xl mb-1 lg:mb-3">October 11-15, 2021</h2>
-          <img src="~/assets/images/mwdw-2021-logo.png" alt="MWDW" class="hero-logo mb-2 lg:mb-4" />
+          <h1 class="uppercase lg:text-2xl mb-1 lg:mb-3">October 11-15, 2021</h1>
+          <img src="~/assets/images/mwdw-2021-logo.png" alt="MWDW 2021 logo" class="hero-logo mb-2 lg:mb-4" />
           <img
             src="~/assets/images/midwest-design-week-aiga.svg"
-            alt="MWDW"
+            alt="Midwest Design Week 2021"
             class="w-32 lg:w-64 ml-auto mb-8 lg:mb-16"
           />
           <div class="text-center mb-10 lg:mb-20">
@@ -38,7 +38,6 @@
         <nuxt-link to="/events" class="btn btn-orange">See Full Schedule </nuxt-link>
       </div>
     </section>
-    <!-- email form -->
     <!-- sponsors -->
     <section class="bg-white">
       <div class="px-4 py-8 lg:py-12 container mx-auto text-center">
@@ -99,6 +98,7 @@ const HOME_PAGE_QUERY = gql`
       content
       featuredImage {
         node {
+          altText
           sourceUrl(size: LARGE)
         }
       }

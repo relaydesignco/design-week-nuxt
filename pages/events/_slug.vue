@@ -34,7 +34,7 @@
             </div>
             <a
               :href="options.registrationLink"
-              class="btn-sm lg:btn btn-teal mb-8 lg:mb-12"
+              class="btn btn-teal mb-8 lg:mb-12"
               target="_blank"
               rel="noopener noreferrer"
             >

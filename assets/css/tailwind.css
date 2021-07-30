@@ -24,33 +24,19 @@ h4 {
   }
 
   h2 {
-    @apply text-xl;
+    @apply text-xl lg:text-2xl mb-2 lg:mb-3;
   }
 
   h3 {
-    @apply text-lg mb-2;
+    @apply text-lg lg:text-xl mb-2 lg:mb-3;
   }
 
   h4 {
-    @apply mb-2;
+    @apply lg:text-lg mb-2 lg:mb-3;
   }
 
   a {
     @apply text-orange font-semibold hover:text-orange-dark transition-colors duration-300;
-  }
-
-  @media only screen and (min-width: 1024px) {
-    h2 {
-      @apply text-2xl;
-    }
-
-    h3 {
-      @apply text-xl mb-3;
-    }
-
-    h4 {
-      @apply text-lg mb-3;
-    }
   }
 
   p {
@@ -69,7 +55,7 @@ h4 {
 }
 
 .field {
-  @apply appearance-none w-full py-1 px-2 leading-tight;
+  @apply appearance-none w-full py-1 px-2 leading-tight text-black;
 }
 
 .field:focus {
@@ -91,7 +77,8 @@ input[type='email'].field:focus:invalid {
   }
 
   .btn-sm {
-    @apply p-2 leading-none text-white text-sm uppercase font-semibold inline-block transition-colors duration-300;
+    @apply leading-none text-white uppercase font-semibold inline-block transition-colors duration-300;
+    padding: 0.4rem 0.6rem 0.3rem;
   }
 }
 
@@ -115,7 +102,7 @@ input[type='email'].field:focus:invalid {
   @apply text-gray-light;
 
   .btn-teal {
-    @apply bg-teal-light hover:bg-teal;
+    @apply bg-teal hover:bg-teal-light;
   }
 
   .text-link,
