@@ -24,7 +24,7 @@
     <!-- speakers -->
     <section class="bg-white">
       <div class="px-4 py-8 lg:py-12 container mx-auto">
-        <h1 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Our Speakers</h1>
+        <h2 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Our Speakers</h2>
         <Speakers :speakers="randomSpeakers" />
         <div class="text-center my-12">
           <NuxtLink to="/speakers" class="btn btn-orange"> Full Speaker List </NuxtLink>
@@ -33,7 +33,7 @@
     </section>
     <!-- upcoming events -->
     <section class="px-4 py-8 lg:py-14">
-      <h1 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Calendar of Events</h1>
+      <h2 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Calendar of Events</h2>
       <div class="text-center my-12">
         <nuxt-link to="/events" class="btn btn-orange">See Full Schedule </nuxt-link>
       </div>
@@ -42,7 +42,7 @@
     <!-- sponsors -->
     <section class="bg-white">
       <div class="px-4 py-8 lg:py-12 container mx-auto text-center">
-        <h1 class="text-3xl mb-2 uppercase tracking-wide">We Love Our Sponsors</h1>
+        <h2 class="text-3xl mb-2 uppercase tracking-wide">We Love Our Sponsors</h2>
         <p class="lg:text-lg mb-8 lg:mb-12">Please follow them, show some love, try out their products or services.</p>
         <Sponsors :sponsors="randomSponsors" />
         <p class="text-gray font-bold mb-8 lg:mb-12">
@@ -52,17 +52,18 @@
       </div>
     </section>
     <!-- stay in touch -->
-    <section class="px-4 py-8 lg:py-14">
-      <h1 class="text-3xl mb-4 lg:mb-12 uppercase tracking-wide text-center">Stay In Touch</h1>
-      <div class="md:flex gap-8 max-w-screen-lg mx-auto">
+    <section class="px-4 py-8 lg:py-14 max-w-screen-lg mx-auto">
+      <h2 class="text-3xl mb-4 lg:mb-12 uppercase tracking-wide text-center">Stay In Touch</h2>
+      <div class="md:flex gap-8 items-center">
         <img
           :src="homePage.featuredImage.node.sourceUrl"
           :alt="homePage.featuredImage.node.altText"
           class="w-80 h-60 object-cover mb-4 md:mb-0 mx-auto"
         />
         <div class="text-center lg:text-left">
-          <p class="lg:text-lg mb-4 lg:mb-12">
-            Sign up to become an AIGA Member, follow any of our chapters, or get updates about this MWDW Conference.
+          <p class="lg:text-lg mb-4 lg:mb-8">
+            Receive exclusive benefits and help support a network of creative changemakers, problem solvers, and design
+            industry leaders.
           </p>
           <a
             href="https://www.aiga.org/membership-community/aiga-membership"
@@ -70,9 +71,13 @@
             rel="noopener noreferrer"
             class="btn btn-teal"
           >
-            Join Today
+            Join AIGA
           </a>
         </div>
+      </div>
+      <div class="pt-12 pb-8 lg:px-16 lg:pt-12">
+        <h3 class="mb-4 lg:text-lg uppercase tracking-wide">Get Conference Updates</h3>
+        <EmailForm />
       </div>
     </section>
   </div>
