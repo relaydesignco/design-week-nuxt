@@ -6,7 +6,7 @@
           <NuxtLink to="/">
             <img src="~/assets/images/mwdw-2021-logo-small.png" alt="MWDW" class="inline-block w-36 mr-2" />
           </NuxtLink>
-          <span class="uppercase text-lg hidden lg:inline-block">Midwest Design Week</span>
+          <span class="uppercase hidden lg:inline-block">Midwest Design Week</span>
         </div>
       </transition>
       <div class="ml-auto">

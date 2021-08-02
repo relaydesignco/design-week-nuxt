@@ -1,7 +1,7 @@
 <template>
   <footer :class="[{ 'bg-black': !bgTransparent }, 'p-4 py-8 lg:py-16']">
     <div class="max-w-screen-lg mx-auto md:flex flex-wrap justify-between gap-4 text-xs">
-      <div class="w-24 mb-8 lg:mb-0">
+      <div class="w-20 mb-8 lg:mb-0">
         <a href="//aiga.org" target="_blank" rel="noopener noreferrer">
           <SvgAigaFullLogo />
         </a>
@@ -29,7 +29,7 @@
             :href="`//facebook.com/${options.facebook}/`"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-12 inline-block mr-4"
+            class="w-8 inline-block mr-4"
           >
             <SvgFacebook />
           </a>
@@ -38,7 +38,7 @@
             :href="`//instagram.com/${options.instagram}/`"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-12 inline-block mr-4"
+            class="w-8 inline-block mr-4"
           >
             <SvgInstagram />
           </a>
@@ -47,7 +47,7 @@
             :href="`//twitter.com/${options.twitter}/`"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-12 inline-block mr-4"
+            class="w-8 inline-block mr-4"
           >
             <SvgTwitter />
           </a>
@@ -55,7 +55,7 @@
         <div>
           <p>© {{ year }} AIGA Midwest Design Week</p>
           <p>
-            site designed and developed by
+            Site designed and developed by
             <a href="//relaydesign.co" target="_blank" rel="noopener noreferrer" class="font-mono">
               relay design co.
             </a>
