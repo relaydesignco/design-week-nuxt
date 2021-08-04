@@ -3,7 +3,7 @@
     <div class="px-4 lg:px-8 py-16 relative">
       <div class="max-w-screen-xl mx-auto">
         <div class="absolute right-4 lg:right-8 top-4 lg:top-8 p-1 w-6">
-          <LinkClose to-route="/speakers" />
+          <LinkClose :to-route="$nuxt.context.from || '/speakers'" />
         </div>
         <div class="lg:flex gap-8">
           <img

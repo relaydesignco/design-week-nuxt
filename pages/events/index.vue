@@ -9,7 +9,7 @@
       </h2>
       <div class="col-span-3">
         <EventCard
-          v-for="event in events.filter((e) => $dateFns.format(new Date(e.eventAcf.start), 'cccc') === day.name)"
+          v-for="event in sortedEvents.filter((e) => $dateFns.format(new Date(e.eventAcf.start), 'cccc') === day.name)"
           :key="event.id"
           :event="event"
           :options="options"
@@ -109,6 +109,11 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    sortedEvents() {
+      return this.events.slice().sort((a, b) => new Date(a.eventAcf.start) - new Date(b.eventAcf.start));
+    },
   },
 };
 </script>

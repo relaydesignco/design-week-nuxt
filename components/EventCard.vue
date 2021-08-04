@@ -6,21 +6,21 @@
       class="w-40 h-40 object-cover mr-8 mb-2"
     />
     <div class="leading-tight">
-      <time :datetime="event.eventAcf.start" class="text-lg lg:text-xl font-semibold mr-1">
+      <time :datetime="event.eventAcf.start" class="lg:text-lg font-semibold mr-1">
         {{ $dateFns.format(new Date(event.eventAcf.start)) }}
       </time>
-      <span class="text-orange text-xl font-semibold">{{ event.eventAcf.type }}</span>
+      <span class="text-teal text-lg font-semibold">{{ event.eventAcf.type }}</span>
 
-      <h2 class="font-bold text-2xl lg:text-4xl mb-2 leading-tighter">{{ event.title }}</h2>
-      <p v-if="event.eventAcf.speakers" class="text-gray text-lg lg:text-xl font-semibold mb-3 lg:mb-4 leading-none">
+      <h2 class="font-bold text-xl lg:text-2xl mb-1 leading-tighter">{{ event.title }}</h2>
+      <p v-if="event.eventAcf.speakers" class="text-gray lg:text-lg font-semibold mb-3 lg:mb-4 leading-none">
         <span v-for="(speaker, index) in event.eventAcf.speakers" :key="speaker.speaker.id">
           {{ speaker.speaker.title
           }}<span v-if="index !== event.eventAcf.speakers.length - 1 || event.eventAcf.otherSpeakers">, </span>
         </span>
         <span v-if="event.eventAcf.otherSpeakers">{{ event.eventAcf.otherSpeakers }}</span>
       </p>
-      <NuxtLink :to="`/events/${event.slug}`" class="btn-sm btn-gray mb-2 mr-2 lg:mr-3">Event Info</NuxtLink>
-      <a :href="options.registrationLink" class="btn-sm btn-teal" target="_blank" rel="noopener noreferrer">
+      <NuxtLink :to="`/events/${event.slug}`" class="btn-sm btn-orange mb-2 mr-2 lg:mr-3">Event Info</NuxtLink>
+      <a :href="options.registrationLink" class="btn-sm btn-orange" target="_blank" rel="noopener noreferrer">
         Register
       </a>
     </div>

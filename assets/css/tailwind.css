@@ -77,7 +77,7 @@ input[type='email'].field:focus:invalid {
   }
 
   .btn-sm {
-    @apply leading-none text-white uppercase font-semibold inline-block transition-colors duration-300;
+    @apply leading-none text-white text-sm uppercase font-semibold inline-block transition-colors duration-300;
     padding: 0.4rem 0.6rem 0.3rem;
   }
 }
@@ -105,29 +105,23 @@ input[type='email'].field:focus:invalid {
     @apply bg-teal hover:bg-teal-light;
   }
 
+  .text-teal {
+    @apply text-teal-light;
+  }
+
+  .text-gray {
+    @apply text-gray-light;
+  }
+
   .text-link,
   .page-content a {
     @apply text-orange font-semibold hover:text-orange-light transition-colors duration-300;
   }
 }
 
-@responsive {
-  .pad-top {
-    padding-top: 99.6px;
-  }
-  .pad-top-lg {
-    padding-top: 137.5px;
-  }
-}
-
-@responsive {
-  .unpad-top {
-    margin-top: -99.6px;
-  }
-  .unpad-top-lg {
-    margin-top: -137.5px;
-  }
-}
+/* .text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+} */
 
 @tailwind utilities;
 

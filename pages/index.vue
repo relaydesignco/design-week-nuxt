@@ -12,9 +12,15 @@
             class="w-32 lg:w-64 ml-auto mb-8 lg:mb-16"
           />
           <div class="text-center mb-10 lg:mb-20">
-            <a :href="options.registrationLink" target="_blank" rel="noopener noreferrer" class="btn btn-orange">
+            <a
+              :href="options.registrationLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-orange mb-3 lg:mb-0 lg:mr-3"
+            >
               Buy Tickets
             </a>
+            <NuxtLink to="/events" class="btn btn-orange"> View Schedule </NuxtLink>
           </div>
           <div class="page-content max-w-xl mx-auto lg:text-lg text-white text-center" v-html="homePage.content"></div>
         </div>
@@ -26,15 +32,26 @@
       <div class="px-4 py-8 lg:py-12 container mx-auto">
         <h2 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Our Speakers</h2>
         <Speakers :speakers="randomSpeakers" />
-        <div class="text-center my-12">
+        <div class="text-center mt-12">
           <NuxtLink to="/speakers" class="btn btn-orange"> Full Speaker List </NuxtLink>
         </div>
       </div>
     </section>
     <!-- upcoming events -->
     <section class="px-4 py-8 lg:py-14">
-      <h2 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Calendar of Events</h2>
-      <div class="text-center my-12">
+      <h2 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Upcoming Events</h2>
+      <div class="max-w-screen-lg mx-auto">
+        <EventCard
+          v-for="event in events
+            .filter((event) => $dateFns.isAfter(new Date(event.eventAcf.end), new Date()))
+            .sort((a, b) => new Date(a.eventAcf.start) - new Date(b.eventAcf.start))
+            .slice(0, 3)"
+          :key="event.id"
+          :event="event"
+          :options="options"
+        />
+      </div>
+      <div class="text-center mt-8">
         <nuxt-link to="/events" class="btn btn-orange">See Full Schedule </nuxt-link>
       </div>
     </section>
@@ -44,10 +61,13 @@
         <h2 class="text-3xl mb-2 uppercase tracking-wide">We Love Our Sponsors</h2>
         <p class="lg:text-lg mb-8 lg:mb-12">Please follow them, show some love, try out their products or services.</p>
         <Sponsors :sponsors="randomSponsors" />
-        <p class="text-gray font-bold mb-8 lg:mb-12">
+        <p class="text-gray-dark font-bold mb-8 lg:mb-12">
           Interested in becoming a Sponsor? We’d love that.
           <NuxtLink to="/sponsors#sponsorship" class="text-link">Learn More.</NuxtLink>
         </p>
+        <div class="text-center mt-12">
+          <nuxt-link to="/sponsors" class="btn btn-orange">See All Sponsors </nuxt-link>
+        </div>
       </div>
     </section>
     <!-- stay in touch -->
@@ -68,7 +88,7 @@
             href="https://www.aiga.org/membership-community/aiga-membership"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-teal"
+            class="inline-block btn-outline"
           >
             Join AIGA
           </a>
@@ -195,14 +215,6 @@ export default {
       randomSpeakers: [],
       randomSponsors: [],
     };
-  },
-  computed: {
-    // upcomingEvents() {
-    //   return this.events
-    //     .slice()
-    //     .sort((a, b) => new Date(a.eventAcf.start) - new Date(b.eventAcf.start))
-    //     .filter((event) => this.$dateFns.isAfter(new Date(event.eventAcf.end), new Date()));
-    // },
   },
   mounted() {
     this.randomSpeakers = [...this.speakers].sort(() => Math.random() - 0.5).slice(0, 3);

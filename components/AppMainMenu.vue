@@ -35,15 +35,15 @@ export default {
         },
         {
           route: '/events',
-          name: 'Events',
+          name: 'Event Schedule',
         },
         {
           route: '/speakers',
-          name: 'Speakers',
+          name: 'Our Speakers',
         },
         {
           route: '/sponsors',
-          name: 'Sponsors',
+          name: 'Our Sponsors',
         },
       ],
     };

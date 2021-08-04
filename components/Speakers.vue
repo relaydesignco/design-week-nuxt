@@ -1,6 +1,10 @@
 <template>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 max-w-screen-lg mx-auto">
-    <article v-for="speaker in speakers" :key="speaker.id" class="text-center">
+    <article
+      v-for="speaker in speakers"
+      :key="speaker.id"
+      class="text-center transform hover:scale-105 transition-transform duration-300"
+    >
       <NuxtLink :to="`/speakers/${speaker.slug}`">
         <img
           :src="speaker.speakerAcf.image.sourceUrl"
