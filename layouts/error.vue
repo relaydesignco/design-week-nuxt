@@ -4,7 +4,7 @@
     <h1 class="text-2xl mb-4">{{ error.message }}</h1>
     <p class="mb-8">Status Code: {{ error.statusCode }}</p>
     <NuxtLink to="/">
-      <img src="~/assets/images/mwdw-2021-logo-small.png" alt="MWDW" class="w-48 mx-auto" />
+      <img src="/images/mwdw-2021-logo-small.png" alt="MWDW" class="w-48 mx-auto" />
       <span class="text-link">Back Home</span>
     </NuxtLink>
   </div>

@@ -5,11 +5,19 @@
       <section class="px-4 lg:px-8 pb-8">
         <div class="max-w-screen-lg mx-auto">
           <h1 class="uppercase lg:text-2xl mb-1 lg:mb-3">October 11-15, 2021</h1>
-          <img src="~/assets/images/mwdw-2021-logo.png" alt="MWDW 2021 logo" class="hero-logo mb-2 lg:mb-4" />
           <img
-            src="~/assets/images/midwest-design-week-aiga.svg"
+            src="/images/mwdw-2021-logo.png"
+            alt="MWDW 2021 logo"
+            class="hero-logo mb-2 lg:mb-4 max-w-[102%]"
+            width="1044.47"
+            height="229.78"
+          />
+          <img
+            src="/images/midwest-design-week-aiga.svg"
             alt="Midwest Design Week 2021"
             class="w-32 lg:w-64 ml-auto mb-8 lg:mb-16"
+            width="400"
+            height="80.22"
           />
           <div class="text-center mb-10 lg:mb-20">
             <a
@@ -230,9 +238,7 @@ export default {
   background-attachment: fixed;
   background-position: -9rem -15rem;
 }
-.hero-logo {
-  max-width: 102%;
-}
+
 .bg-white {
   @apply text-black;
 }

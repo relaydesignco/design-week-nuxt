@@ -58,10 +58,11 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
-  webfontloader: {
-    google: {
-      families: ['Hind Siliguri:400,600'], // Google Font with weights 400 and 600
+  googleFonts: {
+    families: {
+      'Hind+Siliguri': [400, 600],
     },
+    display: 'block',
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -76,7 +77,7 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    'nuxt-webfontloader',
+    '@nuxtjs/google-fonts',
     '@nuxtjs/date-fns',
   ],
 
