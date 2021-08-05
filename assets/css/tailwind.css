@@ -126,14 +126,24 @@ input[type='email'].field:focus:invalid {
 @tailwind utilities;
 
 /* Animation */
-.page-enter-active {
-  transition: opacity 0.5s ease-in-out;
-}
+.page-enter-active,
 .page-leave-active {
   transition: opacity 0.5s ease-in-out;
 }
+
 .page-enter,
 .page-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 0.2s ease-out;
+}
+.fade-leave-active {
+  transition: opacity 0.2s ease-in;
+}
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 

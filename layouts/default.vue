@@ -9,13 +9,19 @@
     <nav>
       <div class="text-gray-light fixed z-50 h-16 lg:h-20 flex items-center top-0 right-4 lg:right-8">
         <button
-          class="w-8"
           aria-label="Menu"
           aria-controls="main-menu"
           :aria-expanded="$store.state.navIsOpen ? 'true' : 'false'"
           @click="$store.commit('TOGGLE_NAV_IS_OPEN')"
         >
-          <SvgHamburger aria-hidden="true" />
+          <transition name="fade" mode="out-in">
+            <span v-if="$store.state.navIsOpen" key="close" class="w-6 mr-1 inline-block">
+              <SvgClose aria-hidden="true" />
+            </span>
+            <span v-else key="open" class="w-8 inline-block">
+              <SvgHamburger aria-hidden="true" />
+            </span>
+          </transition>
         </button>
       </div>
       <transition name="nav">
