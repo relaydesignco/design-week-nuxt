@@ -7,14 +7,14 @@
         </a>
       </div>
       <div>
-        <ul class="mb-4 lg:mb-8">
+        <ul class="mb-8">
           <li v-for="page in footerPages" :key="page.id" class="mb-2">
             <nuxt-link :to="`/${page.slug}`" class="font-bold">
               {{ page.title }}
             </nuxt-link>
           </li>
         </ul>
-        <h2 class="mb-2">Support Contacts</h2>
+        <h2 class="text-sm mb-2">Support Contacts</h2>
         <ul class="mb-6 lg:mb-0">
           <li v-for="contact in options.supportContacts" :key="contact.chapter" class="mb-2">
             {{ contact.chapter }} -

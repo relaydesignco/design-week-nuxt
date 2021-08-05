@@ -9,7 +9,7 @@
       <time :datetime="event.eventAcf.start" class="lg:text-lg font-semibold mr-1">
         {{ $dateFns.format(new Date(event.eventAcf.start)) }}
       </time>
-      <span class="text-teal text-lg font-semibold">{{ event.eventAcf.type }}</span>
+      <span class="text-teal lg:text-lg font-semibold">{{ event.eventAcf.type }}</span>
 
       <h2 class="font-bold text-xl lg:text-2xl mb-1 leading-tighter">{{ event.title }}</h2>
       <p v-if="event.eventAcf.speakers" class="text-gray lg:text-lg font-semibold mb-3 lg:mb-4 leading-none">

@@ -31,6 +31,9 @@
             <NuxtLink to="/events" class="btn btn-orange"> View Schedule </NuxtLink>
           </div>
           <div class="page-content max-w-xl mx-auto lg:text-lg text-white text-center" v-html="homePage.content"></div>
+          <p class="text-white lg:text-lg font-bold text-center">
+            Learn more on our <NuxtLink to="/about" class="text-link">About Page.</NuxtLink>
+          </p>
         </div>
       </section>
     </div>
@@ -71,7 +74,9 @@
         <Sponsors :sponsors="randomSponsors" />
         <p class="text-gray-dark font-bold mb-8 lg:mb-12">
           Interested in becoming a Sponsor? We’d love that.
-          <NuxtLink to="/sponsors#sponsorship" class="text-link">Learn More.</NuxtLink>
+          <br />
+          Learn how on our
+          <NuxtLink to="/sponsors#sponsorship" class="text-link">Sponsorship Page.</NuxtLink>
         </p>
         <div class="text-center mt-12">
           <nuxt-link to="/sponsors" class="btn btn-orange">See All Sponsors </nuxt-link>
