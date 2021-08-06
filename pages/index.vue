@@ -52,15 +52,7 @@
     <section class="px-4 py-8 lg:py-14">
       <h2 class="text-3xl mb-8 lg:mb-12 uppercase text-center tracking-wide">Upcoming Events</h2>
       <div class="max-w-screen-lg mx-auto">
-        <EventCard
-          v-for="event in events
-            .filter((event) => $dateFns.isAfter(new Date(event.eventAcf.end), new Date()))
-            .sort((a, b) => new Date(a.eventAcf.start) - new Date(b.eventAcf.start))
-            .slice(0, 3)"
-          :key="event.id"
-          :event="event"
-          :options="options"
-        />
+        <EventCard v-for="event in upcomingEvents" :key="event.id" :event="event" :options="options" />
       </div>
       <div class="text-center mt-8">
         <nuxt-link to="/events" class="btn btn-orange">See Full Schedule </nuxt-link>
@@ -227,11 +219,16 @@ export default {
     return {
       randomSpeakers: [],
       randomSponsors: [],
+      upcomingEvents: [],
     };
   },
   mounted() {
     this.randomSpeakers = [...this.speakers].sort(() => Math.random() - 0.5).slice(0, 3);
     this.randomSponsors = [...this.sponsors].sort(() => Math.random() - 0.5).slice(0, 6);
+    this.upcomingEvents = this.events
+      .filter((event) => this.$dateFns.isAfter(new Date(event.eventAcf.end), new Date()))
+      .sort((a, b) => new Date(a.eventAcf.start) - new Date(b.eventAcf.start))
+      .slice(0, 3);
   },
 };
 </script>
