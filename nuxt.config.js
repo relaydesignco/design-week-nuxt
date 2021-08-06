@@ -101,7 +101,7 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: process.env.BASE_URL || 'https://mwdw.wpengine.com/graphql',
+        httpEndpoint: process.env.BASE_URL || 'https://mwdwaiga.wpengine.com/graphql',
       },
     },
     errorHandler: '~/plugins/apollo-error-handler.js',
