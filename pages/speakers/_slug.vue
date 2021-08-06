@@ -1,15 +1,15 @@
 <template>
   <div class="pt-16 lg:pt-20 min-h-screen">
-    <div class="px-4 lg:px-8 py-16 relative">
+    <div class="px-4 lg:px-8 py-12 lg:py-16 relative">
       <div class="max-w-screen-xl mx-auto">
-        <div class="absolute right-4 lg:right-8 top-4 lg:top-8 p-1 w-6">
-          <LinkClose :to-route="$nuxt.context.from || '/speakers'" />
+        <div class="absolute top-4">
+          <NuxtLink to="/speakers" class="text-link">&lsaquo; Our Speakers</NuxtLink>
         </div>
         <div class="lg:flex gap-8">
           <img
             :src="speaker.speakerAcf.image ? speaker.speakerAcf.image.sourceUrl : '/icon.png'"
             :alt="speaker.speakerAcf.image ? speaker.speakerAcf.image.altText : 'AIGA logo'"
-            class="w-64 h-64 object-cover mb-4"
+            class="w-full h-48 md:w-64 md:h-64 object-cover mb-4"
           />
           <div>
             <h1 class="font-bold text-2xl lg:text-4xl text-teal-light leading-tight mb-1">
@@ -24,12 +24,12 @@
               </a>
               <span v-else>{{ speaker.title }}</span>
             </h1>
-            <h2 v-if="speaker.speakerAcf.jobTitle" class="text-lg font-normal mb-8 lg:mb-12">
+            <h2 v-if="speaker.speakerAcf.jobTitle" class="text-lg font-normal mb-6 lg:mb-12">
               {{ speaker.speakerAcf.jobTitle }}
             </h2>
             <template v-if="speaker.speakerAcf.sessions">
-              <h3 class="text-teal-light uppercase mb-2">Sessions</h3>
-              <ul class="mb-8 lg:mb-12">
+              <h3 class="text-teal-light uppercase lg:mb-2">Sessions</h3>
+              <ul class="mb-6 lg:mb-12">
                 <li v-for="event in speaker.speakerAcf.sessions" :key="event.event.id">
                   <NuxtLink :to="`/events/${event.event.slug}`" class="text-link">{{ event.event.title }}</NuxtLink>
                 </li>

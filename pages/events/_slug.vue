@@ -1,18 +1,18 @@
 <template>
-  <div class="pt-16 lg:pt-20">
-    <div class="px-4 lg:px-8 py-16 relative">
+  <div class="pt-16 lg:pt-20 min-h-screen">
+    <div class="px-4 lg:px-8 py-12 lg:py-16 relative">
       <div class="max-w-screen-xl mx-auto">
-        <div class="absolute right-4 lg:right-8 top-4 lg:top-8 p-1 w-6">
-          <LinkClose :to-route="$nuxt.context.from || '/events'" />
+        <div class="absolute top-4">
+          <NuxtLink to="/events" class="text-link">&lsaquo; Event Schedule</NuxtLink>
         </div>
         <div class="lg:flex gap-8">
           <img
             :src="event.eventAcf.image ? event.eventAcf.image.sourceUrl : '/icon.png'"
             :alt="event.eventAcf.image ? event.eventAcf.image.altText : 'AIGA logo'"
-            class="w-64 h-64 object-cover mb-4"
+            class="w-full h-48 md:w-64 md:h-64 object-cover mb-4"
           />
           <div>
-            <h1 class="font-bold text-2xl lg:text-4xl text-teal-light leading-tight mb-2">{{ event.title }}</h1>
+            <h1 class="font-bold text-2xl lg:text-4xl text-teal-light leading-tight mb-1">{{ event.title }}</h1>
             <h2 class="text-lg lg:text-xl font-normal mb-6 lg:mb-12">
               <span v-for="(speaker, index) in event.eventAcf.speakers" :key="speaker.speaker.id">
                 <NuxtLink :to="`/speakers/${speaker.speaker.slug}`" class="text-link">
