@@ -123,5 +123,9 @@ export default {
     extend(config, ctx) {
       config.devtool = process.env.NODE_ENV === 'development' ? '#source-map' : '';
     },
+    babel: {
+      // silence message in console - known nuxt bug - https://github.com/nuxt/nuxt.js/pull/9631
+      plugins: [['@babel/plugin-proposal-private-property-in-object', { loose: true }]],
+    },
   },
 };
