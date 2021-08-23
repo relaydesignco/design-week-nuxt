@@ -10,7 +10,7 @@ import gql from 'graphql-tag';
 
 const SPEAKERS_QUERY = gql`
   query SPEAKERS_QUERY {
-    speakers {
+    speakers(first: 100, after: null) {
       nodes {
         id
         title

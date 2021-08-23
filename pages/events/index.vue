@@ -24,7 +24,7 @@ import gql from 'graphql-tag';
 
 const EVENTS_QUERY = gql`
   query EVENTS_QUERY {
-    events {
+    events(first: 100, after: null) {
       nodes {
         id
         title

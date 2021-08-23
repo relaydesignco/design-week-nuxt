@@ -63,7 +63,7 @@
       <div class="px-4 py-8 lg:py-12 container mx-auto text-center">
         <h2 class="text-3xl mb-2 uppercase tracking-wide">We Love Our Sponsors</h2>
         <p class="lg:text-lg mb-8 lg:mb-12">Please follow them, show some love, try out their products or services.</p>
-        <Sponsors :sponsors="randomSponsors" />
+        <Sponsors :sponsors="sponsors.filter((sponsor) => sponsor.sponsorAcf.level === 'Premier')" />
         <p class="text-gray-dark font-bold mb-8 lg:mb-12">
           Interested in becoming a Sponsor? We’d love that.
           <br />
@@ -128,7 +128,7 @@ const HOME_PAGE_QUERY = gql`
         }
       }
     }
-    speakers {
+    speakers(first: 100, after: null) {
       nodes {
         id
         title
@@ -154,7 +154,7 @@ const HOME_PAGE_QUERY = gql`
         }
       }
     }
-    events {
+    events(first: 100, after: null) {
       nodes {
         id
         title
@@ -181,7 +181,7 @@ const HOME_PAGE_QUERY = gql`
         }
       }
     }
-    sponsors(where: { orderby: { field: TITLE, order: ASC } }) {
+    sponsors(where: { orderby: { field: TITLE, order: ASC } }, first: 100, after: null) {
       nodes {
         id
         title
@@ -217,13 +217,13 @@ export default {
   data() {
     return {
       randomSpeakers: [],
-      randomSponsors: [],
+      // randomSponsors: [],
       upcomingEvents: [],
     };
   },
   mounted() {
     this.randomSpeakers = [...this.speakers].sort(() => Math.random() - 0.5).slice(0, 3);
-    this.randomSponsors = [...this.sponsors].sort(() => Math.random() - 0.5).slice(0, 6);
+    // this.randomSponsors = [...this.sponsors].sort(() => Math.random() - 0.5).slice(0, 6);
     this.upcomingEvents = this.events
       .filter((event) => this.$dateFns.isAfter(new Date(event.eventAcf.end), new Date()))
       .sort((a, b) => new Date(a.eventAcf.start) - new Date(b.eventAcf.start))

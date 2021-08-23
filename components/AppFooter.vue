@@ -71,7 +71,7 @@ import gql from 'graphql-tag';
 
 const FOOTER_QUERY = gql`
   query FOOTER_QUERY {
-    pages {
+    pages(first: 100, after: null) {
       nodes {
         id
         slug
