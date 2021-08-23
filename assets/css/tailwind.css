@@ -43,13 +43,22 @@ h4 {
     @apply mb-8 leading-relaxed;
   }
 
+  &.sponsors {
+    h2 {
+      @apply leading-none mb-1;
+    }
+  }
+
   ul {
-    @apply mb-8;
+    @apply mt-4 lg:mt-8 mb-8 lg:mb-16 text-sm lg:text-base;
   }
 
   li {
-    &:before {
-      content: '- ';
+    @apply relative pl-6 mb-4 leading-tight;
+    &::before {
+      @apply left-0 top-0 lg:top-[2px] w-4 h-4 absolute;
+      content: '';
+      background: url(~/assets/images/check-circle.svg);
     }
   }
 }
