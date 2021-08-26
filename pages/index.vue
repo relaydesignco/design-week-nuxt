@@ -221,6 +221,7 @@ export default {
       upcomingEvents: [],
     };
   },
+
   mounted() {
     this.randomSpeakers = [...this.speakers].sort(() => Math.random() - 0.5).slice(0, 3);
     // this.randomSponsors = [...this.sponsors].sort(() => Math.random() - 0.5).slice(0, 6);

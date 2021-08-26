@@ -16,15 +16,22 @@
 
 <script>
 export default {
+  name: 'MainEventPage',
   head() {
     return {
-      name: 'MainEventPage',
       title: `Midwest Design Week | Main Event`,
       meta: [
         {
           hid: 'description',
           name: 'description',
           content: `Midwest Design Week 2021 Main Event`,
+        },
+      ],
+      script: [
+        {
+          src: 'https://www.socialintents.com/api/socialintents.1.3.js#2c9faa357586ec4b0175995176721bad',
+          body: true,
+          async: true,
         },
       ],
     };
