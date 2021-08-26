@@ -58,9 +58,6 @@ module.exports = {
         '3xl': '1.8rem', // 45px
         '4xl': '2rem', // 50px
       },
-      minHeight: {
-        '16x9': '56.25vw',
-      },
       letterSpacing: {
         wide: '0.1em',
         wider: '0.2em',
@@ -75,5 +72,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio')],
 };
