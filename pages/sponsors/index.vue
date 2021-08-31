@@ -65,7 +65,7 @@ export default {
   },
   data() {
     return {
-      levels: ['Premier', 'Event', 'Supporting', 'In-Kind', 'Creative'],
+      levels: ['Premier', 'Event', 'Supporting', 'In-Kind'],
     };
   },
   head() {

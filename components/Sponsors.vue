@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap justify-around gap-4 md:gap-12 items-center max-w-2xl mx-auto mb-16">
+  <div class="flex flex-wrap justify-around gap-4 md:gap-12 items-center max-w-2xl mx-auto mb-20">
     <div
       v-for="sponsor in sponsors"
       :key="sponsor.id"
