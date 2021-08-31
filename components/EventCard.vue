@@ -7,7 +7,8 @@
     />
     <div class="leading-tight">
       <time :datetime="event.eventAcf.start" class="lg:text-lg font-semibold mr-1">
-        {{ $dateFns.format(new Date(event.eventAcf.start)) }}
+        {{ $dateFns.format(new Date(event.eventAcf.start), "MMM. d, haaa 'EST'") }} /
+        {{ $dateFns.format($dateFns.add(new Date(event.eventAcf.start), { hours: 1 }), "haaa 'CST'") }}
       </time>
       <span class="text-teal lg:text-lg font-semibold">{{ event.eventAcf.type }}</span>
 

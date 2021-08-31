@@ -23,13 +23,21 @@
               <span v-if="event.eventAcf.otherSpeakers">{{ event.eventAcf.otherSpeakers }}</span>
             </h2>
             <h3 v-if="event.eventAcf.speaker" class="text-teal-light uppercase mb-2">Event Time</h3>
-            <div class="mb-4">
+            <div class="mb-4 leading-tight">
               <time :datetime="event.eventAcf.start" class="text-lg lg:text-xl">
                 {{ $dateFns.format(new Date(event.eventAcf.start)) }}
               </time>
               -
               <time :datetime="event.eventAcf.end" class="text-lg lg:text-xl">
-                {{ $dateFns.format(new Date(event.eventAcf.end), 'haaa') }}
+                {{ $dateFns.format(new Date(event.eventAcf.end), "haaa 'EST'") }}
+              </time>
+              <br />
+              <time class="text-lg lg:text-xl">
+                {{ $dateFns.format($dateFns.add(new Date(event.eventAcf.start), { hours: 1 }), 'haaa') }}
+              </time>
+              -
+              <time class="text-lg lg:text-xl">
+                {{ $dateFns.format($dateFns.add(new Date(event.eventAcf.end), { hours: 1 }), "haaa 'CST'") }}
               </time>
             </div>
             <a
