@@ -14,7 +14,8 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
+        content:
+          'A Virtual Design Conference hosted by Midwest AIGA Chapters Cincinnati, Detroit, Indianapolis, Louisville, Northwest Arkansas, Saint Louis, Toledo, West Michigan, and Wisconsin.',
       },
       {
         hid: 'twitter:card',
@@ -49,7 +50,8 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Virtual Design Week featuring Louisville, Cincinnati, Indiananpolis, and Toledo AIGA Chapters.',
+        content:
+          'A Virtual Design Conference hosted by Midwest AIGA Chapters Cincinnati, Detroit, Indianapolis, Louisville, Northwest Arkansas, Saint Louis, Toledo, West Michigan, and Wisconsin.',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
