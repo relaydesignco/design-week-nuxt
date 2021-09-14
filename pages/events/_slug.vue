@@ -33,11 +33,11 @@
               </time>
               <br />
               <time class="text-lg lg:text-xl">
-                {{ $dateFns.format($dateFns.add(new Date(event.eventAcf.start), { hours: 1 }), 'haaa') }}
+                {{ $dateFns.format($dateFns.sub(new Date(event.eventAcf.start), { hours: 1 }), 'haaa') }}
               </time>
               -
               <time class="text-lg lg:text-xl">
-                {{ $dateFns.format($dateFns.add(new Date(event.eventAcf.end), { hours: 1 }), "haaa 'CST'") }}
+                {{ $dateFns.format($dateFns.sub(new Date(event.eventAcf.end), { hours: 1 }), "haaa 'CST'") }}
               </time>
             </div>
             <a

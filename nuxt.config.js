@@ -86,7 +86,7 @@ export default {
   dateFns: {
     defaultLocale: 'en-US',
     format: 'MMM. d, haaa',
-    methods: ['format', 'isAfter', 'add'],
+    methods: ['format', 'isAfter', 'sub'],
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
