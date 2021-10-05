@@ -25,19 +25,35 @@
             <h3 v-if="event.eventAcf.speaker" class="text-teal-light uppercase mb-2">Event Time</h3>
             <div class="mb-4 leading-tight">
               <time :datetime="event.eventAcf.start" class="text-lg lg:text-xl">
-                {{ $dateFns.format(new Date(event.eventAcf.start)) }}
+                {{
+                  $dateFns.getMinutes(new Date(event.eventAcf.start)) === 0
+                    ? $dateFns.format(new Date(event.eventAcf.start))
+                    : $dateFns.format(new Date(event.eventAcf.start), 'MMM. d, h:mmaaa')
+                }}
               </time>
               -
               <time :datetime="event.eventAcf.end" class="text-lg lg:text-xl">
-                {{ $dateFns.format(new Date(event.eventAcf.end), "haaa 'EST'") }}
+                {{
+                  $dateFns.getMinutes(new Date(event.eventAcf.start)) === 0
+                    ? $dateFns.format(new Date(event.eventAcf.end), "haaa 'EST'")
+                    : $dateFns.format(new Date(event.eventAcf.end), "h:mmaaa 'EST'")
+                }}
               </time>
               <br />
               <time class="text-lg lg:text-xl">
-                {{ $dateFns.format($dateFns.sub(new Date(event.eventAcf.start), { hours: 1 }), 'haaa') }}
+                {{
+                  $dateFns.getMinutes(new Date(event.eventAcf.start)) === 0
+                    ? $dateFns.format($dateFns.sub(new Date(event.eventAcf.start), { hours: 1 }), 'haaa')
+                    : $dateFns.format($dateFns.sub(new Date(event.eventAcf.start), { hours: 1 }), 'h:mmaaa')
+                }}
               </time>
               -
               <time class="text-lg lg:text-xl">
-                {{ $dateFns.format($dateFns.sub(new Date(event.eventAcf.end), { hours: 1 }), "haaa 'CST'") }}
+                {{
+                  $dateFns.getMinutes(new Date(event.eventAcf.start)) === 0
+                    ? $dateFns.format($dateFns.sub(new Date(event.eventAcf.end), { hours: 1 }), "haaa 'CST'")
+                    : $dateFns.format($dateFns.sub(new Date(event.eventAcf.end), { hours: 1 }), "h:mmaaa 'CST'")
+                }}
               </time>
             </div>
             <a

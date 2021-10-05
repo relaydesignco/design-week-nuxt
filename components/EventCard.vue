@@ -7,8 +7,17 @@
     />
     <div class="leading-tight">
       <time :datetime="event.eventAcf.start" class="lg:text-lg font-semibold mr-1">
-        {{ $dateFns.format(new Date(event.eventAcf.start), "MMM. d, haaa 'EST'") }} /
-        {{ $dateFns.format($dateFns.sub(new Date(event.eventAcf.start), { hours: 1 }), "haaa 'CST'") }}
+        {{
+          $dateFns.getMinutes(new Date(event.eventAcf.start)) === 0
+            ? $dateFns.format(new Date(event.eventAcf.start), "MMM. d, haaa 'EST'")
+            : $dateFns.format(new Date(event.eventAcf.start), "MMM. d, h:mmaaa 'EST'")
+        }}
+        /
+        {{
+          $dateFns.getMinutes(new Date(event.eventAcf.start)) === 0
+            ? $dateFns.format($dateFns.sub(new Date(event.eventAcf.start), { hours: 1 }), "haaa 'CST'")
+            : $dateFns.format($dateFns.sub(new Date(event.eventAcf.start), { hours: 1 }), "h:mmaaa 'CST'")
+        }}
       </time>
       <span class="text-teal lg:text-lg font-semibold">{{ event.eventAcf.type }}</span>
 
